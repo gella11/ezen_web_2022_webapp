@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>Insert title here</title>
+		</head>
+	<body>
+	
+	
+		<script type="text/javascript">
+		
+		/*
+			p.116			
+				0.경고창 			: alert("메세지")
+				1.문자열 입력 		: prompt("메세지")	: 문자열 입력 상자 띄우기
+				2.불 입력 		: confirm("메세지")	: 확인(True) / 취소(false) 입력버튼 상자 띄우기
+			
+			p.119~ : 자료형 변환
+				1. 문자열 -> 숫자형 바뀜 : Number(문자열)
+				2. 숫자열 -> 문자열 바뀜 : String(숫자형)			//일단 생략
+					숫자 + 문자열  >>>"숫자형"
+					13+"" = "13"
+				3. 문자 or 숫자 -> 불 변환 : Boolean(자료형)		//일단 생략
+					Boolean("true") -> true
+		
+		
+		*/
+			//문자열 입력받기
+			const input = prompt('문자 입력해주세요')			// HTML에서 문자열 입력받기 >>> input이란 상수에 저장
+			console.log('입력받은 문자 : ' + input)				// 콘솔에 변수 출력
+			
+			// 볼 입력받기
+			const input2 = confirm('동의 여부 확인')			// HTML에서 확인/여부 상자 띄우기
+			console.log ('입력받은 볼 : ' + input2)			// 확인 누르면 콘솔에 True, 취소 누르면 콘솔에 false
+			
+			//숫자열 입력받기
+			const 숫자 = prompt('숫자 입력')					// 입력받으면 문자열로 저장된다.
+			console.log('입력받은 수 : ' + (숫자+10))			// >>> 1010 문자열
+			console.log('입력받은 수 : ' + ( Number(숫자)+10))	// >>> 20   문자열 -> 숫자열 변환
+			
+			
+			
+			
+		
+		</script>
+	
+	
+	</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+	
+		<script type="text/javascript">
+		
+			/*
+				※상수든 변수든 하나의 값 만 저장 가능
+				※상수명 변수명 2개 이상 선언 불가능
+					[선언] 키워드 변수명 = 값
+					[호출] 변수명 
+					[변경] 변수명 = 새로운 값
+			
+				상수 : 고정된 수 [선언시 상수에 대입된 값은 나중에 변경 할 수 없다]
+					1. const 변수명 = 값
+					
+				변수 : 변하는 수 [선언시 변수에 대입된 값은 추후에 변경 할 수 있다]
+					1. let 변수명 = 값
+					
+				대입연산자
+						= : [ 오른쪽에서 왼쪽으로 대입(저장)]
+						+=
+						-=
+						*=
+						/=
+						%=
+				
+				증감연산자
+						++ : 1증가
+							++변수 : 우선증가
+							변수++ : 후위증가
+						-- : 1감소
+							--변수 : 선위감소
+							변수-- : 후위감소
+						
+					
+					
+			*/
+			//상수의선언
+			const pi = 3.141592
+			console.log( "pi :" + pi )
+/* 			pi = 10
+			console.log( pi ) >> 오류 Assignment to constant variable		 */
+			
+			//변수의 선언
+			let pi2 = 3.141592
+			console.log( "pi2 : "+ pi2 )
+			pi2 = 10
+			console.log( "p12 변경 후 :" + pi2)
+			
+			//대입연산자
+			let 변수1 = 3
+			console.log('변수1의 값 :' + 변수1)
+			변수1 = 변수1 + 2 // = 변수1 += 2
+			console.log('변수1의 2를 더한후 :' + 변수1)
+			
+			//활용 [JS 변수에 저장된 HTML형식의 문자를 HTML에 출력]
+			let list = ''		//변수의 선언과 ''공백 대입 [초기값]
+			list +='<ul>'		//변수의 누적 값 저장
+			list +='<li>hello</li>'
+			list +='<li>javascript</li>'
+			list +='</ul>'
+				console.log(list) //<ul><li>hello</li><li>javascript</li></ul>
+			
+			document.write(list)  //document 는 html를 뜻하는데 document.write 키워드가 <ul><li>hello</li><li>javascript</li></ul> 를 html에 뿌려줌
+			
+			
+			//증감연산자
+			let 변수2 = 3
+				console.log ( " 변수2:" + 변수2)				// >>> 3
+				console.log ( " 변수2 선위증가:" + (++변수2))	// >>> 4 증가후에 출력
+				console.log ( " 변수2 후위증가:" + (변수2++))	// >>> 4 출려후에 증가
+				console.log ( " 변수2:" + 변수2)				// >>> 5
+				
+
+				console.log ( " 변수2 선위감소:" + (--변수2))	// >>> 4 증가후에 출력
+				console.log ( " 변수2 후위감소:" + (변수2--))	// >>> 4 출려후에 증가
+				console.log ( " 변수2:" - 변수2)				// >>> 3
+				
+			
+			
+		</script>
+	
+	</body>
+</html>
