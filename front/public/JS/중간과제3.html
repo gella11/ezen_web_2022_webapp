@@ -21,6 +21,16 @@
 			console.log('만 원 : ' + input[1] + '장' )
 			console.log('천 원 : ' + input[2] + '장' )
 			console.log('백 원 : ' + input[3] + '개' )
+			
+			/* 문제 1 강사님 답
+			let 금액 = prompt(' 금액 입력 :')
+			console.log('안내) 입력받은 금액 : ' + 금액 + "장")
+			console.log('십 만원 : ' + parseInt((금액/100000)) + '장') 				//소수점 버리기
+			금액 -= parseInt(금액/100000) * 100000
+			console.log('만 원 : ' + parseInt((금액/10000)) + '장')
+			금액 -= parseInt(금액/10000) * 10000
+			console.log('천 원 : ' + parseInt((금액/1000)) + '장')
+			*/
 
 			
 					
@@ -34,6 +44,11 @@
 				3의 배수이면 true 출력 / 아니면 false 출력 */
 			const input3 = prompt('숫자 입력시 3의 배수 여부 확인')		
 			console.log(Boolean(input3%3 == 0))
+			
+			/*문제 3 강사님 답
+			let 정수1 = prompt('정수 1 입력 : ')
+			console.log ('3 배수 체크 : ' (정수2 % 2 == 1) )
+			*/
 				
 			/* 문제 4 : prompt 함수로 숫자를 입력받아 홀수 인지 확인
 				true / false */
@@ -42,6 +57,9 @@
 				
 			/* 문제 5 : 두 실수를 입력받아 앞 실수의 값이 뒤 실수의 값의 몇 % 인지 출력
 				예) 54.5가 84.3의 몇프로인지 비율 결과 : 64.~~~% */
+			let 실수1 = prompt('실수 1 입력 : ')
+			let 실수2 = prompt('실수 2 입력 : ')
+			console.log( ' 실수2의 상수 1 백분율 : ' + (실수1/실수2)*100 + '%' )
 
 		
 		</script>

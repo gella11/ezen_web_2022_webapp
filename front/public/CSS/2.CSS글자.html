@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style type="text/css">
+			/* 주석 */
+			/*  */
+			/* 꾸밀때 옆 형식 지키기>>> 선택자{ 속성 : 값 ;} */
+			
+			/* 웹 폰트 : 폰트 설치 없이 웹에서 폰트 가져오기*/
+			@font-face {
+				   font-family: 'MabinogiClassicR';
+				   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/MabinogiClassicR.woff2') format('woff2');
+				   font-weight: normal;
+				   font-style: normal;
+				}
+			
+			/* 모든 곳에 적용 */
+			*{
+				font-family: "궁서"; /* pc에 설치된 폰트*/
+				color: blue;
+			}
+			
+			/* 특정 태그에 이용*/
+			h3{
+				font-family: "MabinogiClassicR"; 					/* 웹 폰트 적용 */
+				text-decoration : overline line-through underline;  /* 윗줄 가운데줄 아랫줄 */
+				text-align: center; 								/* 폰트 정렬 left, center right*/
+				text-shadow: 3px 3px 3px orange;					/* 그림자 x축이동 y축이동 깊이(?) 색상 */			
+			}
+			
+			p{
+				background-color: yellow; 							/* 배경색 */
+				line-height: 150%; 									/* 줄간격 기본값100%*/
+				font-size: 30px; 									/* 폰트크기 */
+				font-style: italic; 								/* 폰트 기울기 */
+				font-weight: bold; 									/* 폰트 굴게 */
+				letter-spacing: 2px;								/* 글자 간격 [자간]*/
+				word-spacing: 5px; 									/* 단어 간격 [어간] */
+				
+			}
+			/* 특정 태그는 기본으로 css값이 들어가 있는데 그것을 수정할 수 있음 기본값 css 적용 */
+			a{
+				text-decoration: none; 								/* 밑줄 없앰 */
+				color: black 										/* 색상 지정  */
+			}
+			
+			a:hover{												/* 마우스를 올렸을 때 색상으로 바뀜 */ 
+				color: orange;
+			}
+	
+			a:visited {												/* a태그를 클맀했을 때 그 뒤로 색이 바뀜*/
+				color: blue;
+			}
+			
+			a:active { 												/* a태그에 마우스를 클릭햇을 때 순간 이벤트 */
+				color: green;
+			}
+
+			
+		</style>
+		
+	</head>
+	<body>
+	
+	
+		<!-- 
+			1. font-family : 폰트명
+			2. color : 글골색
+			3. background-color : 배경색
+			4. font-size : 폰트크기
+			5. font-style : italic										>>> 기울기
+			6. font-style : bold 										>>> 폰트 굴게
+			7. text-decoration : overline / line-through / underline	>>> 폰트에 선 긋기
+			8. text-align : center / left / right 						>>> 정렬
+			9. text-shadow : x축[px] y축[px] 깊이[px] 색상					>>> 그림자
+			10. line-height : 줄간격[%]									>>> 줄 간격
+			11. letter-spacing : [px]									>>> 자간
+			12. word-spacing : [px]										>>> 어간
+		 -->	
+		 
+		<h3>강아지</h3>
+		<p>개는 중형 동물이자 가장 널리 분포하며 개체 수가 가장 많은 지상 동물 중 하나이며
+		가축화한 회색늑대이다.
+		개는 인류가 최초로 가축으로 삼은 동물로 알려져 있으며, 역사적으로 반려견,
+		사냥견으로서 길러 왔다.
+		</p>
+		
+		<a href="http://www.naver.com">네이버</a>	
+		
+	</body>
+</html>

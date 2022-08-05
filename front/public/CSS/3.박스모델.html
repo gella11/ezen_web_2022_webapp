@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style type="text/css">
+		/*  */
+		
+			p{
+				border: solid 10px green;				/* 테두리 : 선모양 굵기 색상 */
+				margin: 50px; 							/* 바깥 여백 (테두리(border)기준 즉, 바깥 글과 테두리 사이 여백) */
+				padding: 50px; 							/* 안쪽 여백 (테두리(border)기준 즉, 안쪽 글과 테두리 사이 여백) */
+			}
+		
+			h1{
+				border-top: solid 2px skyblue;			/* 위 실선 */
+				border-bottom: dotted 3px oragne; 		/* 아래 점선  */
+				border-right: double 3px red;			/* 오른쪽 이중선 */
+				border-left: dashed 5px black;			/* 왼쪽 파선 */
+				border-radius: 20px;					/* 둥근 모서리 */
+				box-shadow: 10px 10px 5px purple;		/* 박스 그림자 */
+			}
+		
+			h2{
+				border: solid 2px green;
+				margin-top: 40px;						/* 바깥여백 위 */
+				margin-right: 50px;						/* 바깥여백 오른쪽 */
+				margin-bottom: 60px;					/* 바깥여백 아래 */
+				margin-left: 70px;						/* 바깥여백 왼쪽*/
+				margin: 40px 50px 60px 70px;			/* 시계방향 : 위40, 오른쪽50, 아래60, 왼쪽70 */
+				margin: 40px 50px;						/* 위40 아래40 , 왼쪽50 오른쪽50 */
+				margin: 40px;							/* 모든 면40 */
+				
+				padding-top: 40px;						/* 안쪽여백 위 */
+				padding-right: 50px;					/* 안쪽여백 오른쪽 */
+				padding-bottom: 60px;					/* 안쪽여백 아래 */
+				padding-left: 70px;						/* 안쪽여백 왼쪽 */
+				padding: 40px 50px 60px 70px;			/* 시계방향 : 위40, 오른쪽50, 아래60, 왼쪽70 */
+				padding: 40px 50px;						/* 위40 아래40 , 왼쪽50 오른쪽50 */
+				padding: 40px;							/* 모든 면40 */
+			}
+			
+			h3{
+				border: solid 1px red;
+				width: 200px;
+				text-align: center;						/* 박스권 안에 있는 글자가 박스 가운데 정렬임 ★주의*/
+				margin: 0 auto;							/* 위아래 margin 0, 오른쪽 왼쪽 margin 가운데로 */
+			}
+		</style>
+		
+		
+	</head>
+	<body>
+			<!-- 박스권 모델
+				1. border	:	테두리
+				2. margin	:	바깥여백
+				3. padding	:	안쪽여백
+				4. border-radius : 둥근 모서리
+				5. box-shadow : 박스 그림자
+			 -->
+			<h1> 박스 모델 </h1>
+			<p>위 사용범위는 참고용으로, 정확한 사용범위는 이용 전 폰트 제작사에 확인바랍니다.
+				사용범위는 폰트 제작사의 규정에 따라 달라질 수 있습니다.
+				제작사명은 상단 폰트 이름 밑에 있습니다.
+			</p>
+			<h2> 경계선 </h2>
+			<h3> 마진 </h3>
+			
+	</body>
+</html>

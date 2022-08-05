@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+	
+		<!--  
+			조건문 [ if , switch ]
+				예) 동생에게  a b c 편의점에서 1000 콜라 사오기 심부름
+			
+			if 형태
+				1. if(조건) {
+					조건참일때 실행문
+				}
+				 
+				2. if(조건) {
+					(참=ture)실행문
+				}
+				else{
+					(거짓=false)실행문
+				}
+				3. if 중첩
+					if( 조건 ) {
+						if( 조건 ) {
+						
+						}else{
+						
+						}
+					}else{
+						if( 조건 ) {
+						
+						}else{
+						
+						}
+					}
+					
+				4. if ~ else if ~ else
+					if( 조건1 ) { 참1실행 }
+					else if ( 조건2 ) { 참2실행 }
+					else if ( 조건3 ) { 참3실행 }
+					else if ( 조건4 ) { 침4실행 }
+					else if { 거짓실행 }
+					
+		 -->		
+		 
+		 <script type="text/javascript">
+		 	//p.131
+			 	if(273 < 100){
+			 		alert('273<100 -> true')
+			 	}
+			 	alert('종료')
+			 	
+
+			 	
+		 	//p.132
+			 	const date = new Date() 		// Data클래스로 date 객체 선운 [ Date는 날짜 관련 클래스]
+			 	const hour = 14 	// date객체에서 '시' 만 호출해서 hour 상수에 저장
+			 	if(hour < 12){					// 현재시간이 12보다 작으면 아래코드 실행
+			 		alert('오전입니다.');
+			 	}
+			 	if(hour >= 12){					// 현재시간이 12보다 크거나 같으면 아래코드 실행
+			 		alert('오후입니다.');
+			 	}
+		 	
+		 	//p.134
+			 	if(hour < 12){					// 현재시간이 12보다 작으면 아래코드 실행
+			 		alert('오전입니다.');
+			 	}else{
+			 		alert('오후입니다.')	
+			 	}
+		 	
+		 	//p.135
+		 	 if( hour < 11 ) {
+					alert('아침 먹을 시간입니다.')
+		 	 }else{
+		 		 if(hour < 15){
+		 			 alert('점심 먹을 시간입니다.')
+		 		 }else{
+		 			 alert('저녁 먹을 시간입니다.')
+		 		 }
+		 	 }
+		 	
+		 	//p.137
+		 		if ( hour < 11){
+		 			alert('아침 먹을 시간입니다.')
+		 		} else if ( hour < 15) {
+		 			alert('점심 먹을 시간입니다.')
+		 		} else {
+		 			alert('저녁 먹을 시간입니다.')
+		 		}
+		 	
+		 	//p.140 4번
+		 		const a = Number(prompt('숫자 입력 : '))
+		 		if(a > 0){alert('입력한 숫자는 양수 입니다.')}
+		 		else if ( a === 0){alert('입력한 숫자는 0 입니다.')}
+		 		else{ alert('입력한 숫자는 음수 입니다.')}
+		 	
+		 	//p.140 5번
+		 		const  b = Number(prompt('숫자를 입력해주세요 : '))
+		 		if( b % 2 === 1){alert('입력한 숫자는 홀수 입니다.')}
+		 		else('입력한 숫자는 짝수 입니다.')
+
+		 	//p.141 6번
+		 		const  c = Number(prompt('월를 입력해주세요 : '))
+		 		if( c > 3 && c <= 5){
+		 			alert('봄 입니다.')
+		 			}else if ( c > 6 && c <= 8 ){
+		 				alert('여름 입니다.')
+		 			}else if ( c >= 9 && c <= 11){
+		 				alert('가을 입니다.')
+		 			}else{
+		 				alert('겨울 입니다.')
+		 				}
+		 	</script>
+		 
+		 
+	
+	
+	
+	</body>
+</html>
