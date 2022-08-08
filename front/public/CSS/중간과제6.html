@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style type="text/css">
+			
+			span{
+				margin : 30px;
+			}
+			
+			.B1{
+				margin : center;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+	
+				<h1> 회원 가입 폼 </h1>
+		
+			<form>
+				<span>아이디</span> <span class="B1"> <input type="text" autofocus="autofocus"> <br> </span>
+				<span>비밀번호</span>  <span class="B1"><input type="password"> <br></span>
+				<span>비밀번호</span>  <span class="B1"><input type="password"> <br></span>
+				<span>이름</span>  <span class="B1"><input type="text"  readonly="readonly"> <br></span>
+				<span>이메일</span>  <span class="B1"><input type="text"> @
+							<select>
+								<option> 직접입력 </option>
+								<option> naver.com </option>
+								<option> nate.com </option>
+							</select> </span> <br>
+				이메일 수신  <input type="radio" name="email">예
+						 <input type="radio" name="email">아니오 <br>
+				가입경로  <input type="checkbox" name="item"> 친구추천
+						 <input type="checkbox" name="item"> 인터넷 검색
+						 <input type="checkbox" name="item"> 기타<br>
+				인사말  <textarea rows="5" cols="50"></textarea> <br>
+						<input type="submit" value="저장하기">
+						<input type="submit" value="저장하기">
+			</form>
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+	
+		<!-- 
+			if		: 논리 ( true / false ) 검사 / 제어
+				if( 조건 ) { }
+				
+				vs
+			
+			switch	: 데이터 검사 / 제어
+				switch( 데이터 검사 ) {
+					case 조건 : 
+						실행문
+						break
+					}
+						break : 가장 가까운 [ 반복문 , switch ] 나가기
+						
+				vs
+			삼항 연산자
+				1. 조건 ? 참 : 거짓
+				2. 조건 ? 조건2 ? 참2 : 거짓2 : 거짓1		다중
+					
+		 -->
+		 
+		 <script type="text/javascript">
+		 	//p.143
+		 	//const 	: 상수 선언시 사용되는 키워드
+		 	//input 	: 상수의 이름[아무거나]
+		 	//Number 	: (데이터) 해당 데이터를 숫자형 변환
+		 	//prompt 	: 입력받기 함수
+		 	
+		 	// switch 형  나머지 0 (짝수) 1 (홀수) 
+		 	const input = Number(prompt('숫자를 입력하세요'))		// 숫자를 입력받아 상수에 저장
+		 	switch ( input % 2){
+		 		case 0 :										// 나머지가 0인 경우
+		 			alert('짝수입니다.')
+		 			break
+		 		case 1 :										// 나머지가 1인 경우
+		 			alert('홀수입니다.')
+		 			break
+		 		default :										// 그 외인 경우
+		 			alert('숫자가 아닙니다..')
+		 	}
+		 	
+		 	// 조건문 2. if 형
+		 	if(input % 2 == 0){
+		 		alert('짝수입니다.')
+		 	}else if ( input % 2 == 1){
+		 		alert('홀수입니다.')
+		 	}else{
+		 		alert('숫자가 아닙니다.')
+		 	}
+		 	// 조건문 3. 삼항연산자
+		 	const result = (input % 2==0) ? '짝수입니다.' : '홀수입니다.'
+		 	alert(result)
+		 	
+		 	// 예제 1) 국어 / 영어 /수학 점수 입력받아
+		 			//평균이 90점 이상 A등급
+		 			//평균이 80점 이상 B등급
+		 			//그 외 탈락
+		 			//parseInt ( 실수 ) >>> 정수형으로 변환
+		 	const 국어 = Number(prompt ('국어 점수 : '))
+		 	const 영어 = Number(prompt ('수학 점수 : '))
+		 	const 수학 = Number(prompt ('영어 점수 : '))
+		 	const 평균 = (국어+수학+영어) / 3
+		 		alert( " 평균 : " + parseInt(평균/10) )
+		 	switch ( parseInt(평균 /10) ){
+		 		case 9 :										// 평균 나누고 앞자리가 9인 경우
+		 			alert('A 등급 입니다.')
+		 			break
+		 		case 8 :										// 평균 나누고  1인 경우
+		 			alert('B 등급 입니다.')
+		 			break
+		 		default :										// 그 외인 경우
+		 			alert('탈락.')
+		 	}
+		 	
+		 	
+		 </script>
+		 
+	
+	</body>
+</html>

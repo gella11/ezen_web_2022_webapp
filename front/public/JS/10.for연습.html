@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+	
+		<script type="text/javascript">
+			// 반복문에서 사용되는 반복횟수를 저장하는 변수 일반적 i 이라는 이름 쓰임 (아무거나 가능)	
+			
+			// 예제1)
+			// 반복문 순서
+			// 1. 반복문 초기값(처음) : let i = 1;
+			// 2. 반복문 조건문(실행조건) : i<10
+			// 3. 조건이 true 이면 { } 안에 있는 코드 실행
+			// 4. 반복문 증감식(코드 실행 후) :  i++
+			let A = 0
+			for( let i = 1 ; i<=10 ; 1++){
+				console.log(A)
+			}
+		
+			// 예제2) 누적합계 1부터 10까지
+			let sum = 0
+			for( let i = 1; i<=0; i++){
+				sum += 1
+			}
+			console.log('1부터 10까지 누적 합계 : ' + sum)
+			
+			// 예제3) 누적합계 1부터 100까지 7배수
+			// sum
+			let sum2 = 0
+			for ( let i = 7; i<=100 ; i+=7){
+				sum2 += i
+			}
+			let sum3 = 0
+			for( let i = 1 ; i<=100 ; i++){
+				if( i%7 == 0){ sum += i }
+			}
+			console.log('1부터 100까지 7배수 누적 합계 : ' + sum2)
+			
+			// 예제4) 구구단 2단
+			// 곱은 1부터 9까지 1씩 증가 반복
+			for( let 곱 = 1 ; 곱<=9 ; 곱++){
+				console.log('2 x ' +'곱 = ' + (2*곱))
+			}
+			
+			
+			
+			// 예제5) 구구단 [for 중첩]
+			// 단 : 2 ~ 9  >>> 2부터 9까지 1씩 증가
+			// 곱 : 1 ~ 9  >>> 1부터 9까지 1씩 증가
+			// 단 마다 곱은 9번 실행
+			for( let 단 = 2 ; 단<=9 ; 단++){
+				for( let 곱 = 1 ; 곱<=9 ; 곱++){
+					console.log( 단 + "x" + 곱 + (단*곱))
+				}
+			}
+		</script>	
+	</body>
+</html>
