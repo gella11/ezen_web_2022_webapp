@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+			
+			<link href="9.중간과제.css"
+		
+		<style type="text/css">
+			
+			h1{
+				border-bottom: 3px;
+			}
+			
+			span{
+				margin : 30px;
+				margin-left: 70px;
+			}
+			
+			.B1{
+				margin : center;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+	
+				<h1> 회원 가입 폼 </h1>
+		
+			<form>
+				<span>아이디</span> <span class="B1"> <input type="text" autofocus="autofocus"> <br> </span>
+				<span>비밀번호</span>  <span class="B1"><input type="password"> <br></span>
+				<span>비밀번호</span>  <span class="B1"><input type="password"> <br></span>
+				<span>이름</span>  <span class="B1"><input type="text"  readonly="readonly"> <br></span>
+				<span>이메일</span>  <span class="B1"><input type="text"> @
+							<select>
+								<option> 직접입력 </option>
+								<option> naver.com </option>
+								<option> nate.com </option>
+							</select> </span> <br>
+				이메일 수신  <input type="radio" name="email">비수신
+						 <input type="radio" name="email">수신 <br>
+				가입경로  <input type="checkbox" name="item"> 친구추천
+						 <input type="checkbox" name="item"> 인터넷 검색
+						 <input type="checkbox" name="item"> 기타.<br>
+				인사말  <textarea rows="5" cols="50"></textarea> <br>
+						<input type="submit" value="저장하기">
+						<input type="submit" value="저장하기">
+			</form>
+			
+			
+			
+			<!-- 강사님 답 -->
+				<form>
+					<ul>
+						<li>
+							<ul>
+								<li> 아이디 </li>
+								<li> <input type="text"> </li>
+							</ul>
+						</li>
+						<li>
+							<ul>
+								<li> 비밀번호</li>
+								<li> <input type="password"></li>
+							</ul>
+						</li>
+						<li>
+							<ul>
+								<li> 비밀번호 확인</li>
+								<li> <input type="password"></li>
+							</ul>
+						</li>
+						<li>
+							<ul>
+								<li> 이름 </li>
+								<li> <input type="text"> </li>
+							</ul>
+						</li>
+						<li>
+							<ul>
+								<li> 이메일 수신 </li>
+								<li> <input type="radio" name="reception"> 비수신 </li>
+								<li> <input type="radio" name="reception"> 수신 </li>
+							</ul>
+						</li>
+							<ul>
+								<li> 가입 경로 </li>
+								<input type="checkbox" name="signuproute"> 비수신
+								<input type="radio" name="signuproute"> 수신
+							</ul>
+						<li>
+							<ul>
+								<li> 인사말 </li>
+								<li> <textarea rows="5" cols="50"></textarea> </li>
+							</ul>
+						</li>
+						<li></li>
+						<li></li>
+					</ul>
+				</form>
+			
+			 
+	</body>
+</html>
