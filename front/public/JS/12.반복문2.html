@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 
+		변수 / 상수 : let / const
+		배열 : []
+		제어문 : if / switch
+		반복문 : ( 조건이 true이면 실행 )
+				* 초기값이나 증감식이 필요없는 경우 -> 무한루프 : while 선호
+				* 특정 값을 어디서부터 어디까지 몇개씩 증감 할지 생각하고 작성
+			1. for(기초값 ; 조건문 ; 증감식){실행문}
+			2. 
+				기초값
+				while(조건문){
+				증감식
+				}		
+				
+		break 		: 가장 가까운 반복문 / switch 나가기
+		continue 	: 가장 가까운 반복문으로 이동
+	 -->
+	<script type="text/javascript">
+		
+		// p.181 무한 반복문
+/* 		let i = 0 
+		while( ture ){ //조건이 true이면 실행인데 true라는 상수를 넣으면 무조건 실행
+			alert(`${i}번째 반복입니다.`)
+			i = i + 1
+		} */
+		
+		// p.182 
+/* 		let i = 0
+		while ( confirm ('계속 진행하시겠습니까?')){
+			alert(`${i}번째 반복입니다.`)
+			i = i + 1
+		} */
+		
+		// p.183
+/* 		let i = 0
+		const array = [ 1, 2, 3, 4, 5 ] //배열 선언과 동시에 1~5대입
+			//[호출] 배열명 [ 인덱스 ]
+				// 인덱스 : 배열에 저장된 순서번호 [ 0번 시작 ]
+		while ( i < array.length) {
+			console.log(`${i} : ${array[i]}`)
+			i++
+		}
+		
+			//vs
+			
+		for ( let i = 0 ; i<array.length ; i++){
+			console.log(`${i} : ${array[i]}`)
+		} */
+		
+		// p.184
+		/* for( let i = 0; true ; 1++) {}	vs	 while(true){} 는 본인 선택*/
+		
+		//무한루프 [ 종료조건 : 취소 버튼을 눌렀을 때 break ]
+/* 		for ( let i = 0 ; true ; i++){
+			alert( i + '번째 반복입니다.')
+			
+			// 진행여부
+			const isContinue = confirm('계속 하시겠습니까?')
+			// if( 조건 ) { 실행문 }
+			//취소를 눌렀을 때, break 실행 ! 느낌표가 있어서 취소 false값이 true 로 바뀜
+			//취소를 눌렀을 때, (가장 가까운 반복문 종료) 실행
+			if(!isContinue){ break } 
+		}
+		
+		// vs
+		
+		while( true ){
+			alert( i + '번째 반복입니다.')
+			const isContinue = confirm
+			if(!isContinue){ break }
+		} */
+		
+		// p.185
+/* 		for(let i = 0 ; i < 5 ; i++){
+			continue
+			alert(i) // continue , break 아래 코드는 실행이 x
+		}
+		
+		// p.185-2
+		let output = 0
+		for(let i = 1 ; 1<=10 ; i++){
+			if ( i % 2 ==1){ continue }
+			output += i
+		}
+		alert('1~10 짝수 누적 합 : ' output ) */
+		
+		// p.192
+		let output = 1
+		for ( let i = 1; i <= 100 ; i++){
+			output *= i
+		}
+		console.log(`1~100의 숫자를 모두 곱하면 , ${output}입니다.` )
+	</script>
+
+
+</body>
+</html>
