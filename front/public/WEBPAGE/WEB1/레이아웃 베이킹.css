@@ -1,0 +1,124 @@
+@charset "UTF-8";
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ기본세팅ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+*{ padding : 0; margin: 0; font-family: '굴림';}
+a{ text-decoration : none; color : black; }
+a:hover{ color : gray;}
+li{ list-style-type: none;}
+
+@font-face {
+    font-family: 'KyoboHandwriting2020A';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/KyoboHandwriting2020A.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ헤더ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+#header{ height : 150px;}
+.hd_box{ width : 1200px; margin : 0 auto; }
+.logobox{ float : left; margin : 30px 0 0 30px;}
+.menus { float : right; text-align: right;}
+.menus li{ display: inline; }
+
+.top_menu{ margin : 30px 0px; }
+.main_menu li a{
+	font-family: 'KyoboHandwriting2020A';
+	font-size: 20px; margin-left: 50px;
+}
+
+
+
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ메인이미지ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+#main_img{
+	clear : both;
+	height : 350px;
+	background-image: url("img2/main_bg.png");
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ본문ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+#content{ width : 1200px; margin : 0 auto; }
+     /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ사이드바ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+.sidebar{ float : left; width : 250px; }
+.sb_title1{ background-color: #0ca9a3; padding : 15px; font-size: 20px; 
+	color : white;}
+.sb_comment{
+	padding : 15px; line-height: 150%;
+}
+.searchbox{ padding : 15px; }
+.searchbox input{ width : 150px; height: 30px; }
+.searchbox button{ margin-left: 5px; padding : 8px 10px;}
+.sidebar .sb_title2{ 
+	border-top: solid 2px black;
+	border-bottom: solid 1px #eeeeee;
+	padding : 15px; 
+	font-size: 15px;
+}
+.sidebar .sub_list{ padding : 15px;}
+.sidebar .sub_list li{ padding : 10px; }
+
+     
+     /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ메인 본문ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+
+.main_content{ float : right; width : 900px; }
+.left_main{ float : left; width : 440px;}
+.left_main .main_title{ border-bottom : solid 2px black; padding-bottom : 8px;}
+.left_main .board_ul{ margin : 10px 0px 40px 0px;}
+.left_main .board_ul .items{ padding-bottom : 40px; } 
+.items .title { float : left;}
+.items .date{ float : right; }
+.right_main { float : right; width : 440px;}
+
+.right_main{ float : right; width : 440px;}
+.right_main .main_title{border-bottom : solid 2px black; padding-bottom : 8px;}
+.right_main .product_ul{float : left; width : 200px; margin : 20px 0  0 10px; }
+
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ푸터ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+
+#footer { clear : both; background-color: #05354e;  height : 300px; }
+
+.ft_box {
+	color : white;
+	width : 1200px; height : 300px;
+	margin: 0 auto;
+}
+.ft_menu{
+	width : 1200px;
+	float : left ;
+	font-weight : bold;
+	font-size : 20px; 
+	padding-top : 30px;
+	padding-bottom: 50px;
+}
+.ft_menu li{
+	display : inline;
+	margin-right : 30px;
+	
+}
+.ft_title{
+	color : #077d64;
+}
+.ft_items{
+	float : left;
+	width : 400px;
+}
+.ft_items li{
+	font-size : 17px;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

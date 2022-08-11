@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+/*기본적으로 적용되는 여백제거*/
+*{ padding : 0; margin: 0; }
+ a{ text-decoration : none; color : blak}
+ a:hover{ color : gray;}
+	/* 식별자 : 꾸미기 대상
+		1. *{} : 모든 대상
+		2. 태그명{} : 해당 태그
+		3. .class : 해당 클래스명 	[사용빈도가 많을 때 ]
+		4. #id : 해당 id명		[페이지'당' '1'번씩 사용할 때 중복x]
+			우선순위 4 > 3 > 2 > 1
+	*/
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ헤더ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+
+#header{
+	width : 1200px;
+	height : 100px;
+	margin : 0 auto; /*박스권 가운데 정렬*/
+}
+
+.logobox{ float : left; margin : 20px 0 0 20px; }
+.menus { float : right; }
+.top_menu{ text-align: right; margin-top: 20px;}
+.main_menu{ margin-top: 20px; font-size: 20px;}
+.main_menu li{ display : inline; margin-left: 80px;}
+/*인라인을 썻기 때문에 글머리가 자동으로 없어짐*/
+
+
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ메인이미지ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+
+#main_img{
+	clear : both;								/*앞태그에서 사용되는 플로팅 제거*/
+	width : 100%; height : 250px; 				/*100% 라서 다 채움*/
+	background-image: url("img/main_img.png");
+	background-repeat: no-repeat; 				/*자동채우기가 제거되서 한개만 표시됨*/
+	background-position: top center;			/*박스권 '배경' 이미지 정렬*/
+	margin : 20px;
+}
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ본문ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+
+
+#content{
+	width : 1200px;
+	margin : 0 auto;
+}
+#content li{
+	list-style: none; 							/*글머리 제거*/
+}
+.sub_menu{ float : left; width : 250px; }
+.main_content{ float : right; width : 900px; margin-bottom: 50px; }
+
+.sub_menu h3{ 
+	font-size: 20px; 
+	color : #55cfad;  
+	background-color: #516e7f;
+	padding : 15px;
+}
+.sub_menu li{
+	border-bottom : dotted 1px #eeeeee; 				/*점선*/
+	padding : 10px;
+}
+
+.main_content h3{ 
+	font-size: 20px;	padding-bottom: 10px;
+	border-bottom: solid 1px #eeeeee;
+}
+.main_content p{
+	line-height: 180%;							/*줄간격 % 이용 기본값 100%*/
+	margin-top : 20px;
+}
+.content_img{ text-align: center; }
+
+.main_content li{ padding : 5px; }
+
+
+
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ푸터ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+
+#footer{ 
+	clear : both;
+	background-color: #2c2a29;
+	height : 150px; 
+}
+
+.ft_box{
+	width : 1200px;
+	height : 150px;
+	margin : 0 auto;
+}
+.ft_logo{
+	float : left;
+	margin : 50px 0 0 30px;
+}
+.ft_address{
+	float : right;
+	color : white;
+	margin : 50px 30px 0 0 ;
+}
+
+
+
+
+
+
+
+
+
+
