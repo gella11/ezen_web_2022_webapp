@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+		<style type="text/css">
+			.box1 , .box2 , .box3 ,
+			.box4 , .box5 , .box6 ,
+			.box7 , .box8 , .box9 ,
+			.box10 , .box11 , .box12, .box13{
+				width : 100px;
+				height: 60px;
+				background-color: yellow;
+				border : solid 1px red;
+			}
+			.box2{
+				position : relative;
+				left : 50px; top : 30px;
+				bottom : 20px;
+			}
+			.box5{
+				position : absolute;
+				left : 50px; top : 20px;
+				bottom : 20px;
+			}
+			.parent1{
+				width : 300px;
+				height : 200px;
+				border : solid 1px red;
+				position : relative;
+				left : 200px; top : 60px;
+			}
+			.box8{
+				position : absolute;
+				left : 30px; top : 30px;
+			}
+			.parent2{
+				width : 300px;
+				height : 200px;
+				border : solid 1px red;
+				position : absolute;
+				left : 200px; top : 60px;
+			}
+			.box11{
+				position : absolute;
+				left : 30px; top : 30px;
+			}
+			.box13{
+				position : fixed;
+				right : 100px; top : 50px;
+			}
+			.programing{
+				width : 500px;
+				height: 500px;
+				background-color: green;
+				border : solid 1px red;
+			}
+			.box-1 , .box-2 , .box-3, .box-4,
+			.box-5 , .box-6{
+				width : 100px;
+				height: 60px;
+				background-color: yellow;
+				border : solid 1px red;
+			}
+			.box-1{
+				position: absolute;
+				left : 30px;
+			}
+
+	</style>
+</head>
+<body>
+	<!-- 
+		박스모델
+			float : left
+			float : right
+			margin : 0 auto;
+		박스모델 안 텍스트 , 사진, 버튼
+			text-align : center / left / right
+		포지션
+			position : relative [ 상대 위치 ]
+				: 본래(현) 위치 기준으로 시작점(왼쪽)
+			position : absolute [ 절대 위치 ]
+				: 상위 태그 기준으로 시작점
+					(여기서 box5의 상위태그는 body)
+					(여기서 box8의 상위태그는 parent)
+					(여기서 parent2의 상위태그는 body)
+			position : fixed [ 부동 위치 ]
+				: 위치 고정
+				: 스크롤을 내려도, 확대 축소를 하여도 화면 고정 위치값을 유지함
+				: 디바이스(화면) 기준으로 움직임
+	 -->
+
+		<h3> 상대 위치 지정</h3>
+		<div class="box1"> 박스 1</div>
+		<div class="box2"> 박스 2</div>
+		<div class="box3"> 박스 3</div>
+		
+		<h3> 상대 위치 지정</h3>
+		<div class="box4"> 박스 4</div>
+		<div class="box5"> 박스 5</div>
+		<div class="box6"> 박스 6</div>
+		
+		<h3> 부모 : 상대위치 (relative)</h3> 
+		<div class="parent1"> <!-- 상위 또는 부모 태그 -->
+		<div class="box7"> 박스 7</div>	<!-- 하위 또는 자식 태그 ( 이 태그도 부모태그가 될 수 있음) -->
+		<div class="box8"> 박스 8</div>
+		<div class="box9"> 박스 9</div>
+		</div>
+		
+		<h3> 부모 : 절대위치 (absolute)</h3>
+		<div class="parent2"> <!-- 상위 또는 부모 태그 -->
+		<div class="box10"> 박스 10</div>	<!-- 하위 또는 자식 태그 ( 이 태그도 부모태그가 될 수 있음) -->
+		<div class="box11"> 박스 11</div>
+		<div class="box12"> 박스 12</div>
+		</div>
+		
+		<div class="box13"> 박스 13</div>
+		
+		<div class="programing">
+			<h3> 프로그래밍 강좌</h3>
+			<div class="box-1"> HTML 강좌</div>
+			<div class="box-2"> 파이썬 강좌</div>
+			<div class="box-3"> 자바 강좌</div>
+			<div class="box-4"> PHP 강좌</div>
+			<div class="box-5"> C# 강좌</div>
+			<div class="box-6"> CSS 강좌</div>
+		</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/* ------------- 기본 css 제거 및 설정 -------------- */
+*{ margin: 0px; padding: 0px; font-family: '굴림'; border : solid 1px white;}
+a{ text-decoration: none; color: black;}
+a:hover { color: gray; }
+li{ list-style-type: none; }
+/* 웹 폰트 적용 = 눈누 , 구글 폰트 */
+@font-face {
+    font-family: 'ONE-Mobile-POP';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.box{ width : 1200px; margin : 0 auto; position :relative;}
+/* ------------------- 헤더 ----------------- */
+#header{ height: 150px;  }
+.hd_box{ width: 1200px; margin: 0 auto; }
+.logobox{ float: left; margin: 30px 0 0 30px; }
+.menus{ float: right; text-align: right; }
+.menus li{ display: inline; }
+.top_menu{ margin: 30px 0px; }
+.main_menu li a{
+	font-family:"ONE-Mobile-POP";
+	font-size: 20px; margin-left: 100px;
+}
+/* ------------------- 메인이미지 ----------------- */
+#main_img{ text-align : center; }
+/* ------------------- 본문 ----------------- */
+#banners{ height : 300% ;}
+.banner{ float : left; width : 550px; margin : 50px 20px ;}
+.b_col1{float : left ; width : 100px; }
+.b_col2{float : right; width : 450px;}
+/* ------------------- 본문 ----------------- */
+.item{ float : left ; width:250px; margin : 50px 20px; }
+.item img{ width : 100% ; }
+
+/* ------------------- 푸터 ----------------- */
+#footer{ 
+	clear : both;
+	background-color: #292c32;
+	color : white;
+	padding : 20px;
+}
+.ft_item{float : left; width : 370px; }
+.ft_item li{display : inline;}
+.ft_item ul{margin-bottom: 20px;}
+.ft_sns{float : right; width : 370px; text-align: center;}
+.ft_sns img{ margin-left : 10px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

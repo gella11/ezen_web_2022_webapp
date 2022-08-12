@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<style type="text/css">
+		.parent{
+			background-color: green;
+			width : 700px; height : 600px;
+			margin : 0 auto;
+			position: relative; /* 부모에 포지션 안넣으면 자식들이 밖으로 나갈 수 있음 */
+		}
+		.parent div{
+			background : yellow;
+			width : 100px; height : 70px;
+			border-radius: 15px;
+			text-align: center;
+			padding : 10px;
+			position: absolute; /* 부모기준 */
+		}
+		.box1{ left : 300px; top : 100px;}	/* 비율(%)도 가능*/
+		.box2{ left : 150px; top : 180px;}
+		.box3{ left : 450px; top : 180px;}
+		.box4{ left : 150px; top : 320px;}
+		.box5{ left : 450px; top : 320px;}
+		.box6{ left : 300px; top : 400px;}
+		
+	</style>
+
+</head>
+<body>
+
+
+		<h3> 프로그래밍 강좌</h3>
+		<div class="parent">
+			<div class="box1"> HTML<br>강좌</div>
+			<div class="box2"> CSS<br>강좌</div>
+			<div class="box3"> 파이썬<br>강좌</div>
+			<div class="box4"> C#<br>강좌</div>
+			<div class="box5"> 자바<br>강좌</div>
+			<div class="box6"> PHP<br>강좌</div>
+		</div>
+		
+</body>
+</html>
