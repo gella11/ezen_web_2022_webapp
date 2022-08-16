@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+
+*{ padding : 0px; margin : 0px; box-sizing: border-box;}
+
+
+header, footer{
+	height : 70px; width : 100%;
+	background-color: blue;
+	text-align: center;
+	color: white;
+	position: fixed; 
+	/* 헤더와 푸터를 픽스로 쓰는 경우도 있음 블로그같이, 
+	단, 다른 애들이 가려질 수 있음, 
+	고정위치는 생략이 되었는데 헤더란 태그는 header{ top:0 }생략가능하지만 
+	푸터는 footer{ bottom : 0 }지정해줘야함
+	푸터 fixed는 그 자리에 고정이 됨 */
+	z-index: 100
+	/* 곂쳤을 때 높이라고 생각하면 될 듯 
+	즉,맨앞으로 가기 그런 숫자 클 수록 우선순위 */
+	
+}
+header{ top : 10px; }	/* top 0 이면 상단에 붙어잇음 */
+footer{ bottom : 10px; }
+
+
+#floatingbox{
+	width : 250px; height: 150px;
+	border: solid 2px red;
+	position: absolute;				/* 광고/알림창/메시지창 많이 쓰임 */
+	right: 50 px; top : 150px;
+	background-color: red;
+	z-index: 10;
+	opacity : 0.8;
+	/* opacity 는 투명도 */
+}
+ 
