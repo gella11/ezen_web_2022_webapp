@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, inital-scale=1.0">
+<title>Insert title here</title>
+
+	<style type="text/css">
+	
+		.container{
+			display: flex;
+		}
+		
+		#flexbox1{ justify-content: flex-start; }
+		#flexbox2{ justify-content: flex-end; }
+		#flexbox3{ justify-content: center; }
+		#flexbox4{ justify-content: space-between; }
+		#flexbox5{ justify-content: space-around; }
+		#flexbox6{ justify-content: space-evenly; }
+		.box{
+			width: 10%;
+			height: 50%;
+			background-color: skyblue;
+			border: solid 1px white;
+			color: black;}
+		
+	
+	
+	</style>
+	
+	
+</head>
+<body>
+	<h3>justify-content: flex-start;</h3>
+	<div class="container" id="flexbox1">
+		<div class="box"> box1 </div>
+		<div class="box"> box2 </div>
+		<div class="box"> box3 </div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<h3>justify-content: flex-end;</h3>
+	<h3>오른쪽에 따닥 따닥 붙음</h3>
+	<div class="container" id="flexbox2">
+		<div class="box"> box1 </div>
+		<div class="box"> box2 </div>
+		<div class="box"> box3 </div>
+		<div class="box"> box4 </div>
+		<div class="box"> box5 </div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<h3>justify-content: center;</h3>
+	<h3>메뉴판 만들 때, 게시판 만들 때 이용</h3>
+	<div class="container" id="flexbox3">
+		<div class="box"> box1 </div>
+		<div class="box"> box2 </div>
+		<div class="box"> box3 </div>
+		<div class="box"> box4 </div>
+		<div class="box"> box5 </div>
+	</div>
+	<br>
+	<br>
+	<br>	
+	<h3>justify-content: space-between;</h3>
+	<h3>시작과 끝을 배치하고 가운데 배치</h3>
+	<div class="container" id="flexbox4">
+		<div class="box"> box1 </div>
+		<div class="box"> box2 </div>
+		<div class="box"> box3 </div>
+		<div class="box"> box4 </div>
+		<div class="box"> box5 </div>
+	</div>
+	<br>
+	<br>
+	<br>	
+	<h3>justify-content: space-around;</h3>
+	<h3>시작과 끝 안쪽에 있는 박스들 사이의 여백이 같음</h3>
+	<div class="container" id="flexbox5">
+		<div class="box"> box1 </div>
+		<div class="box"> box2 </div>
+		<div class="box"> box3 </div>
+		<div class="box"> box4 </div>
+		<div class="box"> box5 </div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<h3>justify-content: space-evenly;</h3>
+	<h3>자동 가로배치, 모든 박스들 사이에 여백 균등</h3>
+	<h3> 푸터 만들때 쓰임</h3>
+	<div class="container" id="flexbox6">
+		<div class="box"> box1 </div>
+		<div class="box"> box2 </div>
+		<div class="box"> box3 </div>
+		<div class="box"> box4 </div>
+		<div class="box"> box5 </div>
+	</div>
+
+</body>
+</html>
