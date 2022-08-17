@@ -1,29 +1,28 @@
-/*
-	로또 구매 
-		1.사용자 6개 버튼 선택한다.
-			조건: 중복배제
-			조건: 한번클릭(선택) 두번클릭(취소) , 최대6개
-		2.컴퓨터 추첨번호[1~45난수] 생성
-		3.사용자 추첨번호 비교 결과
+
+
+
+
+
+
+
+ let evf = Math.floor( (Math.random()*15)+1 ) 	//엘레베이터 현재 위치 @@난수
+ let me = 5								//나의 층 @@ 상수
+
  
- 
- 	엘레베이터를 눌렀을 때,
- 	나의 층에 도착하여 문이 열리는 과정.
- 	엘레베이터 동작 순서도 작성.
- 	
- 	
- 	버튼 만들기
- 	버튼 눌렀을 때, 함수
- 	버튼 눌렀을 때, 함수에 따른 변화 판 timeInterval
- 	
- 	
- */
- 
- let Enow = random 	//엘레베이터 현재 위치 @@난수
- let My_floor = 3		//나의 층 @@ 상수
- 
- if(My_floor < Enow){
-	for( Enow ; My_floor == Enow ; Enow--){
-		Enow -= Enow
-	}
-}
+	let count = ''
+	let output=''
+	 while(me < evf){
+		evf--
+		let 타이머 = setInterval( ()=> {
+			console.log(`1초 후에 실행됩니다.${count}`)
+			count++
+			if( count == 5){
+				console.log('타이머가 종료됩니다.')
+				clearInterval(타이머)
+		}
+} , 1*1000)
+		if( me == evf){
+			output = evf
+			break
+		}
+	}console.log(evf)

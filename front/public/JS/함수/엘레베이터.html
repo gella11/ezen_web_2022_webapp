@@ -6,61 +6,19 @@
 </head>
 <body>
 
-
-	<button onclick="btn1()">
-		▲
-	</button>
-	<button onclick="btn2()">
-		▼
-	</button>
 	
-
+	<div>
+		<div>
+			<span> 현재 엘레베이터 층 : </span>
+			<span id="EV">~~~~~</span>
+		</div>
+	</div>
 
 	
 	
 	
 	
-	
-	<script src="엘레베이터.js">
-	 let Enow = 7
-	 let My_floor = 3									
-	 let Dif = parseInt(My_floor - Enow)				
-	 
-	 if(My_floor < Enow){
-		for( Enow ; My_floor == Enow ; Enow--){
-			Enow -= Enow
-		}
-	}
-	 if(My_floor >Enow){
-			for( Enow ; My_floor == Enow ; Enow--){
-				Enow -= Enow
-			}
-		}
-	 
-	 console.log(Enow)
-	 console.log('층 차이 :' + Dif)
-	
-	 
-	 
-	 if( My_floor - Enow != 0){
-		 if(My_floor > Enow){
-			 for( Enow ; My_floor == Enow ; Enow++){
-				 Enow += Enow
-			 }
-		 }else if(My_floor > Enow){
-			 for( Enow ; My_floor == Enow ; Enow++){
-				 Enow -= Enow
-			 }
-		 }else{
-	 }	 
- }
-	 
-	 
-	 
-	 
-	 
-	 
-	</script>
+	<script src="엘레베이터.js"></script>
 	
 	
 

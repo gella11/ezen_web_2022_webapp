@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+	
+	
+	
+	
+	
+	/* 문제) 다이아몬드 별 찍기 */
+	
+	
+	
+	let 문제 = prompt('줄 수(홀수만) : ')
+	output = ''
+		for( let i = 1 ; i<=문제 ; i++){
+			for( let b = 1 ; b<=문제-i ; b++){
+				 output += ' '
+			 }
+			for( let s = 1 ; s<=i*2-1 ; s++){
+				 output +='*'
+			 }
+				 output += '\n'
+		 }
+		for ( let i = 문제-1 ; i > 0 ; i--){
+			for(let b = 문제 - i ; b > 0 ; b--){
+				output +=' '
+			}
+			for(let s = i*2- 1 ; s > 0 ; s--){
+				output +='*'
+			}
+			output +='\n'
+		}
+		
+		console.log(output)
+	 
+	
+	 
+	 
+	 
+	 
+	 
+
+	</script>
+	
+</body>
+</html>
