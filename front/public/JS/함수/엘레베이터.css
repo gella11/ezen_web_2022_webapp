@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+
+*{border : solid 1px red; }
+
+.section{
+	width : 500px;
+	height: 1500px;
+	margin : 0 auto;
+}
+
+.evbox{
+	width :300px;
+	height: 100px;
+	text-align: center;
+	margin : 0 auto;
+}
+#ev{
+	width : 1100px; 
+	background-color: black;
+	color : red;
+}

@@ -3,24 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	
+	<link href="엘레베이터.css" rel="stylesheet">
+
 </head>
 <body>
 
-	
-	<div>
-		<div>
-			<span> 현재 엘레베이터 층 : </span>
-			<span id="EV">~~~~~</span>
+	<div class="section">
+		<div class="evbox">
+			<span id="ev"> </span>	
 		</div>
+		
+		<div>
+			<span>내 현재위치 : </span>
+			<span id="here"> </span>
+		</div>
+	
+		
+		<button onclick="upbtn()">상승</button>
+		<button onclick="downbtn()">하강</button>
+	
+		<script src="엘레베이터.js"></script>
 	</div>
-
 	
-	
-	
-	
-	<script src="엘레베이터.js"></script>
-	
-	
-
 </body>
 </html>
