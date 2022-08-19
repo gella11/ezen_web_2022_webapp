@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+.container{
+	overflow: auto;
+	scroll-snap-type : y mandatory;
+	height: 100vh;
+}
+
+section{
+	
+	height: 100vh; 						/* 뷰포트 높이 */
+	scroll-snap-align : start;
+	background-size: cover;				/* 화면 비율 유지 - > 전체 화면 채우기*/
+ 	background-position: center center;	/* 가로 세로 모두 센터 ( 이 예쩨로는 차이가 없음 ) */
+	background-repeat: no-repeat;		/* 커버를 써서 자동채우기도 차이가 없음 */
+}
+
+
+
+.hero{
+	background-image: url("images/bread1.jpg");
+	text-align: center;
+	padding-top: 10vh;
+}
+
+
+/* 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 */
+
+.menu{
+	background-image: url("images/bread5.jpg");
+	display: flex;
+	align-items: center;
+}
+
+
+.wrapper{
+	width: 900px;
+	margin: 0 auto; /* 900px 안에 쎈터로 오는 것 */
+}
+
+
+.menulist tr{
+	margin-bottom: 5px;
+	line-height: 2;
+}
+
+/* 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 */
+
+.contact{
+	background-image: url("images/bread4.jpg");
+	text-align: center;
+}
+
+
+.contactsns{
+	display: flex;
+	justify-content: center;
+}
+.contactsnsa{
+	margin-top : 30px;
+	
+}
+
+
+
+.fa-facebook{
+	color: red;
+}
+
+
+
+.fa-twitter{
+	color: yellow;
+}
+
+
+
+.title{
+	font-family: 'Aboreto', cursive;
+	font-size: 7rem;
+	margin-bottom: 2rem;
+}
+
+
+
+
+/* 미디어 쿼리 : 디바이스 화면 크기에 따라 css 적용*/
+/* 화면이 가로 700px 밑으로 갈 때, 아래 항목에 조건들이 적용됨 */
+/* 레이아웃을 또 자야해서 작업을 두배로 할 수 있음 */
+@media (max-width:700px){
+	.title{
+		font-size: 4rem;
+		color: skyblue;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

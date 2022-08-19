@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+.container{
+	overflow: auto;
+	scroll-snap-type : y mandatory;
+	height: 100vh;
+}
+
+
+
+/* 1구역 1구역 1구역 1구역 1구역 1구역 1구역 1구역 1구역 1구역 1구역 1구역 */
+section{
+	
+	height: 100vh; 						/* 뷰포트 높이 */
+	scroll-snap-align : start;
+	background-size: cover;				/* 화면 비율 유지 - > 전체 화면 채우기*/
+ 	background-position: center center;	/* 가로 세로 모두 센터 ( 이 예쩨로는 차이가 없음 ) */
+	background-repeat: no-repeat;		/* 커버를 써서 자동채우기도 차이가 없음 */
+}
+
+.title{
+	font-family: 'Aboreto', cursive;
+	font-size: 7rem;
+	margin-bottom: 2rem;
+}
+.title1{
+	font-family: 'Aboreto', cursive;
+	font-size: 15rem;
+	margin-bottom: 2rem;
+}
+
+.hero{
+	background-image: url("images/포르쉐1.jpg");
+	text-align: center;
+	padding-top: 10vh;
+}
+.dis{
+	font-size: 1rem;
+} 
+
+/* 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 */
+
+.modellist{
+	float : left;
+	display: inline-block;
+}
+.model1{
+	width : 500px;
+	margin: 0 auto;	
+}
+img{
+	margin : 0 atuo;
+	width :80%
+}
+.modelname{
+	font-size: 2rem;
+	text-align: center;
+}
+.price{
+	font-size:1.2rem;
+	text-align: center;
+}
+
+
+/* 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 */
+
+
+.contact{
+	background-color : gray;
+	text-align: center;
+	margin : 0 auto;
+}
+.contactbox{
+	width: 80%;
+}
+.box{
+	float : light;
+	margin : 0 auto;
+}
+
+
+
+
+
+
+/* 미디어 쿼리 : 디바이스 화면 크기에 따라 css 적용*/
+/* 화면이 가로 700px 밑으로 갈 때, 아래 항목에 조건들이 적용됨 */
+/* 레이아웃을 또 자야해서 작업을 두배로 할 수 있음 */
+@media (max-width:700px){
+	.title{
+		font-size: 4rem;
+		color: skyblue;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
