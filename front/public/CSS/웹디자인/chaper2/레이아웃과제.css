@@ -27,6 +27,8 @@ section{
 	font-family: 'Aboreto', cursive;
 	font-size: 15rem;
 	margin-bottom: 2rem;
+	text-shadow: 0 0 10px;
+	color: red;
 }
 
 .hero{
@@ -35,48 +37,86 @@ section{
 	padding-top: 10vh;
 }
 .dis{
-	font-size: 1rem;
+	padding : 45vh;
+	font-size: 3rem;
+	font-style: italic;
+	font-weight: bold;
 } 
 
 /* 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 2구역 */
 
-.modellist{
-	float : left;
+
+.model{
+	background-image: url("images/포르쉐배경.webp");
 	display: inline-block;
+	width : 100%;
+}
+.modellist{
+	text-align: center;
+	display: flex;
 }
 .model1{
-	width : 500px;
-	margin: 0 auto;	
-}
-img{
-	margin : 0 atuo;
-	width :80%
+	width : 50%;
+	color: white;
 }
 .modelname{
-	font-size: 2rem;
-	text-align: center;
+	font-size: 4vh;
+	margin-bottom: 2vh;
 }
 .price{
-	font-size:1.2rem;
-	text-align: center;
+	font-family: 'Aboreto', cursive;
+	font-size: 3vh;
+	margin-bottom: 5vh;
 }
-
+img{
+	width : 80vh;
+	margin-top: 5vh;
+}
+table{
+	margin: 0 auto;
+	text-align: left;
+	font-size: 2.5vh;
+	width: 50vh;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+table td{
+	border-bottom: 1px solid gray;
+}
 
 /* 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 3구역 */
 
 
 .contact{
-	background-color : gray;
+	background-image: url("images/포르쉐.jpg");
+	color: white;
 	text-align: center;
-	margin : 0 auto;
 }
-.contactbox{
-	width: 80%;
+.com{
+	margin: 0 auto;
+	text-shadow: 2px 0px #5050ff, 0px -2px #50b4ff;
+	color: black;
+	font-family: 'Aboreto', cursive;
 }
-.box{
-	float : light;
-	margin : 0 auto;
+.tay{
+	font-size: 8vh;
+	margin-left: 12vh;
+	text-shadow:  2px 0px #5050ff, 0px -2px #50b4ff;
+	color: black;
+	font-family: 'Aboreto', cursive;
+	font-style: italic;
 }
+.date{
+	margin-left : 13vh;
+	font-size: 6vh;
+	margin-bottom: 5vh;
+	padding-top: 5vh;
+	font-style: italic;
+}
+
+.contactsns{
+	display: flex;
+	margin-top: 65vh;
+	color: #323232;
 
 
 
