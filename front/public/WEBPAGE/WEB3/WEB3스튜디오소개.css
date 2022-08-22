@@ -9,6 +9,8 @@ li{ list-style-type: none; }
 .box{ width: 1200px; margin: 0 auto; position: relative; }
 
 /* ------------------------ 헤더 ----------------------------*/
+/* ------------------------ 헤더 ----------------------------*/
+/* ------------------------ 헤더 ----------------------------*/
 #header{ height: 100px; }
 .logo{ position: absolute; top:20px; left: 20px; }
 .logo_impact{ color: blue; font-weight: bold; }
@@ -19,55 +21,91 @@ li{ list-style-type: none; }
 
 
 
-
+/* ----------------------- 메인이미지 ------------------------ */
+/* ----------------------- 메인이미지 ------------------------ */
 /* ----------------------- 메인이미지 ------------------------ */
 #main_img{ 
-	height : 400px;
-	background-image: url("img/sub_intro.jpg");
-	background-repeat: no-repeat;
-	background-position: top center;
-	clear : both;
+   height : 400px;
+   background-image: url("img/sub_intro.jpg");
+   background-repeat: no-repeat;
+   background-position: top center;
+   clear : both;
 }
 .main_text{
-	color : white;
-	text-align : center;
-	padding : 0 auto;
+   color : white;
+   text-align : center;
+   padding : 0 auto;
+   padding-top: 6%;
 }
-.main_text .h3{
-	height: 15px;
+.main_text h3{
+   font-size: 30px;
 }
 
 
 /*------------------------ 메인 ------------------*/
+/*------------------------ 메인 ------------------*/
+/*------------------------ 메인 ------------------*/
 
 #banner{
-	width: 1200px;
-	margin: 0 auto;
-	margin-top : 50px;
-	height: 1000px;
+   margin-top : 50px;
+}
+.main{
+   width: 1200px;
+   margin: 0 auto;
 }
 .main1{
-	width:1200px;
+   display: flex;
+   margin: 0 auto;
+   padding-bottom: 70px;
 }
-.container{
-	float : left;
-	width:600px;
-	height:400px;
+img{
+   width:580px;
 }
 .main1_text{
-	float : right;
-	width: 600px;
-	height:400px;
-	margin : 0 auto;
+   padding-left : 20px;
+   padding-right: 20px;
+   padding-top : 20px;
+   width : 45%;
+   font-size: 16px;
+   line-height: 30px;
+}
+.bold{
+   font-weight: bold;
+}
+.main2{
+   background-color : #eeeeee;
+   background-size : 100%;
+   display: flex;
+   margin: 0 auto;
+   padding-top: 20px;
 }
 
+.main5{
+   width:1200px;
+   display: flex;
+   margin: 0 auto;
+   padding-top: 70px;
+   padding-bottom: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+/* ----------------------- 푸터  ------------------------ */
+/* ----------------------- 푸터  ------------------------ */
 /* ----------------------- 푸터  ------------------------ */
 #footer{ 
-	clear: both;
-	background-color:#292c32;
-	color: white;   
-	padding: 20px;
-	height: 250px;
+   clear: both;
+   background-color:#292c32;
+   color: white;   
+   padding: 20px;
+   height: 250px;
 }
 .ft_item{ float: left; width: 380px; margin-top: 50px; }
 .ft_item li{ display: inline; }
