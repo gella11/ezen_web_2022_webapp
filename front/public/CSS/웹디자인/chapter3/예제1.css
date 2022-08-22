@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+h1{
+	font-size: 2rem;
+	font-family: '굴림';
+	font-weight: bold;
+	display: inline-block;
+	background-image: linear-gradient( transparent 50% , #ff6 50% );
+	/* 윗줄 50% 투명 , 아래 노란색 50% 패딩값으로 바텀 조절 */
+	padding-bottom: .25rem;
+}
