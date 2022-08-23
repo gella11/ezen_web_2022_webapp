@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
 
 .post_title{
@@ -37,6 +37,9 @@
 	position: relative;
 	
 }
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ버튼 버튼 버튼ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ버튼 버튼 버튼ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ버튼 버튼 버튼ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
 .btn{
 	color: #fff ;
@@ -58,7 +61,9 @@
 	border: 2px dashed #eda1a1;
 }
 
-/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ가상 요소로 글머리 번호 만들기ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ가상 요소로 글머리 번호 만들기ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ가상 요소로 글머리 번호 만들기ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
 article ul li::before {
 	content : '';
@@ -70,17 +75,151 @@ article ul li::before {
 	margin: 0 8px 2px 0;
 }
 
+ol li{
+	counter-increment: list; /* 요소의 연속 값을 세는 속성 */
+}
+
+article ol li::before{
+	content : counter(list);		/* 위의 counter-increment 의 값과 동일하게 넣어야 함 */
+	color: #93DFB8;
+	display: inline-block;
+	margin-right: 8px;
+}
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 인 용 구 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 인 용 구 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 인 용 구 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* 인용문 작성할 때, blockquote은 기본적으로 tab이 들어가는데 css기초초기화를 했기 때문에 div와 별 다르지 않음 */
+
+article blockquote{
+	position: relative;
+	padding : 1rem 3rem 1rem 3rem;
+	margin-bottom: 1rem;
+} 
+
+article blockquote::before ,
+article blockquote::after{
+	font-size : 6rem;
+	font-family : 'Noto Sans Kr' , sans-serif;
+	position: absolute;
+	color : #cccccc;
+	line-height : 0;
+}
+article blockquote::before{
+	content: '\201C';
+	top : 2.5rem;
+	left: 0;
+}
+article blockquote::after{
+	content: '\201D'; 
+	bottom: .5rem;
+	right: 0;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 인 용 구 2 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 인 용 구 2 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 인 용 구 2 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* 인용문 작성할 때, blockquote은 기본적으로 tab이 들어가는데 css기초초기화를 했기 때문에 div와 별 다르지 않음 */
+
+article .ddd{
+	position: relative;
+	padding : 3rem;
+} 
+
+article .ddd::before ,
+article .ddd::after{
+	content : '';
+	width : 40px;
+	height : 40px;
+	position: absolute;
+	line-height : 0;
+}
+article .ddd::before{
+	border-top : 2px solid #ccc;
+	border-left : 2px solid #ccc;
+	top : 0;
+	left: 0;
+}
+article .ddd::after{
+	border-bottom : 2px solid #ccc;
+	border-right : 2px solid #ccc; 
+	bottom: 0;
+	right: 0;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 페이지네이션 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 페이지네이션 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 페이지네이션 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+.pagination{
+	display: flex;
+	justify-content: center;
+	font-family: 'Noto Sans Kr' , sans-serif;
+	font-size: 1.5rem;
+	text-align: center;
+}
+.pagination a{
+	width: 36px; height: 36px;
+	border-radius: 50%;
+	padding-top: 4px;
+	margin: 0 6px;
+	display: inline-block; /* 인라인은 36px 36px 사이즈 조절이 안되서 인라인블럭으로 해야함 */
+}
+
+.pagination .current{
+	background: #ccc;
+	color: #fff;
+}
+.pagination a:hover{
+	background: skyblue;
+	color: black;
+}
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 사이드바  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 사이드바  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 사이드바  ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* 미디어 쿼리 aisde가 26% 할당되어 있슴 */
+ 
+.side_box{
+	margin-top : 50px; 
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	outline : 2px solid red;			/* 바깥테두리 */
+	outline-offset : 4px;				/* 바깥테두리 간격 */
+	padding: 0.875rem;
+	margin-bottom : 4rem;
+	position: relative;					/* 발바닥 모양 배치를 위함 */
+}
+
+.side_box::before{	
+	
+	width : 2rem; height : 2rem;
+	text-align : center;
+	position : absolute;
+	top : -1rem;						/* 테두리에 겹치기를 하기 위해서 */
+	left : 0 ;							
+	right : 0 ;
+	margin : 0 auto;
+	background-color : #ffffff;
+	border : 1px solid white;			/* 발바닥 테두리 원형 */
+	border-radius : 50%;
+	
+	
+	font-family: "Font Awesome 5 Pro";
+	content : '\f1b0';
+	font-weight: 900;
+	font-size: 1.5rem;
+	color : #949087;
+}
 
 
 
 
 
 
-
-
-
-
-
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ미디어쿼리ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ미디어쿼리ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ미디어쿼리ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
   /* 미디어 쿼리 : 디바이스 크기에 따랄 css 설정 */
   /* min-width : 600px; >>> 최소 가로사이즈 600px
