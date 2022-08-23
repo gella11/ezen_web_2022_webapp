@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-a{color: black; text-decoration: none;}
-body{background: ##ffffff;}
-*:focus{ outline: none;}
-
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 헤 더 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 헤 더 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
@@ -26,62 +22,68 @@ body{background: ##ffffff;}
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ ID PW ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
 
-.idbox{
-	display : flex;
-	display: inline-block;
+.idbox , .pwbox{ 
+	display: flex;
+	border: 1px solid gray;
+	margin-bottom: 10px;
+}
+.id_icon{
+	width : 40px;
+	height :40px;
+	border-right: 1px solid gray;
+	padding : 9px 5px 5px 5px;
+}
+.id_icon::before{
+	font-family: "Font Awesome 5 Pro";
+	content : '\f0e0';
+	font-weight: 900;
+	font-size: 1.2rem;
+}
+.id_input{
+	margin-left : 20px;
+	padding : 9px 0;
+	font-size: 0.9rem;
 }
 
-.inputid , .inputpw{
-	border : 1px solid gray;
-	width : 460px;
-	height: 45px;
+
+.pw_icon{
+	width : 40px;
+	height :40px;
+	border-right: 1px solid gray;
+	padding : 9px 5px 5px 5px;
+}
+.pw_icon::before{
+	font-family: "Font Awesome 5 Pro";
+	content : '\f023';
+	font-weight: 900;
+	font-size: 1.2rem;
+}
+.pw_input{
+	margin-left : 20px;
+	padding : 9px 0;
+	font-size: 0.9rem;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 자동로그인 계정찾기 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 자동로그인 계정찾기 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 자동로그인 계정찾기 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+
+
+.finder{
+	display: flex;
 	margin-bottom: 10px;
 }
 
 
-.email_pw div{
-	display:flex;
-	width:460px;
-	height:40px;
-	color:#eeeeee;
-	font-weight: bold;
-	border: 2px solid #eeeeee;
-	margin: 5px 0 5px 0;
-	box-sizing: border-box;
-}
-.email_pw input{
-	border:none;
-	border-left: 2px solid #eeeeee;
-	padding: 5px;
-	font-size: 9px;
-}
-
-
-
-
-
-
-/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 자동로그인 계정찾기 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
-/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 자동로그인 계정찾기 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
-/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 자동로그인 계정찾기 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
-.finder{
-	display: flex;
-	flex-direction: row-reverse;
-}
-
-.checkbox{
-	width: 24px;
-	height: 24px;
-	margin-right: 10px;
-}
 .find{
-	display: flex;
-	margin: 5px 0 15px 0;
+	margin-left:  auto;
+	color: blue;
 }
-.finder{
-	color : blue;
-	float : right;
-}
+
+
+
+
+
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 로그인 / 회원가입 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 로그인 / 회원가입 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 로그인 / 회원가입 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
@@ -93,6 +95,8 @@ body{background: ##ffffff;}
 	border:none;
 	color: #ffffff;
 	font-size: 18px;
+	box-shadow: 0 .5px 0 .5px #004890;
+	
 }
 
 .btn_signup{
@@ -102,6 +106,7 @@ body{background: ##ffffff;}
 	border:1px solid gray;
 	color: #0074e9;
 	font-size: 18px;
+	box-shadow: 0 .5px 0 .5px #d9d9d9;
 }
 
 .line{
@@ -111,6 +116,6 @@ body{background: ##ffffff;}
 
 footer{
 	text-align: center;
-	color: black;
+	color : #555555;
 	margin-top: 30px;
 }

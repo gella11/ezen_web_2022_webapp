@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, inital-scale=1.0">
 
-<script src="https://kit.fontawesome.com/3367894b6f.js"></script>
+<script src="https://kit.fontawesome.com/b8a7fea4d4.js"></script>
 
 <link href="쿠팡.css" rel="stylesheet">
 
@@ -32,17 +32,24 @@
 		<!-- 메인 -->
 		
 		<section class="loginbox">
-			<div class="email_pw">
-				<div><i class="fa-solid fa-envelope" id="email"></i><input type="text" placeholder="아이디(이메일)"></div>
-				<div><i class="fa-solid fa-lock" id="lock"></i><input id="pw" type="text" placeholder="비밀번호"><i class="fa-solid fa-eye" id="eye"></i></div>
+			<div class="idbox">
+				<span class="id_icon">  </span>
+				<span class="id_input"> <input type="text" placeholder="아이디(이메일)"> </span>				
 			</div>
-			
-			<div class="find">
-				<input type="checkbox" class="checkbox">
-				<h3> 자동로그인 </h3>
-				<a href="#" class="finder"> 아이디(이메일)/비밀번호 찾기> </a>
+			<div class="pwbox">
+				<span class="pw_icon">  </span>
+				<span class="pw_input"> <input type="password" placeholder="비밀번호"> </span>				
 			</div>
-			
+			<div class="finder">
+				<input type="checkbox"  value="자동로그인">
+				<h3>자동로그인</h3>					
+				<div class="find"><a href="#" >아이디(이메일/비밀번호 찾기)></a></div>			
+			</div>
+
+
+
+
+
 			<div>
 				<button class="btn_login" type="submit">로그인</button>
 				<div class="line"></div>
