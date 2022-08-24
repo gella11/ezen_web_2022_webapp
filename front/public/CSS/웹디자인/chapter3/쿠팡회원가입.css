@@ -16,6 +16,13 @@
 	margin-bottom: 30px;
 	margin-top: 50px;
 }
+.logo h3{
+	text-align: left;
+	margin-bottom: 20px;
+	font-weight: bold;
+	font-size: 14px;
+	letter-spacing : 1.5px;
+}
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ ID PW ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ ID PW ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
@@ -87,9 +94,9 @@
 	border-right: 1px solid gray;
 	padding : 9px 5px 5px 5px;
 }
-.name_icon::name{
+.name_icon::before{
 	font-family: "Font Awesome 5 Pro";
-	content : '\f007';
+	content : '\f406';
 	font-weight: 900;
 	font-size: 1.2rem;
 }
@@ -105,7 +112,7 @@
 	border-right: 1px solid gray;
 	padding : 9px 5px 5px 5px;
 }
-.phone_num_icon::name{
+.phone_num_icon::before{
 	font-family: "Font Awesome 5 Pro";
 	content : '\f095';
 	font-weight: 900;

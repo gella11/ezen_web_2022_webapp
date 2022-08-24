@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+
+
+*{
+	border : 1px solid red;
+	margin: 0;
+	padding : 0;
+	box-sizing: border-box;
+}
+body{width: 700px;}
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+.cal{
+	margin : 0 atuo;
+	text-align : center;
+	width: 700px;
+}
+
+.head{
+	display: flex;
+	margin : 0 auto;
+	height: 100px;
+	align-items: center;
+}
+.head h3{
+	width:300px;
+}
+
+.left_btn{
+	text-align : left;
+	width : 200px;
+}
+.right_btn{
+	text-align: right;
+	width : 200px;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.week{
+	display: flex;
+}
+.week div{
+	width : 100px;
+	height : 100px;
+}
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */	
+.days{
+	display: flex;
+	flex-wrap: wrap;
+}
+.days div{	
+	width : 99.4px;
+	height : 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
