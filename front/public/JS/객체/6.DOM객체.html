@@ -1,0 +1,81 @@
+
+	<!-- 
+		
+		
+			Dom : 문서 (html >> tag >> element[요소])객체
+	불러오는 방법 	1.DomContentLoaded 이벤트 사용
+			 
+	-->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+		<!-- p.308 -->
+		<!-- p.308 -->
+		<!-- p.308 -->
+		<!-- 여기서 작성된 스크립트 실행이 안됨x  이유는 body가 생성되기 전이기 때문에.-->
+		<!-- 
+		<script type="text/javascript">
+			  // 콜백 함수 : 인수 => 결과값
+			const h1 = (text) => `<h1>${text}</h1>`
+		</script>
+		
+		<script type="text/javascript">
+			dcument.body.innerHTML += h1 (' 1번째 script태그 ')
+		</script> 
+		-->
+		
+		<!-- p.309 -->
+		<!-- p.309 -->
+		<!-- p.309 -->
+		<script type="text/javascript">
+			// 1. 문서 읽어오는 이벤트
+			// document.addEventListener('DomContentLoaded' , () => { 코드 }) 
+			document.addEventListener('DOMContentLoaded' , () => {
+			
+				const h1 = (text) => `<h1>${text}</h1>`
+				dcument.body.innerHTML += h1 ('DOMContentLoaded 이벤트 발생')
+				
+			})
+			// 2. 문서 읽어오는 이벤트2 onload
+			// document.onload = function(){ 코드 }
+			document.onload = function(){ 코드 }
+				document.innerHTML += 'load 이벤트 발생'
+				
+			// 3. 문서 읽어오는 이벤트3 addEventListener
+			// document.addEventListener( 'load' , function(){ 코드 })
+			document.addEventListener( 'load' , function(){ 
+				document.innerHTML += 'load 이벤트 발생'
+			})
+		</script>		
+		
+		
+</head>
+
+<body>
+	
+	<script type="text/javascript">
+		dcument.body.innerHTML += h1 (' 2번째 script태그 ')
+	</script>
+		<h1> 1번째 h1 태그</h1>
+	
+	<script type="text/javascript">
+		dcument.body.innerHTML += h1 (' 3번째 script태그 ')
+	</script>
+		<h1> 2번째 h1 태그</h1>
+	
+	
+	<!--  4. 바디 최 하단에 js 작성 -->
+	<!--  4. 바디 최 하단에 js 작성 -->
+	<!--  4. 바디 최 하단에 js 작성 -->
+	<script type="text/javascript">
+		document.body.innherHTML += 'body 하단 작성'
+	</script>
+			
+</body>
+</html>

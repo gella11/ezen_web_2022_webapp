@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+
+
+.main_menu{
+	display: flex;
+	justify-content: center;
+}
+
+.main_menu a{
+	padding : 1rem;
+	margin: 1rem;
+}
+.has_menu{
+	position: relative;
+}
+
+.sub_menu{
+	position : absolute;
+	top : 4.5rem;
+	left : 1rem;
+	display: none; 			/* 숨기기 */
+	
+}
+.sub_menu a{
+	margin: 1px;
+	width: 180px;
+}
+
+
+.has_menu:hover .sub_menu{
+	display: block;			/* 블랙 아닌 블록 block */
+}
+
+
+
+
+
+
