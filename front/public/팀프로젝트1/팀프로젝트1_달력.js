@@ -8,39 +8,43 @@ console.log(date)
 
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
-const monthDays = document.querySelector('.days')
-const lastDay = new Date(date.getFullYear(), date.getMonth()+1,0).getDate()
-/*Sun Aug 31 2022 00:00:00 	GMT+0900 (한국 표준시)*/
-/*끝에 .getDate() 를 붙일 경우 31만 추출*/
-const firstdayIndex =new Date(date.getFullYear(), date.getMonth(),1).getDay()
-console.log(firstdayIndex)
-const lastDayIndex = new Date(date.getFullYear(), date.getMonth()+1,0).getDay()
-console.log(lastDayIndex)
-/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
-
-
-const prevlastDay =new Date(date.getFullYear(), date.getMonth(),0).getDate()
-console.log(prevlastDay)
-
-
-
-/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 const months = [
-	"1월",
-	"2월",
-	"3월",
-	"4월",
-	"5월",
-	"6월",
-	"7월",
-	"8월",
-	"9월",
-	"10월",
-	"11월",
-	"12월",
+	"1 January",
+	"2 February",
+	"3 March",
+	"4 April",
+	"5 May",
+	"6 June",
+	"7 July",
+	"8 August",
+	"9 September",
+	"10 October",
+	"11 November",
+	"12 December",
 ]
 
 document.querySelector('.head h3').innerHTML = months[date.getMonth()]
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+const monthDays = document.querySelector('.days')
+const lastDay = new Date(date.getFullYear(), date.getMonth()+2,0).getDate()
+/*Sun Aug 31 2022 00:00:00 	GMT+0900 (한국 표준시)*/
+/*끝에 .getDate() 를 붙일 경우 31만 추출*/
+const firstdayIndex =new Date(date.getFullYear(), date.getMonth()+1,1).getDay()
+console.log(firstdayIndex)
+const lastDayIndex = new Date(date.getFullYear(), date.getMonth()+2,0).getDay()
+console.log(lastDayIndex)
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+
+const thismonth = new Date(date.getFullYear(), date.getMonth()+2,0).getMonth()
+console.log(thismonth)
+const prevlastDay =new Date(date.getFullYear(),date.getMonth()+1,0).getDate()
+
+console.log(prevlastDay)
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
 
 
