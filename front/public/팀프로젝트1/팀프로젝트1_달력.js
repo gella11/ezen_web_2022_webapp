@@ -2,7 +2,7 @@
 
 
 const date = new Date()
-console.log(Number(date))
+console.log(date)
 /*Thu Aug 25 2022 03:32:16 GMT+0900 (한국 표준시)*/
 
 
@@ -49,7 +49,7 @@ document.querySelector('.head h3').innerHTML = months[date.getMonth()]
 let days =""
 
 for(let x = firstdayIndex ; x > 0 ; x--){
-	if(date.getMonth() > new Date().getMonth() ){
+	if(date.getMonth() > new Date().getMonth() || date.getFullYear() > new Date().getFullYear()){
 	days += `<div id="prevDay">${prevlastDay-x+1}
 	<ul>
 		<li><button class="lunch">Lunch</button></li>
@@ -71,7 +71,7 @@ for(let i = 1 ; i<=lastDay ; i++){
 			<li><button class="dinner">Dinner</button></li>
 		</ul>
 		</div>`
-	}else if( i > date.getDate() || date.getMonth() > new Date().getMonth() ){
+	}else if( i > date.getDate() &&date.getMonth() == new Date().getMonth() || date.getMonth() > new Date().getMonth() || date.getFullYear() > new Date().getFullYear() ){
 		days += `<div>${i}
 		<ul>
 			<li><button class="lunch">Lunch</button></li>
@@ -86,6 +86,7 @@ for(let i = 1 ; i<=lastDay ; i++){
 
 
 for(let j = 1 ; j<=7-lastDayIndex-1 ; j++){
+		
 	days += `<div id="nextDay">${j}
 	<ul>
 		<li><button class="lunch">Lunch</button></li>
