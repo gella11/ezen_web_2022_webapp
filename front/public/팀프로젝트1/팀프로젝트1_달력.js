@@ -48,7 +48,7 @@ document.querySelector('.head h3').innerHTML = months[date.getMonth()]
 let days =""
 
 for(let x = firstdayIndex ; x > 0 ; x--){
-	days += `<div class="prevDay">${prevlastDay-x+1}</div>`
+	days += `<div id="prevDay">${prevlastDay-x+1}</div>`
 	monthDays.innerHTML = days
 }
 
@@ -62,6 +62,6 @@ for(let i = 1 ; i<=lastDay ; i++){
 	}
 
 for(let j = 1 ; j<=7-lastDayIndex-1 ; j++){
-	days += `<div class="nextDay">${j}</div>`
+	days += `<div id="nextDay">${j}</div>`
 	monthDays.innerHTML = days
 }

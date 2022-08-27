@@ -63,7 +63,16 @@ body{width: 1200px;}
 	font-weight: bold;
 	margin: 5px;
 	background-color: #FFF;
+	text-align: center;
+	line-height: 90px;
 }
+.week div:nth-child(1){
+	color: red;
+}
+.week div:nth-child(7){
+	color: blue;
+}
+
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ D A Y ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ D A Y ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ D A Y ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */	
@@ -77,16 +86,43 @@ body{width: 1200px;}
 	text-align: left;
 	margin: 5px;
 	background-color: #FFF;
+	font-weight: bold;
+	font-style : italic;
+	font-size: 18px;
 	
 }
+.days div:nth-child(1){
+	color : red;
+}
+.days div:nth-child(8){
+	color : red;
+}
+.days div:nth-child(15){
+	color : red;
+}
+.days div:nth-child(22){
+	color : red;
+}
+.days div:nth-child(29){
+	color : red;
+}
+
 .today{
+	border : 4px solid green;
+	color: black;
+	font-weight : bold;
+}
+#prevDay{
+	color: gray;
+	font-size: small;
+}
+#prevDay:nth-child(1){
 	color: red;
 }
-.prevDay{
+
+#nextDay{
 	color: gray;
-}
-.nextDay{
-	color: gray;
+	font-size: small;
 }
 
 
