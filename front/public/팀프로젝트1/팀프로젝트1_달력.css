@@ -3,7 +3,6 @@
 
 
 *{
-	border : 1px solid skyblue;
 	margin: 0;
 	padding : 0;
 	box-sizing: border-box;
@@ -32,7 +31,7 @@ body{width: 1200px;}
 .head h3{
 	width:300px;
 	font-size: 40px;
-	
+	font-style: italic;
 }
 
 .left_btn{
@@ -113,6 +112,7 @@ body{width: 1200px;}
 	font-weight : bold;
 }
 #prevDay{
+	border : 1px dashed gray;
 	color: gray;
 	font-size: small;
 }
@@ -121,8 +121,19 @@ body{width: 1200px;}
 }
 
 #nextDay{
+	border : 1px dashed gray;
 	color: gray;
 	font-size: small;
 }
 
 
+button{
+	font-size: 15px;
+}
+button:hover{
+	border-bottom:1px dotted black;
+	font-weight: bold;
+}
+ul{
+	padding-top: 25px;
+}
