@@ -1,12 +1,11 @@
 
 
 
-
 const date = new Date()
 console.log(date)
 /*Thu Aug 25 2022 03:32:16 GMT+0900 (한국 표준시)*/
 
-
+const monthmove = () => {
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 const monthDays = document.querySelector('.days')
@@ -45,6 +44,7 @@ document.querySelector('.head h3').innerHTML = months[date.getMonth()]
 
 
 
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 let days =""
 
 for(let x = firstdayIndex ; x > 0 ; x--){
@@ -65,3 +65,16 @@ for(let j = 1 ; j<=7-lastDayIndex-1 ; j++){
 	days += `<div id="nextDay">${j}</div>`
 	monthDays.innerHTML = days
 }
+}
+
+
+document.querySelector('.left_btn').addEventListener('click' , () => {
+	date.setMonth(date.getMonth() -1)
+	monthmove()
+})
+document.querySelector('.right_btn').addEventListener('click' , () => {
+	date.setMonth(date.getMonth() +1)
+	monthmove()
+})
+
+monthmove()
