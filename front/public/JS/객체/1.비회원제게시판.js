@@ -31,16 +31,12 @@
 	  // 1. html에서 입력된 데이터 가져와서 변수에 담기
 	 let bwriter = document.getElementById('bwriter').value
 	 let bpassword = document.getElementById('bpassword').value
-	 
 	 let btitle = document.getElementById('btitle').value
-	 let bcontent = document.getElementById('bcontent').value
-	 
 	 //	2.객체에 담기
 	 let board = {
 		작성자 :  bwriter,
 		비밀번호 : bpassword,	
 	 	제목 : btitle,
-		내용 : bcontent
 		}
 	//5. 객체를 배열에 저장한다.
 	boardlist.push( board ) //배열명.push/(객체명)
@@ -51,7 +47,6 @@
 	bwriter = document.getElementById('bwriter').value=''
 	bpassword = document.getElementById('bpassword').value=''
 	btitle = document.getElementById('btitle').value=''
-	bcontent = document.getElementById('bcontent').value=''
 	// 7. 글 등록시 게시물출력 함수 호출 두 번째 호출
 	게시물출력()
 }

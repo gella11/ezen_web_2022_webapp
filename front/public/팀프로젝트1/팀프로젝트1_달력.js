@@ -29,18 +29,18 @@ console.log(prevlastDay)
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 const months = [
-	"1_January ",
-	"2_February",
-	"3_March",
-	"4_April",
-	"5_May",
-	"6_June",
-	"7_July",
-	"8_August",
-	"9_September",
-	"10_October",
-	"11_November",
-	"12_December",
+	"1_ January ",
+	"2_ February",
+	"3_ March",
+	"4_ April",
+	"5_ May",
+	"6_ June",
+	"7_ July",
+	"8_ August",
+	"9_ September",
+	"10_ October",
+	"11_ November",
+	"12_ December",
 ]
 
 document.querySelector('.head h3').innerHTML = months[date.getMonth()]
@@ -67,6 +67,7 @@ for(let x = firstdayIndex ; x > 0 ; x--){
 /* T H I S */
 for(let i = 1 ; i<=lastDay ; i++){
 	const bbb = new Date(date.getFullYear() , date.getMonth(),i).getDay()
+	const bbbb = new Date(date.getFullYear() , date.getMonth(),i)
 	if( (i == date.getDate() && date.getMonth() == new Date().getMonth()) && bbb !== 1){
 		days += `<div class="today">${i}
 		<ul>
@@ -86,6 +87,8 @@ for(let i = 1 ; i<=lastDay ; i++){
 		monthDays.innerHTML = days
 		}
 	}
+
+
 
 /* N E X T */
 for(let j = 1 ; j<=7-lastDayIndex-1 ; j++){
@@ -115,3 +118,7 @@ document.querySelector('.right_btn').addEventListener('click' , () => {
 })
 
 monthmove()
+
+
+
+
