@@ -2,7 +2,8 @@
 
 
 const date = new Date()
-console.log(date)
+
+
 /*Thu Aug 25 2022 03:32:16 GMT+0900 (한국 표준시)*/
 
 
@@ -42,12 +43,12 @@ const months = [
 ]
 
 document.querySelector('.head h3').innerHTML = months[date.getMonth()]
-
+document.querySelector('.head h2').innerHTML = date.getFullYear()
 
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 let days =""
-
+/* P R E */
 for(let x = firstdayIndex ; x > 0 ; x--){
 	if(date.getMonth() > new Date().getMonth() || date.getFullYear() > new Date().getFullYear()){
 	days += `<div id="prevDay">${prevlastDay-x+1}
@@ -62,7 +63,7 @@ for(let x = firstdayIndex ; x > 0 ; x--){
 	monthDays.innerHTML = days
 	}
 }
-
+/* T H I S */
 for(let i = 1 ; i<=lastDay ; i++){
 	if( i == date.getDate() && date.getMonth() == new Date().getMonth() ){
 		days += `<div class="today">${i}
@@ -71,10 +72,10 @@ for(let i = 1 ; i<=lastDay ; i++){
 			<li><button class="dinner">Dinner</button></li>
 		</ul>
 		</div>`
-	}else if( i > date.getDate() &&date.getMonth() == new Date().getMonth() || date.getMonth() > new Date().getMonth() || date.getFullYear() > new Date().getFullYear() ){
+	}else if( i > date.getDate() && date.getMonth() >= new Date().getMonth() || date.getMonth() > new Date().getMonth() || date.getFullYear() > new Date().getFullYear()  ){
 		days += `<div>${i}
 		<ul>
-			<li><button class="lunch">Lunch</button></li>
+			<li><button class="lunch${date.getDay()}">Lunch</button></li>
 			<li><button class="dinner">Dinner</button></li>
 		</ul>
 		</div>`
@@ -84,17 +85,19 @@ for(let i = 1 ; i<=lastDay ; i++){
 		}
 	}
 
-
+/* N E X T */
 for(let j = 1 ; j<=7-lastDayIndex-1 ; j++){
 		
 	days += `<div id="nextDay">${j}
 	<ul>
-		<li><button class="lunch">Lunch</button></li>
+		<li><button class="lunch}">Lunch</button></li>
 		<li><button class="dinner">Dinner</button></li>
 	</ul>
 		</div>`
 	monthDays.innerHTML = days
 }
+
+
 }
 
 
