@@ -77,7 +77,7 @@ for(let i = 1 ; i<=lastDay ; i++){
 	}else if(( i > date.getDate() && date.getMonth() >= new Date().getMonth() || date.getMonth() > new Date().getMonth() || date.getFullYear() > new Date().getFullYear()) && bbb !==1  ){
 		days += `<div>${i}
 		<ul>
-			<li><button class="lunch${date.getDay()}">Lunch</button></li>
+			<li><button class="lunch">Lunch</button></li>
 			<li><button class="dinner">Dinner</button></li>
 		</ul>
 		</div>`
@@ -90,13 +90,14 @@ for(let i = 1 ; i<=lastDay ; i++){
 /* N E X T */
 for(let j = 1 ; j<=7-lastDayIndex-1 ; j++){
 	const ccc = new Date(date.getFullYear() , date.getMonth()+1,j).getDay()
-	if( ccc !== 1)
+	if(  (date.getMonth()+1 > new Date().getMonth() || date.getFullYear() > new Date().getFullYear() ) && ccc !==1){
 	days += `<div id="nextDay">${j}
 	<ul>
 		<li><button class="lunch">Lunch</button></li>
 		<li><button class="dinner">Dinner</button></li>
 	</ul>
 		</div>`
+	}else{days += `<div id="nextDay">${j}</div>`}
 	monthDays.innerHTML = days
 }
 
