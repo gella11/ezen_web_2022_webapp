@@ -10,6 +10,7 @@ const date = new Date()
 const monthmove = () => {
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+
 const monthDays = document.querySelector('.days')
 const lastDay = new Date(date.getFullYear(), date.getMonth()+1,0).getDate()
 /*Sun Aug 31 2022 00:00:00 	GMT+0900 (한국 표준시)*/
@@ -50,14 +51,14 @@ document.querySelector('.head h2').innerHTML = date.getFullYear()
 let days =""
 /* P R E */
 for(let x = firstdayIndex ; x > 0 ; x--){
-	if(date.getMonth() > new Date().getMonth() || date.getFullYear() > new Date().getFullYear()){
+	const aaa = new Date(date.getFullYear() , date.getMonth()-1,prevlastDay-x+1).getDay()
+	if(  (date.getMonth() > new Date().getMonth() || date.getFullYear() > new Date().getFullYear() ) && aaa !==1){
 	days += `<div id="prevDay">${prevlastDay-x+1}
 	<ul>
 		<li><button class="lunch">Lunch</button></li>
 		<li><button class="dinner">Dinner</button></li>
 	</ul>
 		</div>`
-		
 	}else{
 	days += `<div id="prevDay">${prevlastDay-x+1}</div>`
 	monthDays.innerHTML = days
@@ -65,14 +66,15 @@ for(let x = firstdayIndex ; x > 0 ; x--){
 }
 /* T H I S */
 for(let i = 1 ; i<=lastDay ; i++){
-	if( i == date.getDate() && date.getMonth() == new Date().getMonth() ){
+	const bbb = new Date(date.getFullYear() , date.getMonth(),i).getDay()
+	if( (i == date.getDate() && date.getMonth() == new Date().getMonth()) && bbb !== 1){
 		days += `<div class="today">${i}
 		<ul>
 			<li><button class="lunch">Lunch</button></li>
 			<li><button class="dinner">Dinner</button></li>
 		</ul>
 		</div>`
-	}else if( i > date.getDate() && date.getMonth() >= new Date().getMonth() || date.getMonth() > new Date().getMonth() || date.getFullYear() > new Date().getFullYear()  ){
+	}else if(( i > date.getDate() && date.getMonth() >= new Date().getMonth() || date.getMonth() > new Date().getMonth() || date.getFullYear() > new Date().getFullYear()) && bbb !==1  ){
 		days += `<div>${i}
 		<ul>
 			<li><button class="lunch${date.getDay()}">Lunch</button></li>
@@ -87,10 +89,11 @@ for(let i = 1 ; i<=lastDay ; i++){
 
 /* N E X T */
 for(let j = 1 ; j<=7-lastDayIndex-1 ; j++){
-		
+	const ccc = new Date(date.getFullYear() , date.getMonth()+1,j).getDay()
+	if( ccc !== 1)
 	days += `<div id="nextDay">${j}
 	<ul>
-		<li><button class="lunch}">Lunch</button></li>
+		<li><button class="lunch">Lunch</button></li>
 		<li><button class="dinner">Dinner</button></li>
 	</ul>
 		</div>`
