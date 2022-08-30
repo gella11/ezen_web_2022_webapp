@@ -3,7 +3,8 @@
 
 const date = new Date()
 
-
+const asd = new Date(2021)
+console.log(asd)
 /*Thu Aug 25 2022 03:32:16 GMT+0900 (한국 표준시)*/
 
 
