@@ -19,6 +19,15 @@ const firstdayIndex =new Date(date.getFullYear(), date.getMonth(),1).getDay()
 console.log(firstdayIndex)
 const lastDayIndex = new Date(date.getFullYear(), date.getMonth()+1,0).getDay()
 console.log(lastDayIndex)
+
+const currentYear = date.getFullYear()
+const currentMonth = date.getMonth()+1
+const currentDate = date.getDate()
+const currentDay = date.getDay()
+console.log(currentYear)
+console.log(currentMonth)
+console.log(currentDate)
+console.log(currentDay)
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
 
 
