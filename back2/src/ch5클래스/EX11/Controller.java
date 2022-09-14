@@ -1,4 +1,4 @@
-package back2.EX11;
+package ch5클래스.EX11;
 
 public class Controller {
 	

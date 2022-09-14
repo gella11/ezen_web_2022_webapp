@@ -1,4 +1,4 @@
-package back2.EX11;
+package ch5클래스.EX11;
 
 import java.util.Scanner;
 import java.util.ResourceBundle.Control;

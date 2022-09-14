@@ -1,4 +1,4 @@
-package back2;
+package DATABASE.java연동;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

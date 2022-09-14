@@ -1,4 +1,4 @@
-package back2;
+package DATABASE.java연동;
 
 import java.sql.Connection;				// db 드라이버 클래스 [ 드라이버 데이터 ]
 import java.sql.DriverManager;			// db 연동 인터페이스
