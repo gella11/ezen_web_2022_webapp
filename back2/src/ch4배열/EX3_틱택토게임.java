@@ -41,7 +41,36 @@ public class EX3_틱택토게임 {
 			} // while 2 end 
 
 			// 4. 승리 판단 [ 과제 ] 
-
+			while(true) {
+				
+				for( int i = 0 ; i < 3 ; i++) {
+					if( (게임판[i] == "[O]") && ( 게임판[i] == 게임판[i+3]) && (게임판[i+3] == 게임판[i+6]) ) {
+						System.out.println("승리하였습니다(세로)");	
+						break;
+					}
+				}
+				for( int i = 0 ; i < 2 ; i++) {
+					if( (게임판[i] == "[O]") && ( 게임판[i] == 게임판[i+4] ) && (게임판[i+4] == 게임판[i+8]) ) {
+						System.out.println("승리하였습니다(대각선) 048");	
+						break;
+					}
+				}
+				for( int i = 2 ; i < 3 ; i++) {
+					if( (게임판[i] == "[O]") && ( 게임판[i] == 게임판[i+2] ) && (게임판[i+2] == 게임판[i+4]) ) {
+						System.out.println("승리하였습니다(대각선) 246");	
+						break;
+					}
+				}
+				for( int i = 0 ; i <= 6 ; i++) {
+					if( i % 3 == 0 ) {
+						if( (게임판[i] == "[O]") && ( 게임판[i] == 게임판[i+1]) && (게임판[i+1] == 게임판[i+2]) ) {
+							System.out.println("승리하였습니다 (가로)");
+							break;
+						}
+					}
+				}
+				break;
+			}
 		} // while 1  end 
 
 	} // main end 
