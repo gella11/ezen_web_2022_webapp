@@ -1,5 +1,7 @@
 package ch2연산자;
 
+import java.util.Scanner;
+
 public class EX2_연산자문제 { // class s
 	public static void main(String[] args) { // main s
 		// 1. 입력객체 [ 1번만 선언 ] 

@@ -75,7 +75,7 @@ public class EX7실행 {
 					if( board.password.equals( password) ) {
 						scanner.nextLine();
 						System.out.print("수정할 제목 : "); 	boardlist[select].title = scanner.nextLine();
-						System.out.print("수정할 제목 : "); 		boardlist[select].title = scanner.nextLine();
+						System.out.print("수정할 제목 : "); 	boardlist[select].title = scanner.nextLine();
 						System.out.print("수정할 내용 : ");		boardlist[select].content = scanner.nextLine();
 						System.out.println("안내) 수정처리 했습니다.");
 					} // if end

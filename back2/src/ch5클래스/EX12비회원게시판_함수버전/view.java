@@ -95,8 +95,8 @@ public class view {
 	// 6. 게시물 수정 함수 
 	static void view_update( int bnum ) {
 		System.out.print("비밀번호 : "); 		String password = scanner.next();
-		System.out.print("수정할 제목 : ");	String title = scanner.next();
-		System.out.print("수정할 내용 : ");	String content = scanner.next();
+		System.out.print("수정할 제목 : ")	;	String title = scanner.next();
+		System.out.print("수정할 내용 : ")	;	String content = scanner.next();
 	
 		boolean result = 
 				Contorller.con_update(bnum, password, title, content);

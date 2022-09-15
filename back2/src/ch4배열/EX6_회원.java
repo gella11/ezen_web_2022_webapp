@@ -6,7 +6,6 @@ public class EX6_회원 { // class s
 	public static void main(String[] args) { // main s
 
 		// 0. 메모리
-		String[][] memberlist = new String[100][4]; // 문자열 400개를 저장할수 있는 배열 선언 
 		String[][] memberlist = new String[100][4]; // 문자열 400개를 저장할수 있는 배열 선언 [ 초기값 : null 400 개 ] 
 		Scanner scanner = new Scanner(System.in);	// 입력객체
 

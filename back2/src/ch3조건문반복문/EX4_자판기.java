@@ -1,5 +1,7 @@
 package ch3조건문반복문;
 
+import java.util.Scanner;
+
 public class EX4_자판기 {// class start
 	public static void main(String[] args) { // class start 
 		

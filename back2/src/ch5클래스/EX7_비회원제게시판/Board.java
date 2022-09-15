@@ -13,9 +13,9 @@ public class Board {
 		// 1. 빈 생성자[ 기본생성자 ]
 	Board() {}
 		// 2. 풀 생성자 [ 모든 매개변수 갖는 ] 
-	Board( String title , String content , 
+	Board( 	String title  ,	String content , 
 			String writer , String password ,
-			 int view ){
+			int view ){
 		this.title = title;
 		this.content = content;
 		this.writer = writer;

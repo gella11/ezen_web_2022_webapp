@@ -1,5 +1,7 @@
 package ch3조건문반복문;
 
+import java.util.Scanner;
+
 public class EX5_예금프로그램 {// class start 
 	
 	// 2. main(메인 스레드 내장) 함수[ 코드 실행 ]

@@ -1,5 +1,7 @@
 package ch3조건문반복문;
 
+import java.util.Scanner;
+
 public class EX7_별찍기 {
 
 	public static void main(String[] args) {
