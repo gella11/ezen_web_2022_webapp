@@ -1,5 +1,7 @@
 package ch3조건문반복문;
 
+import java.util.Scanner;
+
 public class EX_IF연습문제 {
 
 	public static void main(String[] args) {
@@ -38,7 +40,7 @@ public class EX_IF연습문제 {
 		
 		// 문제4 : 점수를 입력받아 점수가 90점 이상이면 합격 아니면 불합격 출력 [ 경우의수 : 2개 ]
 		System.out.print("문제3) 점수 입력: "); int 문제4 = scanner.nextInt();
-		System.out.print("문제4) 점수 입력: "); int 문제4 = scanner.nextInt();
+		System.out.print("문제4) 점수 입력: "); int 문제5 = scanner.nextInt();
 		if( 문제4 >= 90 ) { System.out.println("합격"); }
 		else { System.out.println("불합격"); }
 

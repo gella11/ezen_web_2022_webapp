@@ -1,5 +1,7 @@
 package ch1변수;
 
+import java.util.Scanner;
+
 public class EX5_입출력 {// class s
 	public static void main(String[] args) { // main s
 		

@@ -2,7 +2,7 @@ package 자율주제_무인아이스크림;
 
 import java.util.Scanner;
 
-import ch5클래스.EX7_비회원제게시판.Board;
+import ch5클래스.EX7_비회원제게시판_객체버전.Board;
 
 public class icecream_실행 {
 	public static void main(String[] args) {

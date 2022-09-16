@@ -74,7 +74,7 @@ System.out.println("\n---------------------------------------------------");
 System.out.println("\n---------------------------------------------------");
 
 		System.out.print("문제7) 줄수 : "); 
-		int line7 = scanner.nextInt();
+		int line7 = Scanner.nextInt();
 		for( int i = 1 ; i<=line7 ; i++ ) {
 
 			// 2.공

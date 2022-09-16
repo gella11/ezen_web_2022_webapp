@@ -1,5 +1,7 @@
 package back2;
 
+import java.util.Scanner;
+
 public class EX6실행 {
 
 
@@ -20,7 +22,7 @@ public class EX6실행 {
 				// 2차원 배열 예시
 					// Memberarray[0][0] = id;	Memberarray[0][1] = password; Memberarray[0][2] = name;
 				// 객체 선언 
-				Member signupInfo = new Member( id, password, name, 1000 );
+				Member signupInfo = new Member( id, password, name);
 				int index = 0; // 반복문 실행 횟수 
 				for( Member temp : MemberObject ) {	// for( 반복변수 : 배열 ) { } 
 					index++; // 1씩 증가 
