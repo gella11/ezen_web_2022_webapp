@@ -52,7 +52,7 @@ public class BoardDao {
 				// 2. sql 연결조작
 				// 3. sql 결과
 				String sql = "insert"
-								+"into board( b_title , b_content , b_writer , b_password , b_view )"
+								+" into board( b_title , b_content , b_writer , b_password , b_view )"
 								+"values    ( ?, ?, ?, ?, ? )";
 							//  ? : 변수 들어갈 자리[ 와읻르카드 ]
 				try {
