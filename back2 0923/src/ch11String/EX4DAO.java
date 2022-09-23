@@ -1,6 +1,14 @@
 package ch11String;
 
 import java.sql.Connection;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.time.Year;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +22,7 @@ public class EX4DAO {
 	private PreparedStatement ps;							// sql연동/조작 인터페이스
 	private ResultSet rs;									// sql결과[쿼리] 조작 인터페이스
 	private static EX4DAO dao = new EX4DAO();				// 싱글톤
-	static EX4DAO getInstance() {return dao;}	// 싱글톤을 외부로 호출시키는 메소드
+	public static EX4DAO getInstance() {return dao;}	// 싱글톤을 외부로 호출시키는 메소드
 	
 	private EX4DAO() {
 		try {
@@ -41,6 +49,15 @@ public class EX4DAO {
 		return false;
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	HashMap< Integer, ArrayList<String> > 일정출력(){
 		String sql = "select * from calender";
 		HashMap< Integer, ArrayList<String> > map = new HashMap<>();
@@ -62,3 +79,61 @@ public class EX4DAO {
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

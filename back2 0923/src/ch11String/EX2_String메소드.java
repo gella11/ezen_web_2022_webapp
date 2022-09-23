@@ -61,7 +61,7 @@ public class EX2_String메소드 {
 		System.out.println();
 		
 		String subject = "자바 프로그래밍";
-		System.out.println(subject.indexOf("프로그래밍"));
+		System.out.println(subject.indexOf("프로그래밍"));		// 3
 		int location = subject.indexOf("프로그래밍");
 		if(location != -1) {System.out.println("찾았다.");}
 		else {System.out.println("못찾았다");}

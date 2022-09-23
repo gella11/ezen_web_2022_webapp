@@ -2,7 +2,7 @@ package 협업과제;
 
 import java.util.Scanner;
 
-public class asd {
+public class 협업과제_박수현_윤상진 {
 
     public static void main(String[] args) {
               

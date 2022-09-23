@@ -20,6 +20,7 @@ public class EX3_Date클래스 {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 hh시 mm분 ss초");
 		String strNow2 = sdf.format( new Date() );
 		System.out.println(strNow2);
+		System.out.println(sdf);
 		
 		// 3. Calender 클래스
 		// ★★★문자열로 출력

@@ -16,7 +16,7 @@ public class EX4_달력 {
 	Calendar cal = Calendar.getInstance();
 	int year 	= cal.get(Calendar.YEAR);
 	int month 	= cal.get(Calendar.MONTH) + 1;
-	int day		=cal.get(Calendar.DAY_OF_MONTH);
+	int day		= cal.get(Calendar.DAY_OF_MONTH);
 	// 생성자
 	// 메소드
 	EX4Controll acontrol = new EX4Controll();
@@ -25,7 +25,7 @@ public class EX4_달력 {
 		while(true) {
 			cal.set(year, month-1, 1);									// 현재 월의 1일의 날짜
 			int sweek = cal.get( Calendar.DAY_OF_WEEK );				// 현재 월의 1일의 요일
-			int eday = cal.getActualMaximum( Calendar.DAY_OF_MONTH );	// ** 현재날짜의 마지막 일 수 찾기
+			int eday  = cal.getActualMaximum( Calendar.DAY_OF_MONTH );	// ** 현재날짜의 마지막 일 수 찾기
 			
 			System.out.printf(" ===== %d 년 %d 월 의 달력 =======" , year , month);
 			System.out.println("\n일\t월\t화\t수\t목\t금\t토");		
@@ -63,6 +63,27 @@ public class EX4_달력 {
 		if( result) {System.out.println("메뉴 등록햇습니다.");}
 		else		{System.out.println("메뉴 등록 실패했습니다.");}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	// 현재 월의 일정만
 	void 일정출력() {
 		HashMap< Integer, ArrayList<String> > map = EX4DAO.getInstance().일정출력();
@@ -76,3 +97,67 @@ public class EX4_달력 {
 	
 	// 현재 달력에 일정이 있는 달에는 *표시
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
