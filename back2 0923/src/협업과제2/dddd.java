@@ -10,7 +10,9 @@ public class dddd {
 		String ranNum = ""; 			//1자리 난수 형변환 변수
         	int letter    = 19;			//난수 자릿수:6
 		String resultNum = "";  		//결과 난수
-		create = random.nextInt(9);
+		int a = 0;
+		
+		createNum = random.nextInt(9);
 		
 		for (int i=0; i<letter; i++) { 
             		
