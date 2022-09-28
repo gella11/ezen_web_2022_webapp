@@ -1,24 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 package 키오스크.관리자;
 
 import java.util.ArrayList;
