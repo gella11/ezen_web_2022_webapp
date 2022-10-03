@@ -11,6 +11,12 @@ public class View {
 		View view = new View();    // 메소드 호출 할려고 객체 생성 
 		view.menu(); 
 	}
+	
+	
+	
+	
+	
+	
 	// 0.메인메뉴 화면 메소드 
 	void menu() {
 		while( true ) {
@@ -22,6 +28,14 @@ public class View {
 			else if( btn == 3 ) { delete(); }
 		}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 	// 1. 내용 추가 화면 메소드 
 	void create() { 
 		System.out.print("날짜 : "); String edate = scanner.next();
