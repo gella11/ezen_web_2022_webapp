@@ -1,23 +1,49 @@
 package 협업과제2;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+
 public class abc {
-	String key = "123456789"; // 암호화 키
+	public static void main(String[] args) {
+		System.out.println();
+
+	      HashMap<String, Integer> jin = new HashMap<String, Integer>();
+
+	      for( int i = 1 ; i <= 30 ; i++) {
+
+	         int a = (int)(Math.random()*9999);
+
+	       //  int b = (int)(Math.random()*100);
+
+	        // int[] number = new int[]{ a ,b };   
+	         
+	       //  String to = Integer.toString(a);
+	         
+
+	         jin.put( "key"+i, a);
+
+	         
+
+	      }
     
-    byte[] keybyte = key.getBytes();
-    byte[] passwordbyte = password.getBytes();
-    
-     
-    String firstbox="";
-    for(int i=0; i<keybyte.length; i++) {
-       firstbox+=(keybyte[i]); //배열에 담긴 키 숫자 하나씩 String으로 변환해서 누적 더하기
-    }
-    Long firstNum= Long.parseLong(firstbox); // 일렬로 된 숫자들 정수형으로 변환
-     
-    BigInteger[] array=new BigInteger[4]; 
-       
-     String secondbox="";
-     for(int i=0; i<array.length;i++) {
-      array[i]=firstNum * passwordbyte[i]; // 나열된 키숫자들에 password배열의 숫자 하나씩을 곱하기
-      secondbox+=array[i]; // 곱한걸 String으로 누적 더하기
-     }
+	      //jin.forEach((key, value) -> {   
+
+	        // System.out.println(key + " : " + String.format("%02d",value[0])+","+ String.format("%02d",value[1]) );   
+
+	      //});
+	      
+	      jin.forEach((key, value) -> {  
+	    	System.out.println(key + " : " + String.format("%04d",value));  
+	      });
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	}
 }

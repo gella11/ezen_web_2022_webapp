@@ -1,11 +1,13 @@
 package controller.member;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 import model.dao.MemberDao;
 import model.dto.MemberDto;
@@ -20,22 +22,33 @@ public class login extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	
+		// ----------- ajax -------------
+			// js ajax에게 변수 요청
+			String mid = request.getParameter("mid");
+			String mpassword = request.getParameter("mpassword");
+			// Dao 응답
+			int result = MemberDao.getInstance().login(mid, mpassword);
+			// db결과를 js ajax에게 응답
+			response.getWriter().print( result );
 	}
+		
 
+		
+		
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 		
-		String mid 				= request.getParameter("mid");
+		/*String mid 				= request.getParameter("mid");
 		String mpassword 		= request.getParameter("mpassword");
 		
 		MemberDao dao = new MemberDao();
-		boolean result = dao.login(mid, mpassword);
-		if(result) {System.out.println("로그인 성공");}
+		int result = dao.login(mid, mpassword);
+		if(result == 1) {System.out.println("로그인 성공");}
 		else 	   {System.out.println("로그인 실패");}
 		
-		if(result) {	response.sendRedirect("/jspweb/index.jsp");	}
-		else 	   {	response.sendRedirect("/jspweb/member/login.jsp"); }
+		if(result== 1) {	response.sendRedirect("/jspweb/index.jsp");	}
+		else 	   {	response.sendRedirect("/jspweb/member/login.jsp"); }*/
 	}	
 
 }
