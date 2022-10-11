@@ -8,6 +8,7 @@ public class boardDto {
 	private String bname;
 	private String bpassword;
 	private String bdate;
+	private int view;
 	
 	public boardDto() {	}
 
@@ -21,6 +22,7 @@ public class boardDto {
 		this.bdate = bdate;
 	}
 
+ 
 
 
 
@@ -28,11 +30,31 @@ public class boardDto {
 
 
 
+	public boardDto(int bno, String title, String content, String bname, String bpassword, String bdate, int view) {
+		super();
+		this.bno = bno;
+		this.title = title;
+		this.content = content;
+		this.bname = bname;
+		this.bpassword = bpassword;
+		this.bdate = bdate;
+		this.view = view;
+	}
 
 	@Override
 	public String toString() {
 		return "boardDto [bno=" + bno + ", title=" + title + ", content=" + content + ", bname=" + bname
 				+ ", bpassword=" + bpassword + "]";
+	}
+
+
+	
+	public int getView() {
+		return view;
+	}
+
+	public void setView(int view) {
+		this.view = view;
 	}
 
 	public int getBno() {
@@ -73,6 +95,14 @@ public class boardDto {
 
 	public void setBpassword(String bpassword) {
 		this.bpassword = bpassword;
+	}
+
+	public String getBdate() {
+		return bdate;
+	}
+
+	public void setBdate(String bdate) {
+		this.bdate = bdate;
 	}
 	
 	

@@ -12,6 +12,7 @@ function login(){
 			// 1) document.querySelector("#id")
 			// 2) document.getElementById("id")
 let mid 		= document.querySelector('#mid').value
+				//$("#name").value 제이쿼리식 문법	
 let mpassword 	= document.querySelector('#mpassword').value
 let loginconfirmbox = document.querySelector('#loginconfirmbox')	// div 라서 value 안씀
 // 확인 alert(mid)
