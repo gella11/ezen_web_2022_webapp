@@ -23,7 +23,7 @@ create table member(
     -- constraint primary key member_id_pk (mem_id)					-- pk 여러개 권장 문법 , 제약조선 이름 정의, 필드의 변수명을 정할 수 있음
 );
 -- 제약조건[constaraint] 추가
-   alter table member add constraint primary key(mem_id);				-- primary key를 지정을 안했다는 가정하에, 추가할 수 있음
+   alter table member add constraint primary key(mem_id);			-- primary key를 지정을 안했다는 가정하에, 추가할 수 있음
 -- alter table member add constraint +++ primary key(mem_id);		-- 제약조건 이름 정의(쉽게말해 변수명 정의) 는 + 칸에 넣으면 됨
 alter table member drop primary key;
 select * from member;
