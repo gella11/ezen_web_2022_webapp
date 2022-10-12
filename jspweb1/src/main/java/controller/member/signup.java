@@ -28,7 +28,7 @@ public class signup extends HttpServlet {
 		doGet(request, response);
 		
 		// 0. 한글 인코딩
-		request.setCharacterEncoding("URF-8");
+		request.setCharacterEncoding("UTF-8");
 		
 		// 1.JSP(HTML) form 입력받은 데이터 요청
 		String mid 				= request.getParameter("mid");
@@ -40,10 +40,10 @@ public class signup extends HttpServlet {
 		//String maddress			= request.getParameter("maddress");
 		
 		// 주소 요청
-		String maddress1			= request.getParameter("address1");
-		String maddress2			= request.getParameter("address2");
-		String maddress3			= request.getParameter("address3");
-		String maddress4			= request.getParameter("address4");
+		String maddress1			= request.getParameter("maddress1");
+		String maddress2			= request.getParameter("maddress2");
+		String maddress3			= request.getParameter("maddress3");
+		String maddress4			= request.getParameter("maddress4");
 		
 		String maddress = maddress1+"_"+maddress2+"_"+maddress3+"_"+maddress4;
 		
