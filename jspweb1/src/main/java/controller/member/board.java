@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.dao.bboardDao;
-import model.dto.boardDto;
+import model.dto.boardDto1;
 
 
 @WebServlet("/board/board")
@@ -26,7 +26,7 @@ public class board extends HttpServlet {
 		String bname				= request.getParameter("bname");
 		String bpassword 			= request.getParameter("bpassword");
 	
-		boardDto bdto = new boardDto(0, title, content, bname, bpassword, null);
+		boardDto1 bdto = new boardDto1(0, title, content, bname, bpassword, null);
 		System.out.println( bdto.toString() );
 		
 		bboardDao bdao = new bboardDao();

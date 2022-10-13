@@ -4,11 +4,11 @@ package model.dao;
 import java.util.ArrayList;
 
 import model.dto.MemberDto;
-import model.dto.boardDto;
+import model.dto.boardDto1;
 
 public class bboardDao extends bDao{
 	
-	public boolean board( boardDto bdto) {
+	public boolean board( boardDto1 bdto) {
 		String sql = "insert into board(btitle,bcontent,bname,bpassword) values(?,?,?,?)";
 		try {
 			ps = con.prepareStatement(sql);
@@ -22,14 +22,14 @@ public class bboardDao extends bDao{
 		return false;
 	}
 	
-	public ArrayList<boardDto> boardlist(){
-		ArrayList<boardDto> list = new ArrayList<>();
+	public ArrayList<boardDto1> boardlist(){
+		ArrayList<boardDto1> list = new ArrayList<>();
 		String sql = "select * from board; ";
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()){
-				boardDto dto = new boardDto(
+				boardDto1 dto = new boardDto1(
 						rs.getInt( 1 ) ,
 						rs.getString( 2 ) ,
 						rs.getString( 3 ) ,

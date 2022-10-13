@@ -49,7 +49,7 @@
 				<li> <a href="/jspweb/member/logout.jsp"> 로그아웃 </a> </li>
 			<%	} %>
 				<li> <a href="/jspweb/member/info.jsp" > 마이쇼핑</a> </li>
-				<li> <a href="#" > 고객센터 </a> </li>	
+				<li> <a href="/jspweb/board/list.jsp" > 고객센터 </a> </li>	
 			</ul>
 		</div>	
 	

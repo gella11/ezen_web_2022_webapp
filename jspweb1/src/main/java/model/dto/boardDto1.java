@@ -1,6 +1,6 @@
 package model.dto;
 
-public class boardDto {
+public class boardDto1 {
 
 	private int bno;
 	private String title;
@@ -10,9 +10,9 @@ public class boardDto {
 	private String bdate;
 	private int view;
 	
-	public boardDto() {	}
+	public boardDto1() {	}
 
-	public boardDto(int bno, String title, String content, String bname, String bpassword, String bdate) {
+	public boardDto1(int bno, String title, String content, String bname, String bpassword, String bdate) {
 		super();
 		this.bno = bno;
 		this.title = title;
@@ -30,7 +30,7 @@ public class boardDto {
 
 
 
-	public boardDto(int bno, String title, String content, String bname, String bpassword, String bdate, int view) {
+	public boardDto1(int bno, String title, String content, String bname, String bpassword, String bdate, int view) {
 		super();
 		this.bno = bno;
 		this.title = title;

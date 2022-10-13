@@ -15,7 +15,7 @@ import org.json.simple.JSONObject;
 import model.dao.MemberDao;
 import model.dao.bboardDao;
 import model.dto.MemberDto;
-import model.dto.boardDto;
+import model.dto.boardDto1;
 
 /**
  * Servlet implementation class boardlist
@@ -34,13 +34,13 @@ public class boardlist extends HttpServlet {
 		
 		//ArrayList<boardDto> list = bboardDao.getInstance().boardlist();
 		bboardDao dao = new bboardDao();
-		ArrayList<boardDto> list = dao.boardlist();
+		ArrayList<boardDto1> list = dao.boardlist();
 		
 		//Dto ---> json
 		//JSONObject를 여러개 담을 수 있는 JSON리스트 선언
 		JSONArray array = new JSONArray();
 		
-		for(boardDto dto : list) {
+		for(boardDto1 dto : list) {
 			// JSONObject 생성
 			JSONObject object = new JSONObject();
 			object.put("bno", dto.getBno() );
