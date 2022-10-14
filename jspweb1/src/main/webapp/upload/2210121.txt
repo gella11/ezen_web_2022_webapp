@@ -1,0 +1,17 @@
+https://mr-cho.tistory.com/144
+
+서블릿 나누는 법
+1) data "type" : 1
+2) 변수사용
+
+
+
+
+
+
+통신방식
+ form 페이지전환o 	get/post
+a     페이지전환o  get
+ajax  페이지전환x get/post
+
+

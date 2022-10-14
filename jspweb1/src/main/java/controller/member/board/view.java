@@ -36,17 +36,25 @@ public class view extends HttpServlet {
 					// 다형성 : 부모가 자식으로 강제 형변환 가능 
 				int bno = (Integer)request.getSession().getAttribute("bno");
 				// 2. DAO 처리 
-				BoardDto dto = 
-				BoardDao.getInstance().getboard(bno);
+				BoardDto dto = BoardDao.getInstance().getboard(bno);
 
 				// 3. DTO --> JSON 형변환
 				JSONObject object = new JSONObject();
 				object.put("bno", dto.getBno());
 				object.put("btitle", dto.getBtitle());
 				object.put("bcontent", dto.getBcontent());
-				object.put("mno", dto.getMno() );
+				object.put("mid", dto.getMid() );
+				object.put("bfile", dto.getBfile() );
 
+					// 삭제 , 수정 버튼 활성화를 위한 식별 변수 선언
+					String mid = (String)request.getSession().getAttribute("mid");
+					if(mid!=null && mid.equals(dto.getMid())) {
+						object.put("btnaction", true);
+					}
+					
+				
 				// 4. 응답 
+				response.setCharacterEncoding("UTF-8");
 				response.getWriter().print( object );
 		
 	}

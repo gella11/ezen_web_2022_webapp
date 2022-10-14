@@ -10,14 +10,15 @@ public class BoardDao extends Dao {
 	public static BoardDao getInstance() {return bdao;}
 	
 	// 1. 글 등록
-	public boolean write(String btitle, String bcontent, int mno) {
-		String sql="insert into board(btitle,bcontent,mno)"
-				+"value(?, ? , ?)";
+	public boolean write(String btitle, String bcontent, int mno ,String bfile) {
+		String sql="insert into board(btitle,bcontent,mno,bfile)"
+				+"value(?, ?, ?, ?)";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, btitle );
 			ps.setString(2, bcontent );
 			ps.setInt(3, mno );
+			ps.setString(4, bfile );
 			ps.executeUpdate();
 			return true;
 		} catch (Exception e) {System.out.println(e);}
@@ -43,7 +44,6 @@ public class BoardDao extends Dao {
 					list.add(dto);
 					
 			}
-			System.out.println(list.size() +"리스트 사이즈");
 			return list;
 		} catch (Exception e) {System.out.println(e);}
 		return list;
@@ -51,16 +51,21 @@ public class BoardDao extends Dao {
 	
 	// 3. 글 조회 
 	public BoardDto getboard(int bno) {
-		String sql ="select b.* , m.mid from member m , board b where m.mno = b.mno and bno = 1";
+		String sql ="select b.* , m.mid from member m , board b where m.mno = b.mno and bno = ?";
 		try {
 			ps = con.prepareStatement(sql);
+			ps.setInt(1 , bno);
 			rs = ps.executeQuery();
 			if(rs.next()) {
 				BoardDto dto = new BoardDto(
-						rs.getInt(1), rs.getString(2),
-						rs.getString(3), rs.getString(4),
-						rs.getString(5), rs.getInt(6),
-						rs.getInt(7), rs.getInt(8),
+						rs.getInt(1),
+						rs.getString(2),
+						rs.getString(3),
+						rs.getString(4),
+						rs.getString(5),
+						rs.getInt(6),
+						rs.getInt(7),
+						rs.getInt(8),
 						rs.getString(9)
 						);
 				return dto;
@@ -70,7 +75,16 @@ public class BoardDao extends Dao {
 	}
 	
 	
-	
+	public boolean delete(int bno) {
+		String sql = "delete from board where bno="+bno+"; ";
+		try {
+			ps = con.prepareStatement(sql);
+			int count = ps.executeUpdate();
+			if(count == 1)
+				return true;
+		} catch (Exception e) {System.out.println(e);}
+		return false;
+	}
 	
 	
 	
