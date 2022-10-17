@@ -19,9 +19,7 @@ import model.dto.boardDto1;
 public class boardlist extends HttpServlet {
 	private static final long serialVersionUID = 1L;
      
-    public boardlist() {
-        super();
-    }
+    public boardlist() {super();   }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		
@@ -29,7 +27,6 @@ public class boardlist extends HttpServlet {
 		//ArrayList<boardDto> list = bboardDao.getInstance().boardlist();
 		boardDao dao = new boardDao();
 		ArrayList<boardDto1> list = dao.boardlist();
-
 		//Dto ---> json
 		//JSONObject를 여러개 담을 수 있는 JSON리스트 선언
 		
@@ -45,15 +42,14 @@ public class boardlist extends HttpServlet {
 			object.put("mdate", dto.getBdate() );
 			object.put("view", dto.getView() );
 			array.add(object); // JSONObject 객체를 리스트에 담기
+			System.out.println(object);
 		}
+		System.out.println(array);
 		
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(array);
 		
-		
-		
-		
-		
+
 	}
 
 

@@ -8,17 +8,17 @@ import model.dto.boardDto1;
 
 public class boardDao extends Dao{
 	
-	public boolean board( boardDto1 bdto) {
+	public boolean board( String btitle, String bcontent, String bname, String bpassword) {
 		String sql = "insert into board(btitle,bcontent,bname,bpassword,view) values(?,?,?,?,0)";
 		try {
 			ps = con.prepareStatement(sql);
-			ps.setString(1, bdto.getBtitle() );
-			ps.setString(2, bdto.getBcontent() );
-			ps.setString(3, bdto.getBname() );
-			ps.setString(4, bdto.getBpassword() );
+			ps.setString(1, btitle );
+			ps.setString(2, bcontent );
+			ps.setString(3, bname );
+			ps.setString(4, bpassword );
 			ps.executeUpdate();
 			return true;
-		} catch (Exception e) {	System.out.println(e);}
+		} catch (Exception e) {	System.out.println(e); }
 		return false;
 	}
 	

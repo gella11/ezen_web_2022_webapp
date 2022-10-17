@@ -14,6 +14,7 @@ import org.json.simple.JSONObject;
 
 import model.dao.boardDao;
 import model.dto.boardDto1;
+import model.dto.reviewDto;
 
 /**
  * Servlet implementation class review
@@ -28,12 +29,14 @@ public class review extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		String btitle 				= request.getParameter("btitle");
-		String bcontent 			= request.getParameter("bcontent");
-		String bname				= request.getParameter("bname");
-		String bpassword 			= request.getParameter("bpassword");
+		int bno 					= request.getParameter("bno_review");
+		int cno 					= request.getParameter("bno_review");
+		int cindex					= request.getParameter("bno_review");	
+		String ccontent 			= request.getParameter("bno_ctitle");
+		String cname				= request.getParameter("bno_ccontent");
+		String cpassword 			= request.getParameter("bno_cpassword");
 	
-		boardDto1 bdto = new boardDto1(0, btitle, bcontent, bname, bpassword, null, 0);
+		
 		boardDao bdao = new boardDao();
 		System.out.println( bdto.toString() );
 		

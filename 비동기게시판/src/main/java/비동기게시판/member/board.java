@@ -27,33 +27,32 @@ public class board extends HttpServlet {
 		String bcontent 			= request.getParameter("bcontent");
 		String bname				= request.getParameter("bname");
 		String bpassword 			= request.getParameter("bpassword");
-	
+		
+		System.out.println(btitle);
+		System.out.println(bcontent);
+		System.out.println(bname);
+		System.out.println(bpassword);
+		
 		boardDto1 bdto = new boardDto1(0, btitle, bcontent, bname, bpassword, null, 0);
+		
+		
+		
 		boardDao bdao = new boardDao();
+		
+		
 		System.out.println( bdto.toString() );
 		
-		
-		boolean result = bdao.board(bdto);
+		//boolean result = bdao.board(bdto);
+		boolean result = bdao.board(btitle , bcontent , bname, bpassword);
 		
 		if(result) {
+			System.out.println(result);
 			System.out.println("글 등록 성공");
 			response.getWriter().print(result);
 			}
 		else{
 			System.out.println("글 등록 실패");
 			}
-		
-		//ArrayList<boardDto1> list = bdao.boardlist();
-		//if(list !=null) {
-	//		response.getWriter().print(list);
-		//}else {
-		//	System.out.println("db에서 글을 못가져옴");
-	//	}
-		
-		
-		
-		//if(result) {	response.sendRedirect("/jspweb/index.jsp");	}
-		//else 	   {	response.sendRedirect("/jspweb/board/board"); }	
 	}
 
 

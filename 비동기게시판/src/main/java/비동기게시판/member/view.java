@@ -25,7 +25,6 @@ public class view extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int bno = Integer.parseInt(request.getParameter("bno")) ;
-		System.out.println(bno);
 		boardDao dao = new boardDao();
 		boardDto1 dto = dao.getboard(bno);
 
@@ -38,7 +37,7 @@ public class view extends HttpServlet {
 			object.put("bdate", dto.getBdate() );
 			object.put("view", dto.getView() );
 			
-			System.out.println(object);
+			System.out.println(object+"object");
 		
 		
 		response.setCharacterEncoding("UTF-8");

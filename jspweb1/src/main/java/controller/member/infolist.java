@@ -21,22 +21,12 @@ import model.dto.MemberDto;
 @WebServlet("/member/infolist")
 public class infolist extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public infolist() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+    public infolist() {super();    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ArrayList<MemberDto> list = MemberDao.getInstance().getinfolist();
 		
+		ArrayList<MemberDto> list = MemberDao.getInstance().getinfolist();
 		//Dto ---> json
 		//JSONObject를 여러개 담을 수 있는 JSON리스트 선언
 		JSONArray array = new JSONArray();
