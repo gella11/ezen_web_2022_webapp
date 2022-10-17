@@ -107,39 +107,41 @@ function viewload(bno){
 }
 
 function review(bno){
-	let bno_review 		= "bno_review"+bno
-	let bno_ctitle 		= "bno_ctitle"+bno
-	let bno_ccontent	= "bno_ccontent"+bno
-	let bno_cpassword	= "bno_cpassword"+bno
+	let bno_review 	= "bno_review"+bno
+	let ctitle 		= "ctitle"+bno
+	let ccontent	= "ccontent"+bno
+	let cpassword	= "cpassword"+bno
 	console.log(bno_review)
 	let table = document.querySelector("#bno_review")
-	tag =   '작성자	: '+'<input type="text" 	 id = "bno_ctitle"><br>'	+
-			'내용		: '+'<input type="text" 	 id = "bno_ccontent"><br>'	+
-			'비밀번호	: '+'<input type="password"	 id = "bno_cpassword"><br>'	+
-			' 			 <input type="submit" onclick="commit" value="답글등록">'
+	tag =   '작성자	: '+'<input type="text" 	 id = "ctitle"><br>'	+
+			'내용		: '+'<input type="text" 	 id = "ccontent"><br>'	+
+			'비밀번호	: '+'<input type="password"	 id = "cpassword"><br>'	+
+			' 			 <input type="submit" onclick="commit('+bno+')" value="답글등록">'
 	table.innerHTML = tag
+	
+}
+
+function commit(bno){
+	
+		let cname 	= document.querySelector("#ctitle").value
+		let ccontent 	= document.querySelector("#ccontent").value
+		let cpassword 	= document.querySelector("#cpassword").value
+
+	
 	$.ajax({
 		url:"/비동기게시판/비동기게시판/review",
-		data:{"bno" : bno},
 		success : function(re){
-			let boardlist = JSON.parse(re)
-			console.log(boardlist)
+
+			console.log(re)
 			
 			let table = document.querySelector("#bno_review")
 
 			let tag ='<tr>'+
-					'<th>내용</th>'+
-					'<th>작성자</th>'+
-					'<th>비밀번호</th>'+
+					'<th>등록되었습니다.</th>'+
 					'</tr>';
 
-				tag +='<tr>'+
-					'<td> '+boardlist.bcontent+'</td>'+
-					'<td> '+boardlist.bname+'</td>'+
-					'<td> '+boardlist.bpassword+'</td>'+
-					'<input type="submit" onclick="review('+boardlist.bno+')" value="답글">'+'<br>'+
-					'</tr>';
 			table.innerHTML = tag
 		}
 	})
 }
+

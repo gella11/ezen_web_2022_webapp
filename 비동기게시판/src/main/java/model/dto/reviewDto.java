@@ -3,8 +3,9 @@ package model.dto;
 public class reviewDto {
 
 	   private int bno;
-	   private int cno;
-	   private int cindex;
+	   private int aa;
+	   private int bb;
+	   private int cc;
 	   private String cname;
 	   private String ccontent;
 	   private String cpassword;
@@ -13,11 +14,12 @@ public class reviewDto {
 	   public reviewDto() {}
 
 
-	public reviewDto(int bno, int cno, int cindex, String cname, String ccontent, String cpassword) {
+	public reviewDto(int bno, int aa, int bb, int cc, String cname, String ccontent, String cpassword) {
 		super();
 		this.bno = bno;
-		this.cno = cno;
-		this.cindex = cindex;
+		this.aa = aa;
+		this.bb = bb;
+		this.cc = cc;
 		this.cname = cname;
 		this.ccontent = ccontent;
 		this.cpassword = cpassword;
@@ -26,7 +28,7 @@ public class reviewDto {
 
 	@Override
 	public String toString() {
-		return "reviewDto [bno=" + bno + ", cno=" + cno + ", cindex=" + cindex + ", cname=" + cname + ", ccontent="
+		return "reviewDto [bno=" + bno + ", aa=" + aa + ", bb=" + bb + ", cc=" + cc + ", cname=" + cname + ", ccontent="
 				+ ccontent + ", cpassword=" + cpassword + "]";
 	}
 
@@ -41,23 +43,33 @@ public class reviewDto {
 	}
 
 
-	public int getCno() {
-		return cno;
+	public int getAa() {
+		return aa;
 	}
 
 
-	public void setCno(int cno) {
-		this.cno = cno;
+	public void setAa(int aa) {
+		this.aa = aa;
 	}
 
 
-	public int getCindex() {
-		return cindex;
+	public int getBb() {
+		return bb;
 	}
 
 
-	public void setCindex(int cindex) {
-		this.cindex = cindex;
+	public void setBb(int bb) {
+		this.bb = bb;
+	}
+
+
+	public int getCc() {
+		return cc;
+	}
+
+
+	public void setCc(int cc) {
+		this.cc = cc;
 	}
 
 
@@ -90,6 +102,8 @@ public class reviewDto {
 		this.cpassword = cpassword;
 	}
 
+
+	
 	   
 	  
 	
