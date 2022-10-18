@@ -12,7 +12,7 @@ import model.dao.MemberDao;
 /**
  * Servlet implementation class update
  */
-@WebServlet("/member/update")
+@WebServlet("/board/update")
 public class update extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -27,9 +27,9 @@ public class BoardDao extends Dao {
 	}
 
 	// 2. 글 출력 [ JSP 용 ]
-	public ArrayList<BoardDto> getlist() {
+	public ArrayList<BoardDto> getlist(int startrow , int listsize) {
 		ArrayList<BoardDto> list = new ArrayList<>();
-		String sql = "select b.* , m.mid from member m , board b where m.mno = b.mno;";
+		String sql = "select b.* , m.mid from member m , board b where m.mno = b.mno order by b.bdate desc limit "+startrow+" , "+listsize+";";
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -42,7 +42,6 @@ public class BoardDao extends Dao {
 						rs.getString(9)
 						);
 					list.add(dto);
-					
 			}
 			return list;
 		} catch (Exception e) {System.out.println(e);}
@@ -74,7 +73,7 @@ public class BoardDao extends Dao {
 		return null;
 	}
 	
-	
+	// 4. 글 삭제
 	public boolean delete(int bno) {
 		String sql = "delete from board where bno="+bno+"; ";
 		try {
@@ -86,9 +85,56 @@ public class BoardDao extends Dao {
 		return false;
 	}
 	
+	// 5. 첨부파일만 삭제 [업데이트]
+	public boolean bfiledelete(int bno) {
+		String sql = "update board set bfile = null where bno = "+bno;
+		try {
+			ps = con.prepareStatement(sql);
+			ps.executeUpdate();
+			return true;
+		} catch (Exception e) {System.out.println(e);	}
+		return false;
+	}
 	
+	// 6. 게시물 수정
+	public boolean bupdate(int bno, String btitle, String bcontent, String bfile) {
+		String sql = "update board set btitle = ?, bcontent = ?, bfile = ? where bno = ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, btitle);
+			ps.setString(2, bcontent);
+			ps.setString(3, bfile);
+			ps.setInt(4, bno);
+			ps.executeUpdate();
+			return true;
+		} catch (Exception e) {System.out.println(e);}
+		return false;
+	}
 	
+	// 7. 조회수 [업데이트]
+		public boolean view(int bno) {
+			String sql2="update board set bview = bview +1 where bno = ?;";
+			try {
+				ps = con.prepareStatement(sql2);
+				ps.setInt(1 , bno);
+				ps.executeUpdate();
+				return true;
+			} catch (Exception e) {System.out.println("조회수 업데이트 실패");}
+			return false;
+		}
 	
+	// 8. 전체 페이지 수
+		public int gettotal() {
+			String sql = "select count(*) from board;";
+			try {
+				ps=con.prepareStatement(sql);
+				rs=ps.executeQuery();
+				if(rs.next())
+					return rs.getInt(1);
+				
+			} catch (Exception e) {System.out.println(e);}
+			return 0;
+		}
 	
 	
 	

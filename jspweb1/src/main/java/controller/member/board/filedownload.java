@@ -28,8 +28,8 @@ public class filedownload extends HttpServlet {
 		String bfile = request.getParameter("bfile");	// 다운로드할 파일명 요청
 		
 		// 2. 경로 + 파일명으로 해당 파일 위치 찾기
-		String uploadpath = "C:\\Users\\504\\git\\ezen_web_2022_webapp\\jspweb1\\src\\main\\webapp\\upload\\"+bfile;
-		
+		// String uploadpath = "C:\\Users\\504\\git\\ezen_web_2022_webapp\\jspweb1\\src\\main\\webapp\\upload\\"+bfile;
+		String uploadpath = request.getSession().getServletContext().getRealPath("/upload/"+bfile); //최상의경로
 		// 3. 해당 경로의 파일을 객체화 [ java에서 제공되는 file 클래스 이용 ]
 		// 필요한 파일을 객체화 하였기 때문에  [ 해당 파일을 조작/메소드 가능]
 		File file = new File(uploadpath);

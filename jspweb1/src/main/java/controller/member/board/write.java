@@ -7,17 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.jasper.compiler.NewlineReductionServletWriter;
-
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import model.dao.BoardDao;
 import model.dao.MemberDao;
 
-/**
- * Servlet implementation class write
- */
 @WebServlet("/board/write")
 public class write extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -59,8 +54,12 @@ public class write extends HttpServlet {
 		// HttpServletRequest : 첨부파일x 소량의 문자만 지원
 		// 첨부파일이 있다면,, 첨부파일을 주소에 노출시키면 안되니 post 형식으로만 가능하다.
 		
-		// 저장경로 [ 프로젝트 ]
-		String uploadpath = "C:\\Users\\504\\git\\ezen_web_2022_webapp\\jspweb1\\src\\main\\webapp\\upload";
+		// 저장경로 [ 프로젝트 ] [ 개발중인 프로텍트 폴더에 저장 ]
+		//String uploadpath = "C:\\Users\\504\\git\\ezen_web_2022_webapp\\jspweb1\\src\\main\\webapp\\upload";
+		// 1. 저장경로 [ 배포된 프로젝트의(서버) 폴더 저장 ]
+		//  
+		String uploadpath = request.getSession().getServletContext().getRealPath("/upload"); //최상의경로
+		//System.out.println(uploadpath);
 		
 		// 2. muti 객체 생성
 		// MultipartRequest multi = new MultipartRequest( 1.요청방식 , 2.파일저장경로 , 3.최대용량범위 , 4.인코딩타입 , 5.기타 보안(필수x) );

@@ -1,15 +1,40 @@
-list()
-function list(){
+
+
+let pageinfo = {
+	listsize : 2,
+	page : 1
+}
+list(1)
+function list(page){
+	
+	pageinfo.page = page 
+	
+	
+	let today = new Date();  
+	let year = today.getFullYear(); // 년도
+	let month = today.getMonth() + 1;  // 월
+	let date = today.getDate();  // 날짜
+	let day = today.getDay();  // 요일
+	let date1 = (year + '-' + month + '-' + date)
+
 	$.ajax({
 		url:"/jspweb/board/list",
+		data : pageinfo,
 		success : function(re){
-			let boardlist = JSON.parse(re)
-			console.log(boardlist+"여기야 여기")
-			
+			let boards = JSON.parse(re)
+			console.log(boards)
+			let boardlist = boards.data
+
 			let html = ""
 			
 			for(let i = 0 ; i<boardlist.length; i++){
 				let b = boardlist[i]
+				
+				var result1 = b.bdate.substr(0, 10);
+					if(result1 !== date1){
+					b.bdate = result1
+					}
+				
 				// ? 변수 선언 은 get방식에서만 가능
 				html += '<tr>' +
 				      '<td>'+b.bno+'</td>'+
@@ -27,8 +52,28 @@ function list(){
 		               
 			}
 			console.log(html)
-			document.querySelector('.btable').innerHTML += html
+			document.querySelector('.btable').innerHTML = html
 			//btable.innerHTML = html
+			
+			
+			// 페이징 버튼 html 구성
+			let pagehtml =""
+			if(page <= 1){pagehtml += '<button type="button" onclick="list('+(page)+')"> 이전 </button>'}
+			else		 {pagehtml += '<button type="button" onclick="list('+(page-1)+')"> 이전 </button>'}
+			
+			for(let page = boards.startbtn; page<=boards.endbtn; page++){
+				pagehtml +='<button type="button" onclick="list('+page+')"> '+page+' </button>'
+			}
+			
+			if(page >= boards.totalpage){pagehtml += '<button type="button" onclick="list('+(page)+')"> 다음 </button>'}
+			else					    {pagehtml += '<button type="button" onclick="list('+(page+1)+')"> 다음 </button>'}
+			
+			
+			document.querySelector('.pagebox').innerHTML = pagehtml
+			
+			
+			
+			
 		}
 	})
 }

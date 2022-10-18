@@ -31,7 +31,7 @@ function bview(bno){
 				let deletebtn = '<button onclick="bdelete('+board.bno+')"> 삭제 </button>'
 				btnbox.innerHTML += deletebtn
 				// 수정 버튼 활성화
-				let updatebtn = '<button> <a href="../board/update.jsp"> 수정 </a> </button>'
+				let updatebtn = '<button> <a href="../member/update.jsp"> 수정 </a> </button>'
 				btnbox.innerHTML += updatebtn
 			}
 			
