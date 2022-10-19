@@ -1,9 +1,38 @@
 
 
+
 let pageinfo = {
-	listsize : 2,
-	page : 1
+	listsize : 5,
+	page : 1,
+	key : "",
+	keyword: ""
 }
+
+// 게시글 수 사용자가 정하기
+function blistsize(){
+	pageinfo.listsize = document.querySelector('.listsize').value
+	list(1)
+}
+
+
+// 검색
+function bsearch(){
+	let key 	= document.querySelector('.key').value
+	let keyword = document.querySelector('.keyword').value
+	console.log(key)
+	console.log(keyword)
+	
+	pageinfo.key = key
+	pageinfo.keyword = keyword
+	console.log(pageinfo)	
+	
+	list(1)
+	
+}
+
+
+
+// 페이징
 list(1)
 function list(page){
 	
@@ -16,7 +45,7 @@ function list(page){
 	let date = today.getDate();  // 날짜
 	let day = today.getDay();  // 요일
 	let date1 = (year + '-' + month + '-' + date)
-
+	
 	$.ajax({
 		url:"/jspweb/board/list",
 		data : pageinfo,
@@ -30,10 +59,10 @@ function list(page){
 			for(let i = 0 ; i<boardlist.length; i++){
 				let b = boardlist[i]
 				
-				var result1 = b.bdate.substr(0, 10);
-					if(result1 !== date1){
-					b.bdate = result1
-					}
+				//var result1 = b.bdate.substr(0, 10);
+				//	if(result1 !== date1){
+				//	b.bdate = result1
+				//	}
 				
 				// ? 변수 선언 은 get방식에서만 가능
 				html += '<tr>' +
@@ -71,7 +100,7 @@ function list(page){
 			
 			document.querySelector('.pagebox').innerHTML = pagehtml
 			
-			
+			document.querySelector('.totalsize').innerHTML = boards.totalsize
 			
 			
 		}

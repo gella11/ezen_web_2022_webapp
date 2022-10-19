@@ -47,6 +47,15 @@
 		<!--  JS 로 테이블 표시 [html(JSP) >>> js    >>> 서블릿 >>>  dao -->
 		<!--  JS 로 테이블 표시 [html(JSP) >>> js    >>> 서블릿 >>>  dao -->
 		<!--  JS 로 테이블 표시 [html(JSP) >>> js    >>> 서블릿 >>>  dao -->
+		<div>	게시물 수 : <span class="totalsize"> </span> 	</div>
+		<div>
+			<select class="listsize" onchange="blistsize()">
+				<option value="5">5개</option>
+				<option value="10">10개</option>
+				<option value="15">15개</option>
+				<option value="20">20개</option>
+			</select>
+		</div>
 		<table class="btable table">
 			<tr>
 				<th> 번호 </th> <th> 제목 </th> <th>작성자</th> 
@@ -55,6 +64,17 @@
 		</table>
 		
 		<div class="pagebox">
+		</div>
+		
+		<!-- 검색 -->
+		<div>
+			<select class="key">
+				<option value="b.btitle">제목</option>
+				<option value="b.bcontent">내용</option>
+				<option value="m.mid">작성자</option>
+			</select>
+			<input class="keyword" type="text" placeholder ="검색어">
+			<button type="button" onclick="bsearch()">검색</button>
 		</div>
 		
 		<!-- 부트스트랩 -->

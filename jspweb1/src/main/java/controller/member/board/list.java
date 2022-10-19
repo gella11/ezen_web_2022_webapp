@@ -27,11 +27,36 @@ public class list extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		request.setCharacterEncoding("UTF-8");
+		
+		
+		///////////////////// 검색
+		String key 		= request.getParameter("key");
+		String keyword	= request.getParameter("keyword");
+		System.out.println(key);
+		System.out.println(keyword);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		///////////////////// 페이징
+		
 		// 페이지당 계시글 수
 		int listsize = Integer.parseInt(request.getParameter("listsize"));
 		
 		// 전체 게시글 수
-		int totalsize = BoardDao.getInstance().gettotal();
+		int totalsize = BoardDao.getInstance().gettotal(key , keyword);
 		
 		// 전체 페이지 계산
 		int totalpage = 0;
@@ -56,7 +81,7 @@ public class list extends HttpServlet {
 		
 
 		// 2. db
-		ArrayList<BoardDto> list =  BoardDao.getInstance().getlist(startrow, listsize);
+		ArrayList<BoardDto> list =  BoardDao.getInstance().getlist(startrow, listsize, key, keyword);
 		// ** arraylist ---> jsonarray 변환[ js에서 쓸려고 ]
 		JSONArray array = new JSONArray();
 		// arraylist ---> jsonarray 변화 [js에서 쓰려고]
@@ -69,13 +94,15 @@ public class list extends HttpServlet {
 			object.put("mid", list.get(i).getMid() );
 			array.add(object);
 		}		
-		System.out.println(array);
+		
 		
 		boards.put("totalpage", totalpage);
 		boards.put("data", array);
 		boards.put("startbtn", startbtn);
 		boards.put("endbtn", endbtn);
+		boards.put("totalsize", totalsize);
 		
+		System.out.println("array111"+array);
 	// 3. 응답o
 	response.setCharacterEncoding("UTF-8"); 
 	//response.getWriter().print( array );

@@ -48,6 +48,13 @@
 			<a href="list.jsp"> <button> 목록보기</button> </a>
 		</div>
 		
+		<div class="relybox">
+			<textarea rows="" cols="" class="rcontent"> </textarea>
+			<button type="button" onclick="rwrite()"> 댓글작성 </button>
+		</div>
+		
+		<div class="replylist">
+		</div>
 		
 		
 	</div>

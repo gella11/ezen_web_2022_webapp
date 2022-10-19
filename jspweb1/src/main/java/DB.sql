@@ -1,4 +1,3 @@
-
 drop database if exists jspweb;
 create database jspweb;
 use jspweb;
@@ -44,6 +43,9 @@ CREATE TABLE board(
 select * from board;
 -- foreign key (mno) reference member(mno)
 alter table board modify bdate date;
+select * from board;
+insert board(bcontent) value('asdf');
+insert into board(btitle,bcontent,mno) value(1, 2, 3);
 
 -- 1. 한개 테이블 검색 
 select * from member;
@@ -57,8 +59,6 @@ select b.bno , b.btitle , b.bcontent , b.bfile , b.bdate , b.bview , b.cno , b.m
 select b.* , m.mid from member m , board b where m.mno = b.mno;
 -- 5. 개별 글출력 
 select b.* , m.mid from member m , board b where m.mno = b.mno and bno = 1; -- 게시물번호 
-
-
 select b.* , m.mid from member m , board b where m.mno = b.mno;
 
 select count(*) from board;
@@ -66,3 +66,28 @@ select * from board limit 0,3;
 select * from board order by bdate desc;
 select * from board order by bdate desc limit 0,3;
 select b.* , m.mid from member m , board b where m.mno = b.mno order by b.bdate desc limit 3 , 3;
+select b.* , m.mid from member m , board b where m.mno = b.mno and  m.mid like 'q' order by b.bdate desc limit 0,3;
+select count(*) from member m , board b where m.mno = b.mno;
+
+
+
+drop table if exists reply;
+create table reply(
+	rno			int auto_increment,
+    rcontent 	varchar(1000) not null,
+    rdate 		datetime default now(),
+    rindex		int default 0,	-- [ 0 상위댓글 , 숫자 : 상위댓글의 번호  들여쓰기 정도 ]
+    mno			int not null, -- 회원번호
+    bno			int not null,
+    constraint rno_pk primary key(rno),
+    constraint rmno_fk foreign key(mno) references member(mno) on delete cascade, -- 회원 탈퇴시, 댓글도 같이 삭제
+    constraint rbno_kf foreign key(bno) references  board(bno) on delete cascade -- 게시물 삭제시 댓글도 같이 삭제
+);
+select * from reply;
+select r.rcontent , r.rdate, m.mid from reply r, member m where r.mno = m.mno;
+select r.rcontent , r.rdate, m.mid from reply r, member m where r.mno = m.mno and r.bno = 4 ;
+-- 댓글만 출력
+select * from reply where rindex = 0;
+select * from reply where rindex = 1;
+-- 해당 게시물의 1번의 대댓글
+select r.rcontent , r.rdate, m.mid, r.rno from reply r, member m where r.mno = m.mno and r.bno = 6 and r.rindex = 1 order by r.rdate desc;
