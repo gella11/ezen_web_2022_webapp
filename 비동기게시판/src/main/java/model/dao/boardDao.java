@@ -8,6 +8,7 @@ import model.dto.boardDto1;
 
 public class boardDao extends Dao{
 	
+	// 삽입
 	public boolean board( String btitle, String bcontent, String bname, String bpassword) {
 		String sql = "insert into board(btitle,bcontent,bname,bpassword,view) values(?,?,?,?,0)";
 		try {
