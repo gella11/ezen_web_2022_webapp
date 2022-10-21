@@ -14,6 +14,9 @@ import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 
 
 //@WebServlet("/chatting")
@@ -26,31 +29,42 @@ public class chatting  {
 	// public static Vector<Session> clients = new Vector<>();
 	   public static Hashtable< Session, String > clients = new Hashtable<>();
 	   						  //   키   :   값  이를 엔트리라고 함
-		// 3가지 메소드
-		@OnOpen			// 웹소켓이 들어왔을 때	
-		public void OnOpen(Session session , @PathParam("mid")String mid ) throws IOException { //@PathParam : 경로상의 변수 호출
-			clients.put(session, mid); // 접속된 클라이언트 소켓을 저장
-			System.out.println( session ); // session 자동식별번호. 한 번 나갔다 들어오면 다른 사람이 되어있어서 세션으로 식별 불가
-			System.out.println(mid+"님이 접속했습니다.");
-			
-			// 접속했다고 다른 사람에게 알리기
-			for(Session s : clients.keySet() ) { // keySet() 맵에 저장된 모든 key 호출
-				s.getBasicRemote().sendText(clients.get(s)+"님이 접속했습니다.");
+	   
+	   
+	   public JSONObject jsonAlarm(String content) throws IOException {
+		   // 접속 알람 메시지
+		   // 전송 메시지 구성
+			JSONObject object = new JSONObject();
+			object.put("type", "alarm");
+			object.put("content", content);
+			return object;
+	   }
+	   
+	   // 알람 실제 전송 함수
+	   public void sendmsg(JSONObject object) throws IOException {
+		   for(Session s : clients.keySet() ) { 
+				s.getBasicRemote().sendText( object.toString() );
 			}
+	   }
+	   
+	   
+	   
+		// 3가지 메소드
+		@OnOpen			// 1. 접속 /// 웹소켓이 들어왔을 때	
+		public void OnOpen(Session session , @PathParam("mid")String mid ) throws IOException { //@PathParam : 경로상의 변수 호출
+			sendmsg(jsonAlarm( mid+"님이 들어왔습니다."));			
+			clients.put(session, mid); // 접속된 클라이언트 소켓을 저장
+			
 		}
 		
 		
-		
-		@OnClose		// 웹소켓을 나갔을 때 [ 서버소켓[서버 재부팅/시작 ] 꺼지나 클라이언트소켓이 닫기 요청 ]
-		public void onClose(Session session) {
-			// 1.종료된 세션을 접속명단에서 제거
+		@OnClose		// 2. 나가기 /// 웹소켓을 나갔을 때 [ 서버소켓[서버 재부팅/시작 ] 꺼지나 클라이언트소켓이 닫기 요청 ]
+		public void onClose(Session session) throws IOException {
+			JSONObject object =  jsonAlarm(clients.get(session)+"님이 퇴장했습니다.");
 			clients.remove(session); // map객체명.remove(key) : 해당 key의 앤트리 삭제
-			
+			sendmsg(object);
 		}
 			
-		
-		
-		
 		
 		@OnMessage		// 웹소켓에 메시지 왔을 때
 		public void onMessage(Session session, String msg) throws IOException {

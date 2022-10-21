@@ -13,6 +13,9 @@
 	<!--  헤더는 모든 페이지에 들어가는 것이기 때문에 절대경로를 써야함 프로젝트부터 써야함 -->
 	<link rel="stylesheet" href="/jspweb/css/header.css">
 	
+	<!-- 부트스트랩 css -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	
 	<!-- 폰트 어썸 [ 아이콘 -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 	

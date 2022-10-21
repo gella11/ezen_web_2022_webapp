@@ -1,23 +1,31 @@
 
-let websocket = null // 웹소켓 선언만
+let mid = document.querySelector('.mid').value
 
 //////////////////////////// 로 그 인  여 부 ////////////////////////////////////
 
-let mid = document.querySelector('.mid').value
-
-if(mid !== null){
-	// 1. JS 지원하는 웹소켓 클래스[new WebSocket()]
-	// f5번 누른 만큼 소켓이 생김. 방지법은 추후에 배울 것
-	// f5번 메모리는 날라감. ex)웹게임
-	websocket = new WebSocket('ws://localhost:8081/jspweb/chatting/'+mid)
-	// 3. 2번에서 구현된 메소드를 클라이언트 소켓에 대입
-	websocket.onopen    = function(e){onopen(e)}
-	websocket.onclose   = function(e){onclose(e)}
-	websocket.onmessage = function(e){onmessage(e)}
-	
-}else{
-	alert('로그인 필요합니다.')
-	location.href="../member/login.jsp"
+// 2. 웹소켓 선언 
+let clientsocket = null; 
+// 3. 접속 제어 
+if( mid != 'null'){
+	// 웹소켓에 서버소켓으로 연결[매핑]
+	clientsocket 
+	= new WebSocket('ws://localhost:8080/jspweb/chatting/'+mid);
+	// 아래에서 구현 메소드를 객체에 대입
+	clientsocket.onopen = function(e){ onopen(e) }
+	clientsocket.onclose = function(e){ onclose(e) }
+	clientsocket.onmessage = function(e){ onmessage(e) }
+	clientsocket.onerror = function(e){ onerror(e) }
+}else{ alert('로그인하고 오세요~'); location.href='../member/login.jsp'; }
+function onopen(e){ 	alert( e ) }
+function onclose(e){  	alert( e )}
+function send(){ 
+	let msg = {
+		content : document.querySelector('.msgbox').value , 
+		mid : mid , 
+		date : new Date().toLocaleTimeString() 
+	}
+	clientsocket.send( JSON.stringify(msg) )
+	document.querySelector('.msgbox').value = ''
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -34,10 +42,11 @@ function onclose  (e){alert('채팅방에 나갔습니다.'+e)}
 function send(){
 	// 보낼 데이터 객체 구성
 	let msg = {
+		type : "msg",
 		content : document.querySelector('.msgbox').value,
 		from : mid,
-		date : new Date().toLocaleTimeString() // JS 날짜 Date api에, toLocaleTimeString 시간
-		
+		date : new Date().toLocaleTimeString(), // JS 날짜 Date api에, toLocaleTimeString 시간
+		img : '개.jfif'
 	}
 	// 메시지 전송
 	// 전송 후 입력상자 초기화
@@ -60,10 +69,39 @@ function enterkey(){
 
 // 메시지 받았을 때					  
 function onmessage(e){ // e(event약자) : 서버소켓으로 부터 받은 정보 담겨져있음. 아무말 꺼도 됨.
-	console.log(e)
-	console.log(e.data)
 	let msg = JSON.parse(e.data)		// 파싱하면 JSON 형식만 가능. {키 : 값} 들만 파싱되는데. HTTP는 무조건 문자. 문자여서 안됨. 그래서 send에서 보내 줄 때 JSON형식으로 바꿔서 보내줘야 함.
-	console.log(msg+"msg")
+	
+	if(msg.type == "msg"){
+			if(msg.mid==mid){ // 본인 글
+			let html = document.querySelector('.contentbox').innerHTML
+			
+			html += '<div class="secontent my-3">' 	
+						+'<span class="date"> '+msg.date+' </span>'
+						+'<span class="content"> '+msg.content+' </span>'
+						+'</div>'
+			document.querySelector('.contentbox').innerHTML += html
+		}else{ //남의 글
+			let html = document.querySelector('.contentbox').innerHTML
+			html += +'<div class="row g-0 my-3">'
+					+'			<div class="col-sm-1 mx-2"> '
+					+'				<img width="100%;" class="rounded-circle" alt="" src="/jspweb/img/'+msg.img+'">'
+					+'			</div>'
+					+'			<div class="col-sm-9"> '
+					+'				<div class="recontent">'
+					+'					<div class="name">'+msg.mid+'</div>'
+					+'					<span class="content">'+msg.content+'</span>'
+					+'					<span class="date">'+msg.date+'</span>'
+					+'				</div>'
+					+'			</div>'
+					+'		</div>'
+			document.querySelector('.contentbox').innerHTML += html	
+		}
+	}
+	else if(msg.type =="emo"){}
+	
+	
+	
+	
 	let contentbox = document.querySelector('.contentbox')
 	// 받은 메시지를 html 꾸미기
 	let html = '<div>'
@@ -73,5 +111,40 @@ function onmessage(e){ // e(event약자) : 서버소켓으로 부터 받은 정�
 				+ '</div>'
 	contentbox.innerHTML += html
 }
+
+
+
+
+emoview()
+function emoview(){
+	html = ''
+	for(let i = 1; i<=43 ; i++){
+		html += '<img src="/jspweb/img/imoji/emo'+i+'.gif" onclick="emosend('+i+')"> '
+	}
+	document.querySelector('.dropdown-menu').innerHTML += html
+}
+
+function emosend(i){
+	alert(i + "번째 이모티콘 선택")
+	
+	let msg = {
+		type : "emo" , // 이모티콘
+		content : i , // 이미지번호
+		mid : mid, // 보낸 사람
+		date : new Date().toLocaleTimeString(),
+		img : '개.jfif'
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
