@@ -11,13 +11,16 @@ if( mid != 'null'){
 	clientsocket 
 	= new WebSocket('ws://localhost:8080/jspweb/chatting/'+mid);
 	// 아래에서 구현 메소드를 객체에 대입
-	clientsocket.onopen = function(e){ onopen(e) }
-	clientsocket.onclose = function(e){ onclose(e) }
-	clientsocket.onmessage = function(e){ onmessage(e) }
-	clientsocket.onerror = function(e){ onerror(e) }
+	clientsocket.onopen 	= function(e){ onopen(e) 	 }
+	clientsocket.onclose 	= function(e){ onclose(e) 	 }
+	clientsocket.onmessage  = function(e){ onmessage(e)  }
+	clientsocket.onerror	= function(e){ onerror(e)	 }
 }else{ alert('로그인하고 오세요~'); location.href='../member/login.jsp'; }
-function onopen(e){ 	alert( e ) }
-function onclose(e){  	alert( e )}
+
+
+function onopen(e) { alert( e ) }
+function onclose(e){ alert( e ) }
+
 function send(){ 
 	let msg = {
 		content : document.querySelector('.msgbox').value , 

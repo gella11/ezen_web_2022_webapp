@@ -68,7 +68,7 @@
 			<li> <a href="#">BEST</a> </li>
 			<li> <a href="#">트레이닝</a> </li>
 			<li> <a href="#">50% 할인</a> </li>
-			<li> <a href="#">MUSCLE-FIT</a> </li>
+			<li> <a href="/jspweb/board/api.jsp">공공데이터</a> </li>
 			<li> <a href="/jspweb/board/chatting.jsp">채팅방</a> </li>
 			<li class = "searchbox">
 				<span>
@@ -89,10 +89,20 @@
 
 
 <!-- 
+	헤더는 모든 페이지에서 열려야하기 때문에. 상대경로는 쓰지말기.
+	
 	
 	<div>	: 레이아웃, 박스권, 구역[block 한 줄 차지]
 	<span>	: inline 한 줄 차지xxxx
 	<ul>	: 글머리 리스트 순서x
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
  -->

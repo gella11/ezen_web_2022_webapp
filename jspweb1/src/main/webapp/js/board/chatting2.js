@@ -13,8 +13,11 @@ if( mid != 'null'){
 	clientsocket.onmessage = function(e){ onmessage(e) }
 	clientsocket.onerror = function(e){ onerror(e) }
 }else{ alert('로그인하고 오세요~'); location.href='../member/login.jsp'; }
+
+
 function onopen(e){ 	 }
 function onclose(e){  }
+
 function send(){
 	let msg = { // 전송할 데이터 객체
 		type : "msg" ,  // 일반메시지
@@ -26,6 +29,7 @@ function send(){
 	clientsocket.send( JSON.stringify(msg) )
 	document.querySelector('.msgbox').value = ''
 }
+
 function emosend( i ){	// 이모티콘 전송
 	let msg = {
 		type : "emo" ,  // 이모티콘
@@ -41,6 +45,7 @@ function emosend( i ){	// 이모티콘 전송
 
 
 function enterkey(){ if(window.event.keyCode == 13){ send() } }
+
 function onmessage(e){
 	let msg = JSON.parse( e.data ) // 받은 데이터 객체
 
