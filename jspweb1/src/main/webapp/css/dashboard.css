@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+*{ padding : 0px; margin : 0px; }
+
+/* 사이드 바 */
+.sidebar{
+	background-color: skyblue;
+	color: gray;
+	width: 200px;
+	position: absolute;
+	top : 0; 			/* 위에서	  0만큼 떨어짐 */
+	bottom : 0;			/* 아래에서  0만큼 떨어짐 */
+	left:-170px;
+	transition : 1s 	/* 애니메이션 효과 */
+}
+
+/* 사이드바 목록 */
+.side_menu	 { padding  : 50px; }		/* 사이드바 목록 전체 여백*/
+.side_item	 { margin 	 : 30px 0; }	/* 사이드바 목록 여백*/
+.side_menu li{ list-style: noen;}		/* 글머리 제거*/
+.sidebar h1	 {margin : 10px;}
+.side_item a {
+	color: black;
+	text-decoration: none;
+}

@@ -1,9 +1,11 @@
 package controller.member.board;
 
+import java.io.Console;
 import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Vector;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +16,7 @@ import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
+import org.apache.tomcat.util.http.fileupload.RequestContext;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -38,6 +41,8 @@ public class chatting  {
 			object.put("type", "alarm");
 			object.put("content", content);
 			return object;
+			
+			
 	   }
 	   
 	   // 알람 실제 전송 함수

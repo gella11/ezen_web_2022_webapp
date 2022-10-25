@@ -47,6 +47,30 @@ select * from board;
 insert board(bcontent) value('asdf');
 insert into board(btitle,bcontent,mno) value(1, 2, 3);
 
+
+-- 제품 카테고리 테이블
+create table pcategory(
+	pcno	int AUTO_INCREMENT primary key, 		-- 카테고리번호
+    pcname	varchar(100),							-- 카테고리이름
+    constraint pcno_pk primary key(pcno)
+);
+create table product(
+	pno			int AUTO_INCREMENT primary key,		-- 제품번호		
+    pname 		varchar(100),						-- 제품명
+    pcomment 	varchar(1000),						-- 제품 간단 설명
+	pprice		int UNSIGNED,						-- 제품가격		unsigned 사용으로 -21억~21억 >> 0~40억
+	pdiscount	float,								-- 제품할인율		
+	pacrive		tinyint,							-- 제품상태		0[준비중] 1[판매중] 2[재고없음] 
+	pimg		varchar(1000),						-- 제품이미지		대표 이미지 경로
+	pdate		datetime default now(),				-- 등록날짜		등록 날짜
+	pcno		INT,								-- 카테고리 번호	FK
+    CONSTRAINT pno_pk PRIMARY KEY (pno),
+    CONSTRAINT pcno_fk foreign key (pcno) REFERENCES pcategory (pcno)
+);
+-- 제품 테이블
+
+
+
 -- 1. 한개 테이블 검색 
 select * from member;
 -- 2. 두개 테이블 검색  [ 1번테이블 레코드수 x 2번테이블 레코드수 ]
@@ -83,11 +107,22 @@ create table reply(
     constraint rmno_fk foreign key(mno) references member(mno) on delete cascade, -- 회원 탈퇴시, 댓글도 같이 삭제
     constraint rbno_kf foreign key(bno) references  board(bno) on delete cascade -- 게시물 삭제시 댓글도 같이 삭제
 );
+
+create table api(
+	api_no int AUTO_INCREMENT PRIMARY key,
+    대표전화 VARCHAR(20) ,
+    평점 int    
+);
+
+-- csv 파일 db테이블로 가져오기
+-- 1. 해당 db 오른쪽 클릭 > table data import wizard
+
+
 select * from reply;
 select r.rcontent , r.rdate, m.mid from reply r, member m where r.mno = m.mno;
 select r.rcontent , r.rdate, m.mid from reply r, member m where r.mno = m.mno and r.bno = 4 ;
 -- 댓글만 출력
-select * from reply where rindex = 0;
+select * from reply where ri아파트매매실거래가아파트매매실거래가아파트매매실거래가ndex = 0;
 select * from reply where rindex = 1;
 -- 해당 게시물의 1번의 대댓글
 select r.rcontent , r.rdate, m.mid, r.rno from reply r, member m where r.mno = m.mno and r.bno = 6 and r.rindex = 1 order by r.rdate desc;
