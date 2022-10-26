@@ -15,8 +15,8 @@ if( mid != 'null'){
 }else{ alert('로그인하고 오세요~'); location.href='../member/login.jsp'; }
 
 
-function onopen(e){ 	 }
-function onclose(e){  }
+function onopen(e){}
+function onclose(e){}
 
 function send(){
 	let msg = { // 전송할 데이터 객체

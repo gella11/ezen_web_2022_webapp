@@ -13,7 +13,8 @@ function regist(){
 		processData : false,			// form 전송이 첨부파일있을 경우 3가지 필수 write.js참고
 		contentType : false,			// form 전송이 첨부파일있을 경우 3가지 필수 write.js참고
 		success : function(re){
-			alert('등록됐지롱')
+			if( re == 'true' ){ alert("제품등록") }
+			else			  { alert("제품등록실패") }
 		}
 	})
 }
@@ -21,7 +22,7 @@ function regist(){
 
 // 2. 첨부파일 등록(변경)했을 때 미리보기
 let pimg = document.querySelector('#pimg')
-pimg.addEventListener('change',function(e){	// e 꼭 넣어야함 e:event 객체(이벤트 정보[target] 여기선 change이벤트 , 누가 뭐를[]data])
+	pimg.addEventListener('change',function(e){	// e 꼭 넣어야함 e:event 객체(이벤트 정보[target] 여기선 change이벤트 , 누가 뭐를[]data])
 	// 1) js 파일 클래스 []
 	let file = new FileReader() // 객체생성
 	console.log(file+"는 file")

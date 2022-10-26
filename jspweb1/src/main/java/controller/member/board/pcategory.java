@@ -14,7 +14,7 @@ import org.json.simple.JSONObject;
 
 import model.dao.ProductDao;
 import model.dto.PcategoryDto;
-import model.dto.boardDto1;
+
 
 
 @WebServlet("/pcategory")

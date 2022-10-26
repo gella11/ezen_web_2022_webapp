@@ -27,7 +27,7 @@ public class rlist extends HttpServlet {
 		// 요청
 		String type = request.getParameter("type");
 		int bno = (Integer)request.getSession().getAttribute("bno");
-		request.get
+
 		
 		// DB
 		JSONArray array = new JSONArray();

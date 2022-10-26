@@ -41,8 +41,6 @@ public class chatting  {
 			object.put("type", "alarm");
 			object.put("content", content);
 			return object;
-			
-			
 	   }
 	   
 	   // 알람 실제 전송 함수
@@ -55,8 +53,8 @@ public class chatting  {
 	   
 	   
 		// 3가지 메소드
-		@OnOpen			// 1. 접속 /// 웹소켓이 들어왔을 때	
-		public void OnOpen(Session session , @PathParam("mid")String mid ) throws IOException { //@PathParam : 경로상의 변수 호출
+		@OnOpen	// 1. 접속 /// 웹소켓이 들어왔을 때	//@PathParam : 경로상의 변수 호출
+		public void OnOpen(Session session , @PathParam("mid")String mid ) throws IOException { 
 			sendmsg(jsonAlarm( mid+"님이 들어왔습니다."));			
 			clients.put(session, mid); // 접속된 클라이언트 소켓을 저장
 			
