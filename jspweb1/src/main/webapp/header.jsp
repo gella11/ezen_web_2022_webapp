@@ -44,13 +44,17 @@
 			
 			
 			<ul class="hd_sub"><!--  상단 메뉴 -->
-			<% if(loginid == null){ // 세션이 없다 --> 로그인 안햇다 %>
-				<li> <a href="/jspweb/member/login.jsp" > 로그인 </a> </li>
-				<li> <a href="/jspweb/member/signup.jsp" > 회원가입 </a> </li>
-			<%}else{ // 세션이 존재한다. --> 로그인 했다. %>
-				<li> <%=loginid %>님 안녕하세요 <li>
+			<% if( loginid == null ){ %>
+				<li> <a href="/jspweb/member/login.jsp">로그인</a> </li>
+				<li> <a href="/jspweb/member/signup.jsp">회원가입</a></li>
+
+			<%	}else if( loginid.equals("admin") ){  %> <!-- 로그인된 아이디가 admin이면 보이는 메뉴 -->
+				<li> <a href="/jspweb/admin/dashboard.jsp">관리자모드</a> </li>
+			<!-- 로그인 메뉴  // 세션이 존재한다.    로그인 했다..  -->
+			<%	}else{  %>
+				<li> <%=loginid %>님 안녕하세요 </li>
 				<li> <a href="/jspweb/member/logout.jsp"> 로그아웃 </a> </li>
-			<%	} %>
+			<%  }	 %>
 				<li> <a href="/jspweb/member/info.jsp" > 마이쇼핑</a> </li>
 				<li> <a href="/jspweb/board/list.jsp" > 고객센터 </a> </li>	
 			</ul>

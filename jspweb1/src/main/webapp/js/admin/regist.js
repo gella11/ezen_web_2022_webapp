@@ -13,7 +13,7 @@ function regist(){
 		processData : false,			// form 전송이 첨부파일있을 경우 3가지 필수 write.js참고
 		contentType : false,			// form 전송이 첨부파일있을 경우 3가지 필수 write.js참고
 		success : function(re){
-			if( re == 'true' ){ alert("제품등록") }
+			if( re == 'true' ){ alert("제품등록"); pagechage('regist.jsp')}
 			else			  { alert("제품등록실패") }
 		}
 	})

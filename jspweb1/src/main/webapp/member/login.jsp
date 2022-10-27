@@ -11,11 +11,11 @@
 	<%@include file="../header.jsp" %>
 	<div class="webbox">
 		<h3> 로그인 페이지[form (동기식) 전송] </h3>			
-		<form action="/jspweb/member/login" method="post">	
+		<!-- <form action="/jspweb/member/login" method="post">	
 			아이디 	: <input type="text" 	 name = "mid">				<br>
 			비밀번호 	: <input type="password" name = "mpassword">		<br>
 			<input type="submit" value="로그인">
-		</form>
+		</form> -->
 		
 		<h3> 로그인 페이지[js ajax(비동기식)전송] </h3>	
 			아이디 	: <input type="text" 	 id = "mid">				<br>
