@@ -4,7 +4,7 @@ getproduct()
 function getproduct(){
 	$.ajax({
 		url :"/jspweb/regist" ,
-		data : { "type" : 1 } , 
+		data : { "type" : 1 , "option" : "all" } , 
 		type : "get", 
 		success : function( re ){
 			let json = JSON.parse( re )
@@ -29,7 +29,7 @@ function getproduct(){
 					     	'<td>'+l.pno+'</td>'+
 						  	'<td>'+l.pname+'</td>'+
 			              	'<td>'+l.pcomment+'</td>'+
-						 	'<td>'+l.pprice+'</td>'+
+						 	'<td>'+l.pprice.toLocaleString('ko-KR')+'</td>'+
 							'<td>'+l.pdiscount+'</td>'+
 							'<td>'+l.pactive+'</td>'+
 							'<td>'+img2+'</td>'+

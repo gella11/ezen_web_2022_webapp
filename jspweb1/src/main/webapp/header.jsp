@@ -28,7 +28,7 @@
 		<div class="hd_top">
 			<div><!--  로고 -->
 				<span class="hd_title">
-					<a href="/jspweb/index.jsp">Ezen shop</a>
+					<a class="nav-link"	href="/jspweb/index.jsp">Ezen shop</a>
 				</span>
 			</div>
 			
@@ -45,35 +45,35 @@
 			
 			<ul class="hd_sub"><!--  상단 메뉴 -->
 			<% if( loginid == null ){ %>
-				<li> <a href="/jspweb/member/login.jsp">로그인</a> </li>
-				<li> <a href="/jspweb/member/signup.jsp">회원가입</a></li>
+				<li> <a class="nav-link" href="/jspweb/member/login.jsp">로그인</a> </li>
+				<li> <a class="nav-link" href="/jspweb/member/signup.jsp">회원가입</a></li>
 
 			<%	}else if( loginid.equals("admin") ){  %> <!-- 로그인된 아이디가 admin이면 보이는 메뉴 -->
-				<li> <a href="/jspweb/admin/dashboard.jsp">관리자모드</a> </li>
+				<li> <a class="nav-link" href="/jspweb/admin/dashboard.jsp">관리자모드</a> </li>
 			<!-- 로그인 메뉴  // 세션이 존재한다.    로그인 했다..  -->
 			<%	}else{  %>
 				<li> <%=loginid %>님 안녕하세요 </li>
-				<li> <a href="/jspweb/member/logout.jsp"> 로그아웃 </a> </li>
+				<li> <a class="nav-link" href="/jspweb/member/logout.jsp"> 로그아웃 </a> </li>
 			<%  }	 %>
-				<li> <a href="/jspweb/member/info.jsp" > 마이쇼핑</a> </li>
-				<li> <a href="/jspweb/board/list.jsp" > 고객센터 </a> </li>	
+				<li> <a class="nav-link" href="/jspweb/member/info.jsp" > 마이쇼핑</a> </li>
+				<li> <a class="nav-link" href="/jspweb/board/list.jsp" > 고객센터 </a> </li>	
 			</ul>
 		</div>	
 	
 		
 		<ul class="hd_menu"><!-- 하단 헤더 -->
-			<li> <a href="#">BIG SIZE</a> </li>
-			<li> <a href="#">1+1 이벤트</a> </li>
-			<li> <a href="#">아우터</a> </li>
-			<li> <a href="#">상의</a> </li>
-			<li> <a href="#">바지</a> </li>
-			<li> <a href="#">슈즈</a> </li>
-			<li> <a href="#">악세사리</a> </li>
-			<li> <a href="#">BEST</a> </li>
-			<li> <a href="#">트레이닝</a> </li>
-			<li> <a href="#">50% 할인</a> </li>
-			<li> <a href="/jspweb/board/api.jsp">공공데이터</a> </li>
-			<li> <a href="/jspweb/board/chatting.jsp">채팅방</a> </li>
+			<li> <a class="nav-link" href="#">BIG SIZE</a> </li>
+			<li> <a class="nav-link" href="#">1+1 이벤트</a> </li>
+			<li> <a class="nav-link" href="#">아우터</a> </li>
+			<li> <a class="nav-link" href="#">상의</a> </li>
+			<li> <a class="nav-link" href="#">바지</a> </li>
+			<li> <a class="nav-link" href="#">슈즈</a> </li>
+			<li> <a class="nav-link" href="#">악세사리</a> </li>
+			<li> <a class="nav-link" href="#">BEST</a> </li>
+			<li> <a class="nav-link" href="#">트레이닝</a> </li>
+			<li> <a class="nav-link" href="#">50% 할인</a> </li>
+			<li> <a class="nav-link" href="/jspweb/board/api.jsp">공공데이터</a> </li>
+			<li> <a class="nav-link" href="/jspweb/board/chatting.jsp">채팅방</a> </li>
 			<li class = "searchbox">
 				<span>
 					<input>
@@ -86,6 +86,8 @@
 	
 	<!-- JQUERY 라이브러리 -->
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<!-- 부트스트랩 js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 	
 	
 </body>

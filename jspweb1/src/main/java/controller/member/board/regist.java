@@ -33,8 +33,11 @@ public class regist extends HttpServlet {
 				String type = request.getParameter("type");
 				response.setCharacterEncoding("UTF-8");
 		if( type.equals("1") ) {
+			
+			// all : 모든 제품 출력	  pactive1 : 판매중 모든 제품 출력
+			String option = request.getParameter("option");
 			//////////////////////////////////////////// 모든 제품 출력 //////////////////////////
-			ArrayList<ProductDto> list  = new ProductDao().getProductlist();// DAO 처리 
+			ArrayList<ProductDto> list  = new ProductDao().getProductlist(option);// DAO 처리 
 			JSONArray array = new JSONArray(); 	// LIST -> JSON
 			for( int i = 0 ; i<list.size() ; i++ ) {
 				JSONObject object  = new JSONObject();
