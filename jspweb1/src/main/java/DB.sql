@@ -17,6 +17,7 @@ create table member(
 -- 특정 필드 삽입 : insert into
 -- 모든 필드 삽입 : insert into
 insert into member values( null , "aa" , "aa", "aa" , "aa" , "aa" , "aa" , null , 0 );
+insert into member values( null , "admin" , "aa", "aa" , "aa" , "aa" , "aa" , null , 0 );
 insert into member values( null , "a" , "b", "c" , "d" , "e" , "f" , null , 0 );
 insert into member values( null , "1" , "2", "3" , "4" , "5" , "aa" , null , 0 );
 select * from member;
@@ -49,26 +50,40 @@ insert into board(btitle,bcontent,mno) value(1, 2, 3);
 
 
 -- 제품 카테고리 테이블
+drop table if exists pcategory;
 create table pcategory(
-	pcno	int AUTO_INCREMENT primary key, 		-- 카테고리번호
+	pcno	int AUTO_INCREMENT, 		-- 카테고리번호
     pcname	varchar(100),							-- 카테고리이름
     constraint pcno_pk primary key(pcno)
 );
+
+create table ppp(
+	aaa int AUTO_INCREMENT PRIMARY key,
+    bbb int,
+    ccc int
+);
+select * from ppp;
+
+insert ppp(ccc)  value(6);
+update ppp as p set  p.bbb = p.aaa;
+
+
+drop table if exists product;
 create table product(
-	pno			int AUTO_INCREMENT primary key,		-- 제품번호		
+	pno			int AUTO_INCREMENT,		-- 제품번호		
     pname 		varchar(100),						-- 제품명
     pcomment 	varchar(1000),						-- 제품 간단 설명
 	pprice		int UNSIGNED,						-- 제품가격		unsigned 사용으로 -21억~21억 >> 0~40억
 	pdiscount	float,								-- 제품할인율		
-	pacrive		tinyint,							-- 제품상태		0[준비중] 1[판매중] 2[재고없음] 
+	pactive		tinyint,							-- 제품상태		0[준비중] 1[판매중] 2[재고없음] 
 	pimg		varchar(1000),						-- 제품이미지		대표 이미지 경로
 	pdate		datetime default now(),				-- 등록날짜		등록 날짜
 	pcno		INT,								-- 카테고리 번호	FK
     CONSTRAINT pno_pk PRIMARY KEY (pno),
     CONSTRAINT pcno_fk foreign key (pcno) REFERENCES pcategory (pcno)
 );
--- 제품 테이블
-
+SELECT * from pcategory;
+select * from product;
 
 
 -- 1. 한개 테이블 검색 
@@ -118,11 +133,42 @@ create table api(
 -- 1. 해당 db 오른쪽 클릭 > table data import wizard
 
 
+-- 제품별 사이즈별 테이블 : 제품별 [pno] 사이즈[psize]
+drop table if exists productsize;
+create table productsize(
+	psno int AUTO_INCREMENT,
+    psize varchar(100),
+    pno int,
+    CONSTRAINT psno_pk PRIMARY KEY (psno),
+    CONSTRAINT pno_fk FOREIGN KEY(pno) REFERENCES product(pno)
+);
+
+-- 사이즈별 색상재고 테이블 : 사이즈별[psno] 색상[pcolor] 재고[pstock]
+drop table if exists productstock;
+create table productstock(
+	pstno int AUTO_INCREMENT,
+    pcolor varchar(100),
+    pstock int,
+    psno int,
+    CONSTRAINT pstno_pk PRIMARY KEY(pstno),
+    CONSTRAINT psno_fk FOREIGN KEY(psno) REFERENCES productsize(psno)
+);
+-- 재고 등록 sql
+insert into productsize( psize, pno ) values(? , ?);
+-- 색상 재고 등록 sql
+insert into productstock(pclor , pstock, psno) values (?,?,?);
+-- 제품별 재고 출력
+select ps.psno, ps.psize, pst.pstno , pst.pcolor, pst.stock
+from productsize ps , productstock pst
+where ps.psno = pst.psno and ps.pno = ? order by ps.psize desc;
+
+
+
 select * from reply;
 select r.rcontent , r.rdate, m.mid from reply r, member m where r.mno = m.mno;
 select r.rcontent , r.rdate, m.mid from reply r, member m where r.mno = m.mno and r.bno = 4 ;
 -- 댓글만 출력
-select * from reply where ri아파트매매실거래가아파트매매실거래가아파트매매실거래가ndex = 0;
+select * from reply where rindex = 0;
 select * from reply where rindex = 1;
 -- 해당 게시물의 1번의 대댓글
 select r.rcontent , r.rdate, m.mid, r.rno from reply r, member m where r.mno = m.mno and r.bno = 6 and r.rindex = 1 order by r.rdate desc;

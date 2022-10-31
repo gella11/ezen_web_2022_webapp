@@ -71,7 +71,7 @@ public class chatting  {
 		
 		@OnMessage		// 웹소켓에 메시지 왔을 때
 		public void onMessage(Session session, String msg) throws IOException {
-			System.out.println(msg);
+			System.out.println(msg+"ㄴㄴㄴㄴㄴ");
 			for(Session s : clients.keySet() ) {
 				// 접속된 클라이언트 소켓을  하나씩 호출
 				// 클라이언트 소켓들에게 메시지를 다 보내기
