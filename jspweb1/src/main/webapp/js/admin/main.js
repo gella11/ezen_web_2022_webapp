@@ -15,7 +15,7 @@ function getpactive1(){
 				console.log(img2)
 				let aaa = p.pdiscount
 				html +=  '<div class="item">								'+
-			'				<a href="#"> 									'+
+			'				<a href="/jspweb/product/view.jsp?pno='+p.pno+'">'+
 			'					'+img2+'									'+
 			'				</a>											'+
 			'				<div class="item_info">							'+
@@ -26,7 +26,7 @@ function getpactive1(){
 			'					<div class="item_price">'+p.pprice+' </div>	'+
 			'					<div>										'+
 			'						<span class="item_sale"> '+(p.pprice-(p.pprice*(p.pdiscount/100)))+' </span> '+
-			'						<span class="item_discount">  '+aaa.toLocalString('ko-KR')+' %</span>			'+
+			'						<span class="item_discount">  '+p.pdiscount+' %</span>			'+
 			'					</div>														'+
 			'					<div class="item_review"> 찜수 9999+ 리뷰수 9999+ </div> 		'+
 			'				</div>															'+
