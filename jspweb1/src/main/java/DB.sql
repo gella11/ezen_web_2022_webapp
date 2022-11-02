@@ -1,174 +1,122 @@
-drop database if exists jspweb;
-create database jspweb;
-use jspweb;
+drop database if exists bank;
 
-create table member(
-	mno			int auto_increment primary key,
-	mid 		varchar(100),
-    mpassword 	varchar(100),
-    mname		varchar(100),
-    mphone		varchar(100),
-    memail		varchar(100),
-    maddress	varchar(100),
-    mdate		datetime default now(),	-- default 레코드 추가시 기본으로 들어가는 값 설정
-										-- datetime default now() 현재 시스템(DB)의 자동 날짜
-	mpint		int default 0
-);
--- 특정 필드 삽입 : insert into
--- 모든 필드 삽입 : insert into
-insert into member values( null , "aa" , "aa", "aa" , "aa" , "aa" , "aa" , null , 0 );
-insert into member values( null , "admin" , "aa", "aa" , "aa" , "aa" , "aa" , null , 0 );
-insert into member values( null , "a" , "b", "c" , "d" , "e" , "f" , null , 0 );
-insert into member values( null , "1" , "2", "3" , "4" , "5" , "aa" , null , 0 );
-select * from member;
+create database bank;
+use bank;
 
-drop table if exists category;
-create table category(
-	cno int auto_increment primary key,
-    cname varchar(100)
+drop table if exists customer;
+create table customer(
+	a_no int auto_increment primary key,		-- 고유번호
+	name char(10),							-- 이름
+    phone char(13),							-- 핸드폰
+    address text,							-- 주소
+    lockpassword text,						-- 암호화된 비밀번호
+    account char(15),						-- 계좌
+    depositmoney DECIMAL(15,2) ,	-- 잔고
+    haveloan int default 0,					-- 대출개수
+    errorcount	tinyint default 0							-- 로그인 오류횟수
 );
 
-drop table if exists board;
-CREATE TABLE board(
-	bno			int auto_increment primary key,  -- 번호  	
-    btitle		varchar(1000), 		-- 제목 		
-    bcontent	longtext ,			-- 내용
-    bfile		longtext ,			-- 첨부파일 [ 게시물 1개당 첨부파일 1개 ]
-    bdate 		datetime default now()	,	-- 작성일 : 기본값 현재 DB서버 시스템 날짜 
-    bview		int default 0 ,				-- 조회수 : 기본값 0 
-    cno			int ,				-- 카테고리번호 FK 
-    mno 		int	,				-- 작성자 
-    constraint bcno_fk foreign key (cno) references category(cno) ,
-    constraint bmno_fk foreign key (mno) references member(mno) 
-);
-select * from board;
--- foreign key (mno) reference member(mno)
-alter table board modify bdate date;
-select * from board;
-insert board(bcontent) value('asdf');
-insert into board(btitle,bcontent,mno) value(1, 2, 3);
-
-
--- 제품 카테고리 테이블
-drop table if exists pcategory;
-create table pcategory(
-	pcno	int AUTO_INCREMENT, 		-- 카테고리번호
-    pcname	varchar(100),							-- 카테고리이름
-    constraint pcno_pk primary key(pcno)
+drop table if exists securecard;
+create table securecard(
+	s_no int auto_increment primary key,
+    secure1 char(4), secure2 char(4), secure3 char(4), secure4 char(4), secure5 char(4),
+    secure6 char(4), secure7 char(4), secure8 char(4), secure9 char(4), secure10 char(4),
+    secure11 char(4), secure12 char(4), secure13 char(4), secure14 char(4), secure15 char(4),
+	secure16 char(4), secure17 char(4), secure18 char(4), secure19 char(4), secure20 char(4),
+    secure21 char(4), secure22 char(4), secure23 char(4), secure24 char(4), secure25 char(4),
+    secure26 char(4), secure27 char(4), secure28 char(4), secure29 char(4), secure30 char(4),
+    a_no int,
+   foreign key ( a_no ) references customer ( a_no )   
+    
 );
 
-create table ppp(
-	aaa int AUTO_INCREMENT PRIMARY key,
-    bbb int,
-    ccc int
-);
-select * from ppp;
 
-insert ppp(ccc)  value(6);
-update ppp as p set  p.bbb = p.aaa;
-
-
-drop table if exists product;
-create table product(
-	pno			int AUTO_INCREMENT,		-- 제품번호		
-    pname 		varchar(100),						-- 제품명
-    pcomment 	varchar(1000),						-- 제품 간단 설명
-	pprice		int UNSIGNED,						-- 제품가격		unsigned 사용으로 -21억~21억 >> 0~40억
-	pdiscount	float,								-- 제품할인율		
-	pactive		tinyint,							-- 제품상태		0[준비중] 1[판매중] 2[재고없음] 
-	pimg		varchar(1000),						-- 제품이미지		대표 이미지 경로
-	pdate		datetime default now(),				-- 등록날짜		등록 날짜
-	pcno		INT,								-- 카테고리 번호	FK
-    CONSTRAINT pno_pk PRIMARY KEY (pno),
-    CONSTRAINT pcno_fk foreign key (pcno) REFERENCES pcategory (pcno)
-);
-SELECT * from pcategory;
-select * from product;
-
-
--- 1. 한개 테이블 검색 
-select * from member;
--- 2. 두개 테이블 검색  [ 1번테이블 레코드수 x 2번테이블 레코드수 ]
-select * from member , board;
--- 3. 조건 [ pk-fk 일치 한 경우만 표시 ]
-select * from member , board where member.mno = board.mno;
--- 4. 표시할 필드 선택 
-select b.bno , b.btitle , b.bcontent , b.bfile , b.bdate , b.bview , b.cno , b.mno , m.mid from member m , board b where m.mno = b.mno;
--- 5. 모든 글출력 
-select b.* , m.mid from member m , board b where m.mno = b.mno;
--- 5. 개별 글출력 
-select b.* , m.mid from member m , board b where m.mno = b.mno and bno = 1; -- 게시물번호 
-select b.* , m.mid from member m , board b where m.mno = b.mno;
-
-select count(*) from board;
-select * from board limit 0,3;
-select * from board order by bdate desc;
-select * from board order by bdate desc limit 0,3;
-select b.* , m.mid from member m , board b where m.mno = b.mno order by b.bdate desc limit 3 , 3;
-select b.* , m.mid from member m , board b where m.mno = b.mno and  m.mid like 'q' order by b.bdate desc limit 0,3;
-select count(*) from member m , board b where m.mno = b.mno;
-
-
-
-drop table if exists reply;
-create table reply(
-	rno			int auto_increment,
-    rcontent 	varchar(1000) not null,
-    rdate 		datetime default now(),
-    rindex		int default 0,	-- [ 0 상위댓글 , 숫자 : 상위댓글의 번호  들여쓰기 정도 ]
-    mno			int not null, -- 회원번호
-    bno			int not null,
-    constraint rno_pk primary key(rno),
-    constraint rmno_fk foreign key(mno) references member(mno) on delete cascade, -- 회원 탈퇴시, 댓글도 같이 삭제
-    constraint rbno_kf foreign key(bno) references  board(bno) on delete cascade -- 게시물 삭제시 댓글도 같이 삭제
+drop table if exists saving;
+create table saving(
+	s_no int AUTO_INCREMENT PRIMARY key,
+    s_name char(30),
+    s_content text,
+    s_rate int,
+    s_limit int,
+    s_month int
 );
 
-create table api(
-	api_no int AUTO_INCREMENT PRIMARY key,
-    대표전화 VARCHAR(20) ,
-    평점 int    
+drop table if exists personalsaving;
+create table personalsaving(
+	ps_num int AUTO_INCREMENT PRIMARY key,
+    s_no int,
+    s_account VARCHAR(30),
+    s_sdate varchar(30),
+    s_edate VARCHAr(30),
+    s_month VARchar(30),
+    s_repay tinyint default 0,
+    s_pay int,
+    a_no int,
+    foreign key ( a_no ) references customer ( a_no ),
+    foreign key ( s_no ) references saving ( s_no )  
 );
 
--- csv 파일 db테이블로 가져오기
--- 1. 해당 db 오른쪽 클릭 > table data import wizard
 
+drop table if exists loan;
+create table loan(
+	l_no int auto_increment primary key, 	-- 대출상품번호
+    lname char(30),							-- 대출상품명
+    lcontent text,							-- 상품내용
+    limitmoney int,							-- 대출한도
+    rate DECIMAL(5,5),							-- 이자율
+    ltime int  						-- 대출기간
+);
+-- 보안카드 일련번호는 일단 보류
 
--- 제품별 사이즈별 테이블 : 제품별 [pno] 사이즈[psize]
-drop table if exists productsize;
-create table productsize(
-	psno int AUTO_INCREMENT,
-    psize varchar(100),
-    pno int,
-    CONSTRAINT psno_pk PRIMARY KEY (psno),
-    CONSTRAINT pno_fk FOREIGN KEY(pno) REFERENCES product(pno)
+drop table if exists personalloan;
+create table personalloan(
+	lbalance DECIMAL(15,2),				-- 대출잔액
+    loan int, 					-- 대출금
+	ldate date default (current_date) ,	-- 닙부일
+	repay tinyint default 0, -- 정산 제대로 됐는지 0이면 정상 1 1달밀림 ~~~~
+	a_no int,			-- 고유번호
+	l_no int,			-- 대출상품번호
+	foreign key ( a_no ) references customer ( a_no ),
+    foreign key ( l_no ) references loan ( l_no )   
 );
 
--- 사이즈별 색상재고 테이블 : 사이즈별[psno] 색상[pcolor] 재고[pstock]
-drop table if exists productstock;
-create table productstock(
-	pstno int AUTO_INCREMENT,
-    pcolor varchar(100),
-    pstock int,
-    psno int,
-    CONSTRAINT pstno_pk PRIMARY KEY(pstno),
-    CONSTRAINT psno_fk FOREIGN KEY(psno) REFERENCES productsize(psno)
+drop table if exists chattingroom;
+create table chattingroom(
+	c_room int AUTO_INCREMENT PRIMARY key,
+    name char(10)
 );
--- 재고 등록 sql
-insert into productsize( psize, pno ) values(? , ?);
--- 색상 재고 등록 sql
-insert into productstock(pclor , pstock, psno) values (?,?,?);
--- 제품별 재고 출력
-select ps.psno, ps.psize, pst.pstno , pst.pcolor, pst.stock
-from productsize ps , productstock pst
-where ps.psno = pst.psno and ps.pno = ? order by ps.psize desc;
+
+drop table if exists chatting;
+create table chatting(
+	c_no int AUTO_INCREMENT PRIMARY key,
+    c_room int,
+    name char(10),
+    account char(15),
+    c_content text,
+    c_date date default (current_date),
+     foreign key ( c_room ) references chattingroom ( c_room )   
+);
 
 
 
-select * from reply;
-select r.rcontent , r.rdate, m.mid from reply r, member m where r.mno = m.mno;
-select r.rcontent , r.rdate, m.mid from reply r, member m where r.mno = m.mno and r.bno = 4 ;
--- 댓글만 출력
-select * from reply where rindex = 0;
-select * from reply where rindex = 1;
--- 해당 게시물의 1번의 대댓글
-select r.rcontent , r.rdate, m.mid, r.rno from reply r, member m where r.mno = m.mno and r.bno = 6 and r.rindex = 1 order by r.rdate desc;
+
+-- 관리자아이디
+insert customer(a_no , name, lockpassword,account) values(1, 'admin', 276974741728212199276974741728212199276974741728212199276974741728212199 , '1');
+select * from customer;
+select * from securecard;
+select * from loan;
+select * from personalloan;
+
+--   update personalloan set loan = 10000 where a_no = 2;
+--   update personalloan set loan = 50000 where a_no = 3;
+-- update
+--	personalloan as p ,
+--	customer as c,
+--	loan as l
+-- set
+--	 p.lbalance = p.lbalance -( p.loan / l.ltime),
+--	 c.depositmoney = c.depositmoney-(p.loan / l.ltime)-(p.loan * l.rate)
+-- where p.l_no = l.l_no  -- and c.depositmoney > c.depositmoney-(p.loan / l.ltime)-(p.loan * l.rate)
+
+
+
