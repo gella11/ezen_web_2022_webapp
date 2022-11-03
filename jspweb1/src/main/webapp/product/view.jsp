@@ -110,7 +110,7 @@
 						<!-- 장바구니 / 찜하기 / 바로구매 -->
 						<div class="btnbox">
 							<button id="btn1"> 바로 구매 </button>
-							<button id="btn2"> 장바구니 담기 </button>
+							<button id="btn2" class="btncart">장바구니 담기</button>
 							<button id="btn3" class="btnlike"> 찜하기 ☆ </button>	<!-- 로그인 전용 -->
 						</div>
 					</div>
