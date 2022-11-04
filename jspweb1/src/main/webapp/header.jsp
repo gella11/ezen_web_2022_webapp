@@ -79,7 +79,7 @@
 					<input>
 					<i class="fas fa-search"></i>
 				</span>
-				<i class="fas fa-cart-plus"></i>
+				<i href="/jspweb/board/chatting.jsp" class="fas fa-cart-plus"></i>
 			</li>
 		</ul>
 	</div>

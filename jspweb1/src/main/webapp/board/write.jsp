@@ -29,22 +29,6 @@
 	<div class="webbox"> 
 		<h3> 글쓰기 </h3>
 		
-		<!-- 1.from(동기식 페이지전환) 쓸지 2.ajax(동기식/비동기식) 쓸지 선택 -->
-		
-		<!-- 폼방식 -->
-		<!-- <form method="get" action="/jspweb/board/write">
-			제목 : <input type="text" name="btitle">
-			내용 : <input type="text" name="content">
-			<button type="submit"> 쓰기 </button>
-		</form> -->
-		
-		<!-- 
-			form의 인코딩 기본 타입 enctype = "블라블라"
-			<form enctype="application/x-www-form-urlencoded">
-			
-			form 인코딩 타입을 변화하려면 직접 여기에 써도 됨
-			<form enctype="multipart/form-data">		
-		-->
 		<form enctype="application/x-www-form-urlencoded">
 			제목 : <input type="text" name="btitle"> <br>
 			
