@@ -169,11 +169,11 @@ function sethtmlprint(){
 			
 		}else{ // 1. 할인이 있을때						[ 반올림(소수점버리고 반올림) : Math.round( 데이터 ) ]
 			
-			psale = product.pprice -( product.pprice * product.pdiscount )
+			psale = product.pprice -( product.pprice / product.pdiscount )
 			phtml +=
-				'<span class="pdiscount">'+ Math.round( product.pdiscount * 100 )+'%</span>'+
+				'<span class="pdiscount">'+ Math.round( product.pdiscount)+'%</span>'+
 				'<span class="pprice">'+( product.pprice.toLocaleString() )+'원</span>'+
-				'<span class="psale">'+ psale.toLocaleString() +'원</span>'
+				'<span class="psale">'+   (product.pprice-Math.round(product.pprice /product.pdiscount)).toLocaleString()+'원</span>'
 				
 		}
 		document.querySelector('.pricebox').innerHTML = phtml 
@@ -224,6 +224,8 @@ function print(){
 	
 	productlist.forEach( ( p , i  ) => {
 		let tsale = psale * p.amount	// 판매가 * 수량 
+		console.log(psale)
+		console.log(p.amount)
 		let tpoint = Math.round(tsale * 0.01)		// (판매가 * 수량)  * 1%
 		
 		totalprice += tsale		// 각 옵션별 판매가를 전체판매가에 누적 더하기

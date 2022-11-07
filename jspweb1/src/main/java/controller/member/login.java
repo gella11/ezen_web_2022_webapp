@@ -22,7 +22,7 @@ public class login extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		System.out.println("asdasdasdasd");
 		// ----------- ajax -------------
 			// js ajax에게 변수 요청
 			String mid = request.getParameter("mid");

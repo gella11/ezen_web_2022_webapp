@@ -2,9 +2,10 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
+<head profile="http://www.w3.org/2005/10/profile">
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
 	
@@ -30,7 +31,8 @@
 		</ul>
 			
 	</div>
-	
+	<script  src="../../Jquery/prettify.js"></script>
+	<script  src="../Jquery/jquery.multiselect.js"></script>
 	<script type="text/javascript" src="../js/member/login.js"></script>
 	
 </body>
