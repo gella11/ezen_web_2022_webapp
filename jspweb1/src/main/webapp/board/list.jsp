@@ -57,10 +57,7 @@
 			</select>
 		</div>
 		<table class="btable table">
-			<tr>
-				<th> 번호 </th> <th> 제목 </th> <th>작성자</th> 
-				<th> 작성일 </th> <th> 조회수 </th>
-			</tr>
+			
 		</table>
 		
 		<div class="pagebox">

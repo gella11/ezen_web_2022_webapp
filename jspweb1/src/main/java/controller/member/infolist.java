@@ -25,29 +25,25 @@ public class infolist extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String mid = (String)request.getSession().getAttribute("mid");
+		MemberDto dto =	MemberDao.getInstance().getinfo( mid );
 		
-		ArrayList<MemberDto> list = MemberDao.getInstance().getinfolist();
-		//Dto ---> json
-		//JSONObject를 여러개 담을 수 있는 JSON리스트 선언
-		JSONArray array = new JSONArray();
-		for(MemberDto dto : list) {
-			// JSONObject 생성
-			JSONObject object = new JSONObject();
-			// JSONObject 에 엔트리[정보] 담기
-			object.put("mno", dto.getMno() );
-			object.put("mid", dto.getMid() );
-			object.put("mname", dto.getMname() );
-			object.put("mphone", dto.getMphone() );
-			object.put("memail", dto.getMemail() );
-			object.put("maddress", dto.getMaddress() );
-			object.put("mdate", dto.getMdate() );
-			object.put("mpint", dto.getMpint() );
-			array.add(object); // JSONObject 객체를 리스트에 담기
-		}
-		
+		// *** JS는 DTO를 사용하지 않습니다. 그래서 js 이해할수 있는걸로 변환합니다. 
+			// 1. js 이해할수 있는 형식 변경 [ JSON 형식 ]
+			// 2. DTO ---> JSON 형식 [ JAVA 제공X -> 외부라이브러리 json.simple 적용 ]
+		JSONObject object = new JSONObject();		
+			object.put( "mno", dto.getMno() );
+			object.put( "mid", dto.getMid() );
+			object.put( "mname", dto.getMname() );
+			object.put( "mphone", dto.getMphone() );
+			object.put( "memail", dto.getMemail() );
+			object.put( "maddress", dto.getMaddress() );
+			object.put( "mdate", dto.getMdate() );
+			object.put( "mpoint", dto.getMpint() );
+		// 3. 응답 
 		response.setCharacterEncoding("UTF-8");
-		response.getWriter().print(array);
-		
+		response.getWriter().print( object );
+		System.out.println(object);
 		
 		
 	}

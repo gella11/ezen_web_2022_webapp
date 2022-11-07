@@ -20,6 +20,7 @@ public class update extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
 		// 누구를 수정할껀지 식별 데이터 필요 == 로그인 정보 == 세션 = 'mid'
 				String mid = (String)request.getSession().getAttribute("mid");
 				// 수정할 내용

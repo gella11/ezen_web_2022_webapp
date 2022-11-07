@@ -23,7 +23,6 @@ public class viewload extends HttpServlet {
     public viewload() {super();    }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		
 		// 요청 [클릭한 게시물의 번호 저장 .  backend에 저장]
 		// *세션 : 웹서버에 저장할 수 있는 메모리 공간
 		// 브라우저 마다 할당이 됨.

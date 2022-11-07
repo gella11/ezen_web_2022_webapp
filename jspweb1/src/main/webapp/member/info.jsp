@@ -86,74 +86,7 @@
 		</div>
 		</form>
 	</div>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<!--  본문  -->
-	<div class="webbox">
-		<h3> 회원 정보 </h3>
-		
-		<button onclick="viewdelete()"> 회원탈퇴 </button>
-		<div id="deletebox"></div>
-		
-		<table>
-			<tr>
-				<td> 회원번호 </td> <td id="mno"> </td>
-			</tr>
-			<tr>
-				<td> 아이디 </td> <td id="mid">  </td>
-			</tr>
-			<tr>
-				<td> 이름 </td> <td id="mnmae">  </td>
-			</tr>
-			<tr>
-				<td> 전화번호 </td> <td id="mphone"> </td>
-			</tr>
-			<tr>
-				<td> 이메일 </td> <td id="memail"> </td>
-			</tr>
-			<tr>
-				<td> 주소 </td> <td id="maddress"> </td>
-			</tr>
-			<tr>
-				<td> 가입날짜 </td> <td id="mdate"> </td>
-			</tr>
-			<tr>
-				<td> 포인트 </td> <td id="mpint">  </td>
-			</tr>
-		</table>
-	</div>
-	
-	<div class="webbox">
-		<h3> 회원 목록</h3>
-		<table id="boardlisttable">
-			<tr>
-				<th>번호</th>
-				<th>아이디</th>
-				<th>이름</th>
-				<th>폰</th>
-				<th>이메일</th>
-				<th>주소</th>
-				<th>날짜</th>
-				<th>포인트</th>
-			</tr>
-		</table>
-		
-	</div>
-	
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript" src="../js/member/info.js"></script>
 
 </body>

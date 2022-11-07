@@ -24,7 +24,7 @@ function rlist(){
 					async : false,
 					success : function(re){
 						let rereplylist = JSON.parse(re)
-							html += '<div>' +
+							html += '<div>' 
 										+ '<span>'+reply.rcontent+'</span>' 	 
 										+ '<span>'+reply.rdate+'</span>' 		 
 										+ '<span>'+reply.mid+'</span>' 		 

@@ -4,6 +4,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import model.dto.CartDto;
+import model.dto.OrderDto;
 import model.dto.PcategoryDto;
 import model.dto.ProductDto;
 import model.dto.StockDto;
@@ -253,7 +254,41 @@ public class ProductDao extends Dao{
 			}catch (Exception e) {System.out.println(e);} return list;
 		}
 
-
+		
+		
+		//13.
+		public boolean setOrder(ArrayList<OrderDto> list) {
+			// 1. 주문 레코드 생성
+			// 2. 위에서 생성된 주문번호를 이용해서 list 개수만큼 주문 상세레코드 생성
+			String sql = "insert into porder(oname, ophone, oaddress, oquest, mno) values(?,?,?,?,?)";
+			try {
+				ps = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+				ps.setString(1,list.get(0).getOname());
+				ps.setString(2,list.get(0).getOphone());
+				ps.setString(3,list.get(0).getOaddress());
+				ps.setString(4,list.get(0).getOquest());
+				ps.setInt(5,list.get(0).getMno());
+				ps.executeUpdate();
+				
+				rs = ps.getGeneratedKeys();
+				
+				if(rs.next()) {
+					int odno = rs.getInt(1);
+					sql = "insert into porderdetail(odno, odamount, odprice, odactive, pstno, ono) values(?,?,?,?,?,?)";
+					for(int i = 0; i<=list.size(); i++) {
+						ps = con.prepareStatement(sql);
+						ps.setInt(1,odno);
+						ps.setInt(2,list.get(i).getOdamount());
+						ps.setInt(3,list.get(i).getOdprice());
+						ps.setInt(4,list.get(i).getOdactive());
+						ps.setInt(5,list.get(i).getPstno());
+						ps.setInt(6,list.get(i).getOno());
+					}
+					return true;
+				}
+			} catch (Exception e) {System.out.println("setorder 실패" + e);}
+			return false;
+		}
 	}
 
 	// * 해당 sql에서 insert 된 pk값 가져오기

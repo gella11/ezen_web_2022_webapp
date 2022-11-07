@@ -5,6 +5,7 @@
 // alert(mid.innerHTML);
 
 /* ---------------- 회원정보 호출 -------------- */
+getmember()
 function getmember(){
 	$.ajax({
 		url : "/jspweb/member/info" , 	// 서블릿 URL
@@ -13,19 +14,14 @@ function getmember(){
 			let member = JSON.parse( result )
 			document.querySelector("#mno").innerHTML = member.mno
 			document.querySelector("#mid").innerHTML = member.mid
-			document.querySelector("#mname").innerHTML = member.mname
-			document.querySelector("#mphone").innerHTML = member.mphone
-			document.querySelector("#memail").innerHTML = member.memail
-			document.querySelector("#maddress").innerHTML = member.maddress
 			document.querySelector("#mdate").innerHTML = member.mdate
 			document.querySelector("#mpoint").innerHTML = member.mpoint
-			getmemberlist(); // 모든 회원 함수 호출
-
-
+			
+			
 			document.querySelector("#mname").value = member.mname
 			document.querySelector("#mphone").value = member.mphone
 			document.querySelector("#memail").value = member.memail
-
+			
 			document.querySelector("#sample4_postcode").value = member.maddress.split(",")[0]
 			document.querySelector("#sample4_roadAddress").value = member.maddress.split(",")[1]
 			document.querySelector("#sample4_jibunAddress").value = member.maddress.split(",")[2]
@@ -114,7 +110,7 @@ function updateaction(){
 	let mname  = document.querySelector('#mname')
 	if( buttons[1].innerHTML === '확인' ){
 		$.ajax({
-			url : "http://localhost:8080/jspweb/member/update" ,
+			url : "/jspweb/member/update" ,
 			data : { "mname" : mname.value } , 
 			success : function( re ){ 
 				if( re === 'true'){

@@ -23,29 +23,26 @@ public class info extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		
-		// 1.요청
+		// 1. 요청 [ 세션에 로그인 정보 호출  ]
 		String mid = (String)request.getSession().getAttribute("mid");
-		// 2.db
-		MemberDto dto = MemberDao.getInstance().getinfo(mid);
-			// 	  JS DTO 사용 못함
-			// 1) JS 이해할 수 있는 형식 변경해야함. [ JSON 형식 ]
-			// 2) DTO -> JSON 형식 변경 [ JAVA에서 제공 안해줌x -> 외부라이브러리 
-			JSONObject object = new JSONObject();
-			object.put("mno", dto.getMno() );
-			object.put("mid", dto.getMid() );
-			object.put("mname", dto.getMname() );
-			object.put("mphone", dto.getMphone() );
-			object.put("memail", dto.getMemail() );
-			object.put("maddress", dto.getMaddress() );
-			object.put("mdate", dto.getMdate() );
-			object.put("mpint", dto.getMpint() );
-		// 3.서비스로직
-		//String result ="성공";
-		// 4.응답
+		// 2. db
+		MemberDto dto =	MemberDao.getInstance().getinfo( mid );
+		// *** JS는 DTO를 사용하지 않습니다. 그래서 js 이해할수 있는걸로 변환합니다. 
+			// 1. js 이해할수 있는 형식 변경 [ JSON 형식 ]
+			// 2. DTO ---> JSON 형식 [ JAVA 제공X -> 외부라이브러리 json.simple 적용 ]
+		JSONObject object = new JSONObject();		
+			object.put( "mno", dto.getMno() );
+			object.put( "mid", dto.getMid() );
+			object.put( "mname", dto.getMname() );
+			object.put( "mphone", dto.getMphone() );
+			object.put( "memail", dto.getMemail() );
+			object.put( "maddress", dto.getMaddress() );
+			object.put( "mdate", dto.getMdate() );
+			object.put( "mpoint", dto.getMpint() );
+		// 3. 응답 
 		response.setCharacterEncoding("UTF-8");
-		response.getWriter().print(object);
-		
+		response.getWriter().print( object );
+		System.out.println(object);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -54,7 +54,10 @@ function list(page){
 			console.log(boards)
 			let boardlist = boards.data
 
-			let html = ""
+			let html = '<tr>'
+							+'<th> 번호 </th> <th> 제목 </th> <th>작성자</th> '
+						+	'<th> 작성일 </th> <th> 조회수 </th>'
+						+'</tr>'
 			
 			for(let i = 0 ; i<boardlist.length; i++){
 				let b = boardlist[i]
@@ -110,10 +113,10 @@ function list(page){
 
 function viewload(bno){
 	$.ajax({
-		url:"http://localhost:8081/jspweb/board/viewload",
+		url:"http://localhost:8080/jspweb/board/viewload",
 		data:{"bno" : bno},
 		success : function(re){
-			location.href="http://localhost:8081/jspweb/board/view.jsp"
+			location.href="http://localhost:8080/jspweb/board/view.jsp"
 		}
 	})
 }

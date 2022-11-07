@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONArray;
 
 import model.dao.BoardDao;
+import model.dao.BoardDao2;
 
 
 @WebServlet("/api2")
@@ -21,7 +22,7 @@ public class api2 extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		JSONArray array = BoardDao.getInstance().getapi();
+		JSONArray array = BoardDao2.getInstance().getapi();
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(array);
 		System.out.println( array +"dasdasddddddd" );
